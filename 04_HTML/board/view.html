@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>게시글 상세보기</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:"Malgun Gothic","맑은 고딕",sans-serif;
+}
+
+.container{
+    width:900px;
+    margin:40px auto;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:25px;
+}
+
+h2{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:25px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+     border:1px solid #ddd;
+}
+
+th{
+    width:120px;
+    background:#0d6efd;
+    color:white;
+    padding:12px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.content{
+    min-height:250px;
+    line-height:1.8;
+    vertical-align:top;
+    white-space:pre-line;
+}
+
+.button-area{
+    margin-top:25px;
+    text-align:right;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    text-decoration:none;
+    border-radius:5px;
+    color:white;
+    margin-left:5px;
+}
+
+.list{
+    background:#6c757d;
+}
+
+.edit{
+    background:#198754;
+}
+
+.delete{
+    background:#dc3545;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>게시글 상세보기</h2>
+
+    <table>
+
+        <tr>
+            <th>번호</th>
+            <td>151</td>
+
+            <th>조회수</th>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <th>작성자</th>
+            <td>홍길동</td>
+
+            <th>작성일</th>
+            <td>2026-07-08</td>
+        </tr>
+
+        <tr>
+            <th>이메일</th>
+            <td colspan="3">
+                hong@test.com
+            </td>
+        </tr>
+
+        <tr>
+            <th>제목</th>
+            <td colspan="3">
+                게시글 구현
+            </td>
+        </tr>
+
+        <tr>
+            <th>내용</th>
+            <td colspan="3" class="content">
+안녕하세요.
+
+MVC 게시판 예제입니다.
+
+게시글 상세보기 화면입니다.
+
+감사합니다.
+            </td>
+        </tr>
+
+    </table>
+
+    <div class="button-area">
+        <a href="list.html" class="btn list">목록</a>
+        <a href="edit.html?seq=151" class="btn edit">수정</a>
+        <a href="delete.html?seq=151" class="btn delete"
+           onclick="return confirm('삭제하시겠습니까?');">
+            삭제
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

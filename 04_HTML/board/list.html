@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f6f9;
+    font-family:"Malgun Gothic","맑은 고딕",sans-serif;
+}
+
+.container{
+    width:900px;
+    margin:40px auto;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:25px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#0d6efd;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f8f9fa;
+}
+
+td:nth-child(1),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5){
+    text-align:center;
+}
+
+.title{
+    text-align:left;
+}
+
+
+.button-area{
+    margin-top:20px;
+    text-align:right;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#0d6efd;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+.btn:hover{
+    background:#0b5ed7;
+}
+
+.pagination{
+    margin-top:25px;
+    text-align:center;
+}
+
+.pagination a{
+
+    display:inline-block;
+    width:35px;
+    height:35px;
+    line-height:35px;
+    margin:3px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    text-decoration:none;
+    color:#333;
+}
+
+.pagination .current{
+    background:#0d6efd;
+    color:white;
+    border-color:#0d6efd;
+}
+</style>
+<style>
+.title a{
+    text-decoration:none;
+    color:#333;
+}
+
+.title a:hover{
+    color:#0d6efd;
+    text-decoration:underline;
+}
+</style>
+
+</head>
+<body>
+
+<!-- .container>h2+form>table -->
+<div class="container">
+   <h2>게시판 목록</h2>
+   <form action="">
+      <table>
+        <tr>
+          <th width="80">번호</th>
+          <th>제목</th>
+          <th width="120">작성자</th>
+          <th width="140">작성일</th>
+          <th width="80">조회수</th>
+        </tr>
+        <tbody> 
+          <tr>
+              <td>151</td>
+              <td class="title"><a href="view.html?seq=151">게시글 구현</a></td>
+              <td>홍길동0</td>
+              <td>2026-07-08</td>
+              <td>2</td>
+          </tr>
+      
+          <tr>
+              <td>149</td>
+              <td class="title"><a href="view.html?seq=149">더미...8</a></td>
+              <td>조지훈</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>148</td>
+              <td class="title"><a href="view.html?seq=148">더미...7</a></td>
+              <td>홍길동7</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>147</td>
+              <td class="title"><a href="view.html?seq=147">더미...6</a></td>
+              <td>조지훈</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>146</td>
+              <td class="title"><a href="view.html?seq=146">더미...5</a></td>
+              <td>홍길동5</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>145</td>
+              <td class="title"><a href="view.html?seq=145">게시글 구현</a></td>
+              <td>홍길동4</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>144</td>
+              <td class="title"><a href="view.html?seq=144">더미...3</a></td>
+              <td>홍길동3</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>143</td>
+              <td class="title"><a href="view.html?seq=143">더미...2</a></td>
+              <td>홍길동2</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>142</td>
+              <td class="title"><a href="view.html?seq=142">더미...1</a></td>
+              <td>홍길동1</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr>
+      
+          <tr>
+              <td>141</td>
+              <td class="title"><a href="view.html?seq=141">더미...0</a></td>
+              <td>홍길동0</td>
+              <td>2026-07-08</td>
+              <td>0</td>
+          </tr> 
+        </tbody>           
+      </table>
+      
+      <!-- .button-area>button*2 -->
+      <div class="button-area">
+        <a href="write.html" class="btn write">글쓰기</a>        
+      </div>
+      
+      <div class="pagination">
+        <a class="current" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+      </div>
+      
+   </form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
