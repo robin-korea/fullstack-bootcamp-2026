@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오전 9:09:26</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<style>
+
+	#team2{
+	 border: 1px solid gray;
+	}
+	.teamleader{
+	 background-color: black;
+	 color: white;
+	}
+	
+</style>
+<script>
+ function team1Hide(){
+	 // window.alert('클릭 이벤트 발생!!');
+	 // DOM 메서드
+	 const team1Span = document.getElementById("team1");
+	 // CS style="display: none;" -> JS 코딩을 처리
+	 team1Span.style.display = "none";
+ }
+ 
+ function team1Show() {
+	 const team1Span = document.getElementById("team1");
+	 team1Span.style.display = "inline";
+}
+ let isFlag = false;
+ 
+ function team2HideShow() {
+	
+	 const team2Span = document.querySelector("#team2");
+	 
+	 if ( !isFlag ) {
+		 team2Span.style.display = "none";
+	} else {
+		team2Span.style.display = "inline";
+	}
+	
+	 isFlag = !isFlag;
+}
+  function colorChange() {
+	  // document.querySelector() 메서드는 1개의 첫 번째 요소만 얻어온다.
+	  /*
+	  const teamleaders = document.querySelector(".teamleader");
+	  teamleaders.style.color = "red";
+	  */
+	  
+	  const teamleaders = document.querySelectorAll(".teamleader");
+	  // teamleaders.style.color = "red";
+	  teamleaders.forEach( teamleader => teamleader.style.color = "red");
+  }
+</script>
+</head>
+<body>
+<!-- [span] 태그
+		ㄴ 인라인 모드
+		ㄴ 특정 시각적 기능 X
+		ㄴ 컨테이너 역할
+ -->
+ <span id = "team1">
+ 	 1조 -
+	 <span class="teamleader">양인석</span>
+	 <span>안정빈</span>
+	 <span>신창만</span>
+	 <span>이지훈</span>
+	 <span>장미성</span>
+ </span>
+ 
+ <br>
+ 
+  <span id = "team2">
+ 	 2조 -
+	 <span class="teamleader">류호훈</span>
+	 <span>오수빈</span>
+	 <span>이시연</span>
+	 <span style="display: none;">조지훈</span>
+	 <span>문규리</span>
+ </span>
+ 
+ <br>
+ <!-- 
+ 	javascript: 버튼을 클릭할때 클릭이벤트를 처리할 수 있어야 한다.
+ 	요소의 on이벤트명 속성으로 이벤트 처리한다.
+ 	
+ 	window.alert('클릭 이벤트 발생!!')
+  -->
+ <button type="button" onclick="team1Hide();">1조 숨기기</button>
+ <button onclick="team1Show();">1조 보이기</button>
+ <br>
+ <button onclick="team2HideShow();">2조 보이기/숨기기</button>
+ <br>
+ <button onclick="colorChange();">팀장의 글자색을 빨강으로 변경하기</button>
+</body>
+</html>

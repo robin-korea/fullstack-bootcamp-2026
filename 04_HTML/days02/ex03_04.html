@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오후 2:37:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	table{
+		width:400px;
+		height:300px;
+	}
+	
+	table, th, td{
+		border: 1px solid gray;
+		border-radius: 4px;
+	}
+	
+	td{
+		text-align: right;
+		vertical-align: top;
+	}
+	.today{
+		background-color: gray;
+		border-radius: 50%;
+	}
+	
+	.suncol{
+		color:red;
+	}
+	
+	.dayoff{
+		background-color: red;
+	}
+	
+</style>
+</head>
+<body>
+	<table>  
+	<!-- 테이블의 특정 컬럼(열)에 스타일을 지정하기 위한 태그
+	width, visibility, background, border 속성만 제한적으로 설정할 수 있다 -->
+	<colgroup>
+		<col span="1" style="width:100px">
+		<col span="5">
+		<col span="1" style="width:100px">		
+	</colgroup>    
+      <tr>
+         <th class="suncol">SUN</th>
+         <th>MON</th>
+         <th>TUE</th>
+         <th>WED</th>
+         <th>THU</th>
+         <th>FRI</th>
+         <th>SAT</th>
+      </tr>
+      <tr>
+         <td class="suncol"></td>
+         <td>&nbsp;</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class="suncol"></td>
+         <td></td>
+         <td>1</td>
+         <td>2</td>
+         <td>3</td>
+         <td>4</td>
+         <td>5</td>
+      </tr>
+      <tr>
+         <td class="suncol">6</td>
+         <td>7</td>
+         <td>8</td>
+         <td>9</td>
+         <td>10</td>
+         <td>11</td>
+         <td>12</td>
+      </tr>
+      <tr>
+         <td class="suncol"><span class="today" title="오늘 날짜">13</span></td>
+         <td>14</td>
+         <td>15</td>
+         <td>16</td>
+         <td class="dayoff">17</td>
+         <td>18</td>
+         <td>19</td>
+      </tr>
+      <tr>
+         <td class="suncol">20</td>
+         <td>21</td>
+         <td>22</td>
+         <!-- <td class="today">23</td> -->
+         <td>23</td>
+         <td>24</td>
+         <td>25</td>
+         <td>26</td>
+      </tr>
+      <tr>
+         <td class="suncol">27</td>
+         <td>28</td>
+         <td>29</td>
+         <td>30</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+</body>
+</html>

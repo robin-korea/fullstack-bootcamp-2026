@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오전 11:02:23</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+table {
+	border: 1px solid gray;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+
+td, th {
+	border: 1px solid gray;
+}
+
+/* 
+	.check-cell{
+	text-align: center;
+} 
+*/
+
+tr td:first-child{
+	text-align: center;
+}
+
+/* tbody tr:nth-child(odd){ */
+/* tbody tr:nth-child(even){ */
+/* tbody tr:nth-child(2){ */
+tbody tr:nth-child(2n+1){
+	background-color: #ddd;
+}
+
+thead tr th{
+	background-color: #000;
+	color: #fff;
+}
+
+tbody tr:hover{
+	border:1px solid #ddd;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+	<!-- 
+  [table] 태그
+    ㄴ 데이터를 행/열로 출력
+  deptno     dname         loc          
+   10      ACCOUNTING    NEW YORK   행   <tr == table row>
+   20      RESEARCH      DALLAS     행   
+   30      SALES         CHICAGO    행      
+   40      OPERATIONS    BOSTON     행
+ -->
+	<table>
+		<caption>부서의 정보</caption>
+		<thead>
+			<tr>
+				<th><input type="checkbox"></th>
+				<th>deptno</th>
+				<th>dname</th>
+				<th>loc</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="check-cell"><input type="checkbox"></td>
+				<td>10</td>
+				<td>ACCOUNTING</td>
+				<td>NEW YORK</td>
+			</tr>
+			<tr>
+				<td class="check-cell"><input type="checkbox"></td>
+				<td>20</td>
+				<td>RESEARCH</td>
+				<td>DALLAS</td>
+			</tr>
+			<tr>
+				<td class="check-cell"><input type="checkbox"></td>
+				<td>30</td>
+				<td>SALES</td>
+				<td>CHICAGO</td>
+			</tr>
+			<tr>
+				<td class="check-cell"><input type="checkbox"></td>
+				<td>40</td>
+				<td>OPERATIONS</td>
+				<td>BOSTON</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4" style="text-align: center;">
+					<button>부서 추가</button>
+					<button>부서 삭제</button>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
+
+
+<!-- 
+	방법1) 모든 td align="center" 속성을 추가
+	방법2) <td class="check-cell"> 클래스 속성 추가한 후에
+			.check-cell{
+				text-align: center;
+			}
+	방법3) 
+ -->

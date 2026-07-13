@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오전 9:02:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<style>
+</style>
+</head>
+<body>
+<h3>picture 태그</h3>
+<!-- 
+   ㄴ "반응형 웹"을 만들 때 사용
+   ㄴ "반응형 웹":
+       	- Responsive Wev Design, RWD
+       	- 하나의 웹 사이트가 PC, 태블릿, 스마트폰 등 다양한 화면 크기에 맞게
+       	  자동으로 레이아웃을 변경하는 웹 개발 방식
+ -->
+ <!-- 
+ <img alt="" src="../images/img_pink_flowers.jpg" style="width:460px; height:345px">
+ <br>
+ <img alt="" src="../images/img_white_flower.jpg"  style="width:214px; height:204px">
+ <br>
+ <img alt="" src="../images/img_orange_flowers.jpg"  style="width:100px; height:135px"> 
+ -->
+ 
+<picture>
+	<!-- 너비는 가로 사이즈 기준 
+		 css 로 적용할 때는 @media (min-width:650px){} 설정한다.
+	-->
+
+	<!-- 너비가 최소 650 이상일 때 -->
+	<source media="(min-width: 650px)" srcset="../images/img_pink_flowers.jpg">
+	<!-- 너비가 최소 450 이상일 때 -->
+	<source media="(min-width: 450px)" srcset="../images/img_white_flower.jpg">
+	<!-- 그 외에는 -->
+	<img alt="" src="../images/img_orange_flowers.jpg"  style="width:100px; height:135px">
+</picture>
+
+</body>
+</html>
