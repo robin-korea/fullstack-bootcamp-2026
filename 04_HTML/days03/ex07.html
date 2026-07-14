@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오후 3:35:36</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+<script>
+	function init() {
+		console.log("> init() 호출됨...: 초기화");
+
+		dispClock("box1"); // div의 아이디값 매개변수
+	}
+
+	function dispClock(id) {
+		// js :  var, const, let 키워드
+		let clockDiv = document.querySelector("#box1");
+
+		const now = new Date();
+
+		// 연도, 월, 일, 시, 분, 초를 따로 추출
+		const year = now.getFullYear();
+		const month = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더함
+		const day = now.getDate();
+		const hours = now.getHours();
+		const minutes = now.getMinutes();
+		const seconds = now.getSeconds();
+
+		clockDiv.innerText = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+		
+		setTimeout( dispClock  , 1000);
+	}
+</script>
+</head>
+<body onload="init();" onunload="">
+	<!-- 
+     [ iframe 태그 ]
+     - Inline Frame의 약자
+     - 현재 웹 페이지 안에 또 다른 웹 페이지를 삽입하는 태그
+     - 웹 페이지 속에 또 하나의 작은 브라우저 창을 만드는 태그
+     - <iframe src="페이지주소"></iframe>
+     = ex07_clock.html
+     
+     인라인모드
+     title 속성을 지정( 권장 )
+ -->
+ <!-- div*4>lorem1 -->
+ <!-- <iframe src="ex07_clock.html" title="디지털 시계"></iframe> -->
+ <iframe frameborder="0" src="ex07_clock_02.html" title="아날로그 시계"></iframe>
+ <div>Lorem.</div>
+ <div>Modi.</div>
+ <div id="box1">Repudiandae!</div>
+ <div>Aliquid.</div> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+

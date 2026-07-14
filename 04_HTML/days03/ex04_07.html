@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오전 11:47:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+.container{ 
+  display:grid; 
+  /* 열 갯수 3개 설정 */
+  /* grid-template-columns:100px 100px 100px; */  
+  /* grid-template-columns:1fr 2fr 1fr; */
+  
+  /* grid-template-columns:1fr 1fr 1fr; */
+  /* 1fr을 3번 반복 */
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:100px 200px;
+  gap:20px;  /* Grid 아이템 사이의 간격입니다. */
+  
+}
+
+.item1{ grid-column:1 / 3; }  /* 열합치기 */
+.item2{ grid-row:2 / 4; }  /* 행합치기 */
+/* 행/열 */
+.item9{ grid-area:1 / 2 / 3 / 4; }
+
+div{
+  border: 1px solid gray;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container"> 
+	<div class="item1">1</div> 
+	<div class="item">2</div> 
+	<div class="item2">3</div> 
+	<div class="item">4</div> 
+	<div class="item">5</div> 
+	<div class="item">6</div> 
+</div>
+
+</body>
+</html>

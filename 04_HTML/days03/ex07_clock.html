@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오후 3:40:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  #clock{
+    width: 10em;
+    font-size: 20px;
+    text-align: center;
+  }
+</style>
+<script>
+	function init() {
+		console.log("> init() 호출됨...: 초기화"); 
+		dispClock();  
+	}
+
+	function dispClock() {
+		// js :  var, const, let 키워드
+		let clockDiv = document.querySelector("#clock");
+
+		const now = new Date();
+
+		// 연도, 월, 일, 시, 분, 초를 따로 추출
+		const year = now.getFullYear();
+		const month = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더함
+		const day = now.getDate();
+		const hours = now.getHours();
+		const minutes = now.getMinutes();
+		const seconds = now.getSeconds();
+
+		clockDiv.innerText = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+		
+		setTimeout( dispClock  , 1000);
+	}
+</script>
+</head>
+<body onload="init();">
+  <div id="clock"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오후 2:16:49</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  h3{
+    background-color: yellow;
+  }
+  
+  /* :가상클래스 */
+  h3:hover{
+    color: red;
+  }
+  
+  /* ::의사(가상)요소
+      ㄴ 가짜 요소(element)
+      ㄴ 요소의 지정된 위치에 가짜 요소 있어서 그 가짜 요소에
+      스타일 지정 
+  */
+  h3::before{
+     content: "이미지"; /* url('../../images/SiSt.ico'); */
+  }
+  h3::after{
+     content: "~~~~~";
+  }
+</style>
+</head>
+<body>
+
+<!-- h3*3>lorem5 -->
+<h3>Lorem ipsum dolor sit amet.</h3>
+<h3>Consectetur deleniti ad voluptatem tenetur!</h3>
+<h3>Sit ipsam totam temporibus pariatur?</h3>
+
+</body>
+</html>

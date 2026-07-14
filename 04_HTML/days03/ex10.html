@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오후 4:23:41</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<!-- 
+       [html form(양식, 폼) 태그]
+        ㄴ 사용자 입력값을 수집하는 데 사용되는 태그.
+        ㄴ 사용자 입력값은 수집해서 서버에 전송 
+ -->
+ <form id="loginForm" action="ex10_ok.jsp" method="get">
+   <label for="id">아이디</label>
+   <input type="text" value="admin" id="id" name="id" autofocus="autofocus" tabindex="1" placeholder="아이디 입력하세요">
+   <br>
+   <label for="pwd">비밀번호</label>
+   <input type="password" id="pwd" name="pwd" tabindex="2" maxlength="15">
+   <br>
+   <input type="button" value="로그인" onclick="btnLogin_click();">
+   <input type="submit" tabindex="3" value="로그인">
+   <input type="reset" tabindex="4">
+ </form>
+ 
+ <script>
+   function btnLogin_click() {
+	  alert("입력값에 대한 유효성 검사를 마친 후 js 서브밋시킨다.");
+	  const form = document.querySelector("#loginForm"); 
+	  form.submit();
+   }
+ </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
