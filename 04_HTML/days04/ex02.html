@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오전 10:08:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<form>
+	<p>
+		색상 : <input type="color" id="color">
+		<br>
+		<input type="button" value="js 색상 확인" id="btnColor">
+		<input type="button" value="jq 색상 확인">
+		<div id ="demo"></div>
+	</p>
+</form>
+
+<script>
+	// [3] 색상을 선택하면 바로 출력..
+	$("#color").on("change", function(){
+		// alert("x");
+		// $("input[type=button]").last().click(); // 버튼의 클릭 이벤트를 발생
+		const color = $(this).val();
+		$("#demo")
+		.text(color)
+		.css({
+			"color":color,
+			"font-size":"30px",
+			"border": "2px solid red"
+		});
+	});
+</script>
+
+<script>
+	// [2] : [1] js 코딩을 모두 jquery로 수정
+	// $("input[type=button]").eq(1)       리턴값이 $() jq객체
+	// $("input[type=button]").get(1)         "         X      $(요소)
+	// $("input[type=button]").last()
+	// $("input[type=button]")[1] 인덱스 사용 가능
+	$("input[type=button]").last().on("click", function(){
+		// alert("이벤트 확인!!");
+		const color = $("#color").val();
+		/* $("#demo").text(color);
+		$("#demo").css("color",color);
+		$("#demo").css("font-size","30px"); */
+		
+		$("#demo")
+			.text(color)
+			.css({
+				"color":color,
+				"font-size":"30px",
+				"border": "2px solid red"
+			});
+	});
+</script>
+<script>
+	// [1]
+	// const btnColor = document.getElementById("btnColor");
+	const btnColor = document.querySelector("#btnColor");
+	btnColor.addEventListener("click", function (){
+		// alert("이벤트 확인");
+		const color = document.querySelector("#color").value;
+		const dDemo = document.querySelector("#demo");
+		
+		// alert(iColor.value);
+		dDemo.innerText = color;
+		dDemo.style.color = color;
+		// css font-size = 30px;
+		// js  fontSize
+		dDemo.style.fontSize = "30px";
+		
+		
+	});
+</script>
+</body>
+</html>
