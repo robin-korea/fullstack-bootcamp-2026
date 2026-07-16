@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 16. 오후 3:37:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+</style>
+</head>
+<body>
+<!-- 
+	[아이콘] 찜하기, 별점(평점)주기
+	1. html 페이지에 간편하게 아이콘을 추가하는 방법
+	  1) font awesome 아이콘 라이브러리
+	      - https://fontawesome.com/
+	      - <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+	      - font awsome 튜토리얼
+	      - 설치 X, 다운로드 X
+	  2) 
+	  3)
+	  
+	 2. 인라인모드의 요소( span, i )를 추가하면 된다
+ -->
+ 
+ <i class="fas fa-cloud"></i>
+ <i id = "heart" class="fas fa-heart" style="color:red; font-size:30px"></i>
+ <i class="fas fa-car"></i>
+ <i class="fas fa-file"></i>
+ <i class="fas fa-bars"></i>
+ 
+</body>
+
+<script>
+		document.querySelector("#heart").addEventListener("click", function(){
+			if(this.style.color == "black"){
+				this.style.color = "red";
+				this.style.fontSize = "32px";
+			}else{
+				this.style.color = "black";
+				this.style.fontSize = "16px";
+			}
+		});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 16. 오전 8:39:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<pre style="background-color: rgba(255,30,50,0.3)">
+	     [CSS 색상]
+      1. 140개의 미리 정의된 표준 색상명 gray, blue, red 등등
+      2. hex    #16진수  
+                #00  00  00
+                 R   G   B
+                0~255
+                00~FF  
+      3. RGB 색의 3원색
+         rgb(빨, 녹, 파)
+           0~255,0~255,0~255
+      4. RGBA(빨, 녹, 파, 0.0      ~ 1 )
+            A : 투명도    완전투명   불투명
+      5. HSL(색상, 채도, 명도)
+         색상  0~360(  0~120 빨, 121~240 녹색, 241~360 파랑 )
+         채도      백분율값    0% 회색음영 ~ 100% 풀컬러
+         명도(밝기)    "       0% 검은색  ~ 100% 흰색 
+	
+</pre>
+<div id="controls">
+빨강 : <input id = "r" type="range" min="0" max="255" /><span></span><br>
+녹색 : <input id = "g" type="range" min="0" max="255" /><span></span><br>
+파랑 : <input id = "b" type="range" min="0" max="255" /><span></span><br>
+투명도 : <input id = "a" type="range" min="0" max="100" /><span></span><br>
+</div>
+<script>
+ // js
+ // var preBackgroundColor = document.querySelector("pre").style.backgroundColor;
+ // alert(typeof preBackgroundColor);
+ 
+ // jq
+ var preBackgroundColor = $("pre").css("background-color");
+ 
+ var rgbaArr = preBackgroundColor.match(/^rgba\((\d+), (\d+), (\d+), ([0-9\.]+)\)$/);
+ // console.log(rgbaArr);
+ 
+ var redColor = rgbaArr[1];
+ var greenColor = rgbaArr[2];
+ var blueColor = rgbaArr[3];
+ var alpha = rgbaArr[4];
+ 
+ // js
+ document.querySelector("#r").value = redColor;
+ document.querySelector("#r").nextElementSibling.innerText = redColor;
+ 
+ // jq
+ $("#g")
+ 	.val(greenColor)
+ 	.next()
+ 	   .text(greenColor);
+ 
+ $("#b")
+	.val(blueColor)
+	.next()
+	   .text(blueColor);
+ 
+ $("#a")
+	.val(alpha*100)
+	.next()
+	   .text(alpha);
+  
+ 
+</script>
+
+<script>
+	$("#controls > input[type=range]").on("input",function (){
+		/* let value = $(this).val();
+		console.log($(this)); */
+		let rval = $("#r").val();  $("#r").next().text(rval);
+		let gval = $("#g").val();  $("#g").next().text(gval);
+		let bval = $("#b").val();  $("#b").next().text(bval);
+		let aval = $("#a").val();  $("#a").next().text(aval);
+		
+		$("pre").css("background-color",`rgba(${rval}, ${gval}, ${bval}, ${aval})`);
+	});
+</script>
+
+
+<script>
+ // 테스트 목적: match() - 문자열에서 정규표현식과 일치하는 부분을 찾아주는 메서드
+ // var s = "abc123";
+ // alert(s.match(/\d+/));
+ 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
