@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오후 12:30:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	.box{
+		border: 1px solid gray;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+	}
+	
+	/* div:first-child{} */
+	/* div:first-of-type{} */
+	div:nth-of-type(1){
+		background-color: red;
+		position: static;
+	}
+	
+	div:nth-of-type(2){
+		background-color: green;
+		position: relative;
+		left: 20px;
+		top: 20px;
+	}
+
+	div:nth-of-type(3){
+		background-color: blue;
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+	}
+	
+	/* div:nth-of-type(5){ */
+	div:last-of-type{
+		background-color: yellow;
+		
+		position: absolute;
+		left: 50px;
+		top: 25px;
+		
+		z-index: -1;
+	}
+</style>
+</head>
+<body>
+
+<script>
+	for (var i = 1; i <= 5; i++) {
+		const div = document.createElement("div");
+		div.innerText = `Box - ${i}`;
+		div.classList.add("box");
+		document.body.appendChild(div);
+	}
+</script>
+</body>
+</html>

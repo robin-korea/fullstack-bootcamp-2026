@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오전 9:40:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	.panel, .flip{
+		background-color: #4acf50;
+		color: white;
+		
+		text-align: center;
+		border: 1px solid #a6d8a8;
+		
+		font-size: 1em;
+		padding: 10px;
+		
+		margin: auto;
+	}
+	
+	.panel{
+		display: none;
+	}
+	
+	.flip:hover{
+		color: red;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse facere modi quia iure sit sed veritatis repellat rem nemo vel! Doloribus eligendi aperiam eius quia laudantium cumque debitis fuga reiciendis!</p>
+</div>
+
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse facere modi quia iure sit sed veritatis repellat rem nemo vel! Doloribus eligendi aperiam eius quia laudantium cumque debitis fuga reiciendis!</p>
+	<p>Fugiat tempora mollitia facilis maiores saepe sunt culpa odit eius commodi quia aperiam omnis nulla minima libero quisquam blanditiis dolorum aspernatur quaerat nostrum repellendus ipsum autem ipsa? Similique eos eligendi.</p>
+</div>
+
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse facere modi quia iure sit sed veritatis repellat rem nemo vel! Doloribus eligendi aperiam eius quia laudantium cumque debitis fuga reiciendis!</p>
+</div>
+
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse facere modi quia iure sit sed veritatis repellat rem nemo vel! Doloribus eligendi aperiam eius quia laudantium cumque debitis fuga reiciendis!</p>
+	<p>Fugiat tempora mollitia facilis maiores saepe sunt culpa odit eius commodi quia aperiam omnis nulla minima libero quisquam blanditiis dolorum aspernatur quaerat nostrum repellendus ipsum autem ipsa? Similique eos eligendi.</p>
+	<p>Quia earum quo ipsam iste laborum possimus molestiae accusamus error quidem! Esse laboriosam quaerat laudantium totam accusantium ut ea accusamus voluptatum commodi sit. Dolor voluptates reprehenderit voluptas dolores culpa facilis.</p>
+	<p>Quia earum quo ipsam iste laborum possimus molestiae accusamus error quidem! Esse laboriosam quaerat laudantium totam accusantium ut ea accusamus voluptatum commodi sit. Dolor voluptates reprehenderit voluptas dolores culpa facilis.</p>
+</div>
+XXX
+
+<script>
+	// parent()
+	$("p.flip").on("click", function (){
+		/* $(".panel").hide(); */
+		/* $(this).next().toggle(); */
+		$(this).next().slideToggle();
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오전 11:31:38</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+ <label for="itemCount">항목수: </label>
+ <select id="itemCount">
+   <option>선택</option>
+ </select>
+ 
+ <div id="inputArea"></div>
+ <script>
+ document.body.onload = function (){
+ 	const icSel = document.querySelector("#itemCount");
+ 	const area = document.querySelector("#inputArea");
+ 	// 1. option 요소를 동적 생성: Option(text, value)
+ 	/* 첫 번째 방법(권장)
+ 	// <option value="1">1개</option>
+ 	const opt = new Option("1개",1);
+ 	icSel.add(opt);
+ 	*/
+ 	/* 두 번째 방법
+ 	const option = document.createElement("option");
+    option.value = "1";
+    option.text = "1개";
+
+    select.appendChild(option);
+ 	*/
+ 	// 1-2.
+ 	for (var i = 1; i <=15 ; i++) {
+ 		const opt = new Option(`${i}개`,i);
+ 	 	icSel.add(opt);
+	}
+ 	
+ 	// 2. select 태그의 하나의 option을 선택할 때 선택한 옵션의 vlaue 속성값을 얻어오는 방법
+ 	//    ㄴ change 이벤트 발생
+ 	
+ 	icSel.addEventListener("change", function (){
+ 		// alert(this.value + " / " + this.text);
+ 		/*
+ 		area.innerHTML = ""
+ 		
+ 		for (var i = 1; i <= this.value; i++) {
+			area.innerHTML +=
+ 				`${i} : <input type="text"></br>`;
+		}
+ 		*/
+ 		area.innerHTML= "";
+ 		
+ 		for (var i = 1; i <= this.value; i++) {
+			var no = document.createTextNode(`${i}: `);
+			area.appendChild(no);
+			
+			var input = document.createElement("input");
+			input.type="text";
+			area.appendChild(input);
+			
+			var br = document.createElement("br");
+			area.appendChild(br);
+		}
+ 		
+ 	});
+ 	
+ }
+ </script>
+</body>
+</html>
