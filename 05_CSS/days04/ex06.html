@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오전 10:33:13</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	span.fa{
+		font-size: 25px;
+		/* color: orange; */
+	}
+	
+	span.fa.checked{
+		color:orange;
+	}
+</style>
+</head>
+<body>
+<h3>상품 평점</h3>
+
+<!-- span.fa.fa-star*5 -->
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+
+
+<!-- <script>
+	//js
+	const stars = document.querySelectorAll("span.fa.fa-star");
+	// console.log( stars );
+	stars.forEach( star => {
+			star.classList.remove("checked");
+		});
+
+	
+	stars.forEach( star => {
+		star.addEventListener("click", function(){
+			// star.classList.add("checked");
+			star.classList.toggle("checked");
+		});
+	}); 
+</script> -->
+
+<script>
+	//jq
+	$("span.fa.fa-star").removeClass("checked");
+	
+	$("span.fa.fa-star").on("click", function(){
+		// 다시 모든 별은 checked 속성 제거
+		$("span.fa.fa-star").removeClass("checked");
+		
+		$(this).addClass("checked")
+			   .prevAll("span.fa.fa-star")
+			   		.addClass("checked");
+	});
+</script>
+</body>
+</html>

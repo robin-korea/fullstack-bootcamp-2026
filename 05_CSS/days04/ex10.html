@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오후 12:39:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	button{
+		display: inline-block;
+		padding: 5px;
+		border:none;
+		
+		background-color: red;
+		color: white;
+		
+		cursor: pointer;
+	}
+	
+	/* [1] CSS :hover 의사클래스로 롤오버 효과.. 
+		button:hover{
+		opacity: 0.7;
+	} */
+</style>
+</head>
+<body>
+<!-- 마우스 롤 오버 효과 -->
+<button type="button">마우스 롤오버 효과</button>
+<button>마우스 롤오버 효과</button>
+<button>마우스 롤오버 효과</button>
+
+<!-- <script>
+	// [2]js
+	const btnNodeList = document.querySelectorAll("body > button");
+	// console.log(btnNodeList);
+	btnNodeList.forEach(btn => {
+		btn.addEventListener("mouseover", function(){
+			btn.style.opacity = "0.7";
+		});
+		btn.addEventListener("mouseout", function(){
+			btn.style.opacity = "1.0";
+		});
+	});
+</script> -->
+
+<script>
+	// jq
+	$("body > button").hover(
+			// mouserover
+			function (){
+				$(this).css("opacity","0.7")
+			}
+			// mouseout
+			, function (){
+				$(this).css("opacity","1.0")
+			}
+	);
+</script>
+
+</body>
+</html>

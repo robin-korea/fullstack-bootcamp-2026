@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오후 4:19:53</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		border: 10px dotted;
+		padding: 35px;
+		
+		background: yellow url('../images/img_flwr.gif') no-repeat;
+	}
+	
+	#demo1{
+		/* 배경색의 페이팅 위치:clip */
+		background-clip: border-box;
+		/* 배경이미지의 위치 지정: origin */
+		background-origin: border-box;
+		
+	}
+	#demo2{
+		background-clip: padding-box;
+		background-origin: padding-box;
+	}
+	#demo3{
+		background-clip: content-box;
+		background-origin: content-box;
+	}
+</style>
+</head>
+<body>
+<!-- 
+	[background-size 속성]
+	background-origin 속성
+	          ㄴ 기원, 유래, 출처
+	          ㄴ 배경 이미지의 위치를 지정하는 속성
+	          ㄴ border-bo, padding-box(기본값), content-box 
+	background-clip 속성
+	          ㄴ 자르다, 깍다
+	          ㄴ 배경의 페이팅 영역을 지정하는 속성
+	            border-box(기본값), padding-box, content-box 속성값 지정할 수 있다.
+ -->
+ 
+ <div id="demo1">
+   <h1>Lorem ipsum dolor sit amet.</h1>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum quod atque repellat sapiente delectus provident.</p>
+</div>
+<br>
+<div id="demo2">
+   <h1>Consequatur dolorem ullam adipisci sapiente.</h1>
+   <p>At adipisci inventore qui fugiat nesciunt facilis deserunt vitae porro ipsa animi ab molestias error!</p>
+</div>
+<br>
+<div id="demo3">
+   <h1>Ducimus ullam quae neque perferendis.</h1>
+   <p>Expedita quasi consectetur doloribus cumque maxime necessitatibus modi delectus ipsum? Eaque odio quis eius dolorum.</p>
+</div> 
+</body>
+</html>

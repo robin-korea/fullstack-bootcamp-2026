@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오전 11:13:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+.chip {
+	background-color: #f1f1f1;
+	display: inline-block;
+	font-size: 25px;
+	padding: 0 25px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 25px;
+	margin: 5px;
+}
+
+.chip>img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-left: -25px;
+	margin-right: 10px;
+	/* 이미지 + 텍스트 정렬: float 속성 */
+	float: left;
+}
+
+.chip>span.closebtn {
+	color: #888;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.chip>span.closebtn:hover {
+	color: #000;
+}
+</style>
+</head>
+<body>
+	<div class="chip">
+		<img src="../images/img_avatar.png" alt="" /> Hong Gil Dong <span
+			class="closebtn" onclick="chip_close();">&times;</span>
+	</div>
+</body>
+</html>
