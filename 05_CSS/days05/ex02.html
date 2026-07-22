@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오전 9:17:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width: 300px;
+		height: 100px;
+		background-color: yellow;
+		border: 1px solid;
+		
+		overflow: hidden;
+		
+		/* 2D 변환 - 이동, 현재 위치에서 x축, y축 이동*/
+		/* transform: translate(50px, 100px); */
+		
+		/* 2D 변환 - 회전 각도(양수:시계, 음수: 반시계)*/
+		/* transform: rotate(20deg) */
+		/* transform: rotate(-20deg) */
+		
+		/* transform: scale(0.5, 2); */
+		/* transform: scaleX(0.5); 너비만 축소  */
+		/* transform: scaleY(2); 높이만 확대  */
+		
+		/* x축에 따라 45도 기울이기*/
+		/* transform: skewX(45deg); */ 
+		/* transform: skewY(45deg); */ 
+		/* transform: skew(20deg, 0); */ 
+		
+		transform: matrix(1, -0.3, 0, 1, 0, 0);
+	}
+</style>
+</head>
+<body>
+<!-- 
+	[css 2D 변환 함수]
+	  1) 요소 이동: translate()
+	  2) 요소 회전: rotate()
+	  3) 요소 크기 조정: scale(), scaleX(), scaleY()
+	  4) 요소 기울기: skew(), skewX(), skewY()
+	  
+	  약식: matrix(scaleX, skewY, skewX, scaleY, translateX, translateY )
+ -->
+ 
+ <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et harum aperiam officia consequuntur sed placeat laborum tenetur assumenda asperiores a ipsa quas aspernatur. Odio id delectus cum quae eum.</div>
+</body>
+</html>

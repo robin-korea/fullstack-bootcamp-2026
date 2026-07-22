@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오후 4:35:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	*{
+		border: 1px solid gray;
+	}
+	body{
+		display: grid;
+		
+		width: 100vw;
+		height: 100vh;
+		
+		margin: 0;
+		
+		/* grid-template-columns: auto auto auto auto; */
+		/* grid-template-columns: repeat(4,auto); */
+		/*
+		grid-template-area:
+			'header header header header'
+			'main main main aside'
+			'footer footer footer footer';
+			*/
+		
+		/* fr == fraction == 비율*/
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: 100px auto 50px;
+		
+		grid-template-areas:
+			'header header'
+			'main aside'
+			'footer footer';	
+	}
+	
+	header{grid-area: header;}
+	main{grid-area: main;}
+	aside{grid-area: aside;}
+	footer{grid-area: footer;}
+	
+</style>
+</head>
+<body> <!-- 그리드 컨테이너 -->
+	
+	<!-- 그리드 항목 -->
+   <header>header</header>
+   <main>main :)</main>
+   <aside>side</aside>
+   <footer>footer</footer>
+   
+</body>
+</html>

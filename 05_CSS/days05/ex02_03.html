@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오전 9:35:56</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width: 300px;
+		height: 100px;
+		background-color: yellow;
+		border: 1px solid;
+	}
+</style>
+</head>
+<body>
+<input id="rdoClockWise" type="radio" name="direction" value="1" checked="checked">
+<label for="rdoClockWise">시계방향</label>
+
+<input id="rdoReverseClockWise" type="radio" name="direction" value="-1">
+<label for="rdoReverseClockWise">반시계방향</label>
+
+<br> 회전속도 :
+<input type="range" min="10" max="1000" value="10" id="rspeed">
+<br>
+<button>회전 시작</button>
+<button disabled="disabled">회전 멈춤</button>
+
+<script>
+	// jq
+	
+	const $btnStart = $("body > button:first-of-type");
+	const $btnStop = $("body > button:last-of-type");
+	const $rotateSpeed = $("#rspeed");
+	
+	let direction = 1;
+	let angle = 1;
+	let timer;
+	
+	$btnStart.on("click", function(){
+		direction = $("input[name='direction']:checked").val();
+		timer = setInterval(targetRotate, $rotateSpeed.val());
+		$btnStart.prop("disabled", true);
+		$btnStop.prop("disabled", false);
+	});
+	
+	function targetRotate(){
+		$("body > div").css("transform",`rotate(${angle}deg)`);
+		angle += Number(direction);	
+	}
+	
+	$btnStop.on("click", function(){
+		clearInterval(timer);
+		$btnStart.prop("disabled", false);
+		$btnStop.prop("disabled", true);
+	});
+</script>
+
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magnam eligendi voluptatem voluptas fugiat ad!</div>
+</body>
+</html>

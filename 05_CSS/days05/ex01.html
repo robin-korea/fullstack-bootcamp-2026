@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오전 8:38:54</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width: 200px;
+		height: 150px;
+	}
+	
+	#grad1{
+		/* 선형 그라데이션 효과 : 직선으로 진행되는 색상의 변화를 정의
+			background-image: linear-gradient(방향, 색상 정지점1, 색상 정지점2)
+			방향을 생략하면 기본값: 위 -> 아래 (==180deg)
+		*/
+		/* background-image: linear-gradient(red, yellow); */
+/* 		background-image: linear-gradient(to right, red, yellow);
+ */		background-image: linear-gradient(to bottom right, red, yellow);
+ 
+ 		/* 만약 브라우저에서 그라데이션 효과를 지원하지 않으면 첫 번째 red가 적용된다. */
+	}
+	
+	#grad2{
+		/* 방사형 그라데이션 효과: 중심점에서 바깥쪽으로 갈수록 색상이 변화*/
+		/* background-image: radial-gradiant(모양, 색상, 색상)
+		   모양 기본값: 타원 */
+		background-image: radial-gradient(circle, red 5%, green 15%, blue 60%);
+	}
+</style>
+</head>
+<body>
+<!-- 
+	[ 그라데이션 ]
+	   ㄴ 두 개 이상의 색상 간에 부드러운 전환 효과
+	   ㄴ 1) 선형 그라디언트
+	      2) 방사형 그라디언트
+	      3) 원추형 그라디언트
+ -->
+ 
+ <div id="grad1"></div>
+ <div id="grad2"></div>
+ 
+ <!--
+ 	text-overflow: 콘텐츠가 넘침을 처리하는 속성
+ 	word-wrap: 긴 단어를 나누어서 다음 라인으로 넘기는 속성
+ 	word-break: 줄 바꿈 규칙을 설정하는 속성
+ 	writing-mode: 문자열 가로/세로 배치 설정하는 속성
+ 	
+ 	text-overflow: 영역에서 텍스트가 넘칠때 ... 표시
+ 	   ㄴ white-space: nowrap,    overflow: hidden 설정되어야지만 위의 속성을 사용 할 수 있다.
+ 
+   -->
+ 
+</body>
+</html>
