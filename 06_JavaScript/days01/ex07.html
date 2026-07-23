@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오후 5:05:42</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		
+	</xmp>
+	
+	<button>Turn On</button>
+	<button>Turn Off</button>
+	<br>
+	<img alt="" src="../images/pic_bulboff.gif">
+	<!-- <img alt="" src="../images/pic_bulbon.gif"> -->
+	
+</div>
+<script>
+	const btnTurnOn = document.querySelector("button:first-of-type");
+	const btnTurnOff = document.querySelector("button:last-of-type");
+	btnTurnOff.style.diplay = "none";
+	const imgBulb = document.querySelector("img");
+	
+	btnTurnOn.onclick = function (){
+		imgBulb.setAttribute("src","../images/pic_bulbon.gif");
+		
+		btnTurnOn.style.display = "none";
+		btnTurnOff.style.display = "inline";
+	}
+	
+	btnTurnOff.onclick = function (){
+		imgBulb.setAttribute("src","../images/pic_bulboff.gif");
+		
+		btnTurnOn.style.display = "inline";
+		btnTurnOff.style.display = "none";
+	}
+	
+</script>
+</body>
+</html>

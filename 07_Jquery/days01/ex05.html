@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오후 4:11:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		
+	</xmp>
+	
+  <label for="name">RED : </label><br>  
+  <input id="redrange" class="long" type="range" min="0" max="255" step="1">
+  <br>
+  <label for="name">GREEN : </label><br> 
+  <input id="greenrange" class="long" type="range" min="0" max="255" step="1">
+  <br>
+  <label for="name">BLUE : </label><br>  
+  <input id="bluerange" class="long" type="range" min="0" max="255" step="1">
+  <br>
+  <p>홍길동</p>
+  
+</div>
+<script>
+	const rangeInputs = $("input[type='range'][id$='range']");
+	rangeInputs.each(function(index,element){
+		// console.log(index + " : " + $(element).val());
+		$(element).on("input", range_input);
+	});
+	
+	/*
+	$("p")
+		.css("height", "200px")
+		.css("font-size", "30px");
+	*/
+	const pObj = $("p");
+	
+	pObj.css({
+		"height": "200px",
+		"font-size": "30px"
+	});
+	
+	function range_input(){
+		let cRed = rangeInputs.eq(0).val();
+		let cGreen = rangeInputs.eq(1).val();
+		let cBlue = rangeInputs.eq(2).val();
+		
+		pObj
+			.css("backgroundColor", `rgb(${cRed},${cGreen},${cBlue})`)
+			.text(`rgb(${cRed},${cGreen},${cBlue})`);
+	}
+	
+	range_input();
+</script>
+</body>
+</html>

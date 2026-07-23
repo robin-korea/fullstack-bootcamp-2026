@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오전 11:40:19</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+div#demo {
+	border: solid 1px gray;
+	height: 100px;
+	overflow: auto;
+}
+
+div.item {
+	color: red;
+	background-color: yellow;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">My Home</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> </xmp>
+
+		<label for="name">이름 입력: </label> <input type="text" id="name"
+			name="name" autofocus="autofocus"> <br> <br>
+		<div class="group">
+			<button class="add">추가</button>
+			<button class="edit">수정</button>
+			<button class="del">삭제</button>
+			<button class="search">검색</button>
+			<button class="alldel">모두 삭제</button>
+		</div>
+		<br>
+		<div id="demo">
+			<div onclick='item_click();'>홍길동</div>
+			<div onclick='item_click();'>서영학</div>
+			<div onclick='item_click();'>정창기</div>
+			<div onclick='item_click();'>김병훈</div>
+		</div>
+	</div>
+
+	<script>
+  const $txtName = $("#name");
+  const $btnAdd = $("div.group > button.add");
+  const $btnEdit = $("div.group > button.edit");
+  const $btnDel = $("div.group > button.del");
+  const $btnSearch = $("div.group > button.search");
+  const $btnAlldel = $("div.group > button.alldel");
+  const $demo = $("#demo");
+  
+  // 검색 버튼을 클릭할 때
+  $btnSearch.on("click", function (){
+     itemSearch();
+  });
+  
+  function itemSearch(){
+     let searchWord = $txtName.val(); 
+     let count = 0;
+     
+     $demo.children().each((index,item) => {
+        $(item).removeClass("item");
+        let itemName = $(item).text();
+        if ( itemName.includes( searchWord ) ) {
+        	$(item).addClass("item");
+             count++;
+          }
+     });      
+     
+     alert(`'${ searchWord}'를 ${count}개 찾았습니다.`);
+     
+  }  
+  
+  // 모두 삭제 버튼을 클릭할 때
+  $btnAlldel.on("click", function (){
+     itemAllDel();
+  });
+  
+  function itemAllDel(){
+     if( confirm("정말 모두 삭제할까요?") ){ 
+          $demo.empty();
+    }
+  }
+  
+  // 삭제 버튼을 클릭할 때
+  $btnDel.on("click", function (){
+     itemDel();
+  });
+  
+  function itemDel(){   
+     // undefined , null, "" , 0 : false
+    if( !$updateItemDiv  ){
+       alert("삭제할 아이템을 선택하세요!!!");
+       return ;
+    }
+     // 확인: true,  취소: false
+    if( confirm("정말 삭제할까요?") ){ 
+       $updateItemDiv.remove();
+       $updateItemDiv = undefined;
+    }
+  }
+  
+  // 수정 버튼을 클릭할 때
+  $btnEdit.on("click", function (){
+     itemEdit();
+  });
+  
+  function itemEdit(){ 
+     $updateItemDiv.text( $txtName.val() );
+  }
+  
+  // 추가 버튼을 클릭할 때
+  $btnAdd.on("click", function (){
+     itemAdd();
+  });
+  
+  function itemAdd(){
+     let name = $txtName.val().trim();
+     if (name == "") {
+      alert("이름 필수 입력!!!");
+      $txtName.val(""); // 초기화
+      $txtName.focus();
+      return ;
+     } // 
+      
+     $demo.children().removeClass("item");        
+     
+     let content = $demo.html() + `<div class='item' onclick='item_click();'>${name}</div>`;
+     $demo.html( content );
+      
+     // [1]
+     // demo.scrollTop() = $demo.scrollHeight;
+     
+      // [2] 부드럽게 스크롤 이동   
+      /*
+      const observer = new MutationObserver((mutationsList, observer) => {
+      for (const mutation of mutationsList) {
+         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+             // demo.scrollTop = demo.scrollHeight;
+            demo.scrollTo({
+                  top: demo.scrollHeight,
+                  behavior: 'smooth'
+                });
+         }
+       }
+      });
+   
+      observer.observe(demo, { childList: true });  
+      */
+     
+     $txtName.focus();
+     $txtName.select();
+     
+  }
+  
+  $txtName.on("keydown", function (event){
+     if( event.key == 'Enter' ){
+        // btnAdd.click();
+        itemAdd();
+     }
+  });
+  
+  let $updateItemDiv;
+  
+  function item_click(){
+     //               addClass()
+     $demo.children().removeClass("item");        
+     $updateItemDiv = $(event.target);
+     $updateItemDiv.addClass("item");
+     $txtName.val($updateItemDiv.text());
+  }
+</script>
+</body>
+</html>

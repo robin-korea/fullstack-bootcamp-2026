@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오후 4:29:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	.item{
+		color:red;
+		font-size : 30px;
+		border: 5px solid gray;
+	}
+	
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		div 태그 위에 마우스를 올릴 때
+		1. 글 색상
+		2. 글 크기
+		3. 테두리
+		를 지정(적용)
+	</xmp>
+		
+	<div id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas soluta temporibus tempore voluptate doloribus molestias laudantium ex at corrupti quisquam corporis hic illum nisi quos blanditiis quis ratione. Unde beatae.</div>
+</div>
+<script>
+	$("#demo").on("mouseover", function(){
+		/* [1]
+		$(this).css({
+			"color":"red",
+			"font-size": "30px",
+			"border": "1px solid gray"
+		})
+		*/
+		
+		// [2]
+		// $(this).attr("class","box");
+		$(this).prop("class","box");
+	});
+	
+</script>
+</body>
+</html>
