@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오전 10:41:42</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+</div>
+<script>
+	function sayHello(){
+		return "hello world!";
+	}
+	
+	// let greeting = sayHello(); // 1. 함수 호출
+	let greeting = sayHello; // 2. 함수 참조 함수 자체를 변수 greeting 에 대입 
+	console.log(greeting());
+</script>
+<script>
+	// y 매개변수가 전달되지 않으면 기본값 20 으로 초기화
+	function myFunc(x,y = 20){
+		return x + y;
+	}
+	
+	myFunc(10);
+</script>
+<script>
+	function mult(a,b){ // 누락된 매개변수는 undefined 가 된다.
+		let x = a * b;
+		// 리턴문이 없다.
+	}
+	
+	let result = mult(2,3); // 리턴값은 undefined가 반환
+</script>
+<script>
+	// java :      ...args 가변인자
+	// js
+	
+	function sum(...args){
+		let result = 0;
+		// 반복저그올 처리 코딩(생략)
+		return result;
+	}
+	
+	sum(1,2);
+	sum(1,2,3,4,5,6,7);
+</script>
+
+<script>
+	// js 함수 표현식: 변수에 저장된 함수
+	/*
+	function multiply(a,b){
+		return a*b;
+	}
+	*/
+	
+	// 익명 함수
+	// 함수 표현식
+	const multiply = function (a,b){
+						return a*b;
+	};
+	
+	// multiply 변수를 마치 함수처럼 사용할 수 있다.
+	multiply(1,2);
+	
+	// 변수에 저장된 함수는 값처럼 사용할 수 있다.
+	
+	function run(fn){
+		return fn();
+	}
+	
+	run(multiply);
+</script>
+
+<script>
+	// 호이스팅
+	// add 함수 호출
+	let z = add(2,3);
+	
+	// 일반함수: add 함수 선언 부분
+	// 해당 영역(scope)의 최상위로 "호이스팅" 된다.
+	function add(a,b){
+		return a+b;
+	}
+	
+	// 함수 표현식은 호이스팅 되지 않는다.
+	let k = minus(2,3);
+	
+	
+	/* const minus = function(a,b){
+		return a - b;
+	} */
+	
+	// 화살표 연산자를 사용한 함수도 호이스팅 되지 않는다.
+	/* const minus = (a,b) => {
+		return a-b;
+	} */
+	
+	const minus = (a,b) => a-b;
+	
+	// 함수 선언은 호이스팅되지만, 함수 표현식은 호이스팅 되지 않는다.
+</script>
+<script>
+	// 자체 호출 함수(기억) -> 함수 클로저 설명 X
+	// 익명함수를 만들고 바로 호출
+	(function (a,b){
+		alert("익명 함수 호출됨...")
+	})();
+</script>
+</body>
+</html>

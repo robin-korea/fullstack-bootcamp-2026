@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오후 12:14:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+</div>
+<script>
+	// const person = new Object();
+	const person = {};
+	// 필드(속성, properties) 추가
+	person.name = "홍길동";
+	person.age = 20;
+	
+	person.printPerson = function(){
+		// 구현
+	}
+	
+	alert(person.name);
+	alert(person["name"]);
+	person.printPerson();
+	
+	// 새로운 필드, 메서드 추가 + 삭제
+	// 중첩 객체
+	person.birth = {
+			year: 2000,
+			month: 2,
+			day: 18
+	}
+	
+	person.birth.year;
+	person["birth"]["year"];
+	person.birth["year"];
+	
+	person.gender = true;
+	
+	// 필드 제거
+	delete person.age;
+	
+	// 메서드 새로 추가할 수 있다.
+	person.disp = function (){
+		// 구현
+	}
+	
+</script>
+</body>
+</html>

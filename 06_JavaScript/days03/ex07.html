@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오후 4:33:43</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	#container{
+		display:flex;
+		width:60%;
+		margin: 0 auto;
+	}
+	#container > div{
+		width: 33%;
+	}
+	#container > div > select{
+		width: 100%;
+		height: 200px;
+	}
+	#container > div > button{
+		width: 100%;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+	<div id="container">
+		<div>
+			<select id="leftCmb" multiple="multiple">
+				<option>안준호</option>
+				<option selected="selected">박지웅</option>
+				<option value="">서주원</option>
+				<option selected="selected">김민선</option>
+				<option selected="selected">김현수</option>
+			</select>
+		</div>
+		<div>
+			<button>▶</button><br>
+			<button>▶▶</button><br>
+			<button>◀</button><br>
+			<button>◀◀</button><br>
+		</div>
+		<div>
+			<select id="rightCmb" multiple="multiple">
+			</select>
+		</div>
+	</div>
+</div>
+<script>
+  // leftCmb 아이디의 select 요소
+  const leftCmb = document.querySelector("#leftCmb");
+  const rightCmb = document.querySelector("#rightCmb");
+  // leftCmb.options 컬렉션: 모든 option 얻어오기
+  // 선택된 옵션을 모두 얻어오기.
+  const slectedOptions = leftCmb.selectedOptions;
+
+  // <button>▶</button><br>
+  document.querySelector("div > button:first-of-type").onclick = function (){      
+     // js: for ~ of문
+     //      ㄴ 배열, 문자열, Map, Set, NodeList 등 반복가능한 (iterable)객체의 요소
+     // 를 하나씩 꺼내어 반복적으로 처리하는 반복문 
+     let i = 0;
+     for (let option of slectedOptions) {   //  변수 of 반복가능한 객체
+        // [1] X rightCmb.appendChild( option );  원인 파악 + 처리
+        // [2] O rightCmb.options[i++] = new Option(option.text);
+        // [3] O rightCmb.appendChild(  new Option(option.text) );
+        rightCmb.appendChild(  option.cloneNode(true)  );
+     } // for
+  }
+  // <button>▶▶</button><br>
+  document.querySelector("div > button:nth-of-type(2)").onclick = function (){     
+   // for (var i = leftCmb.options.length - 1 ; i >= 0  ; i--) {
+   for (var i = 0 ; i < leftCmb.options.length  ; i++) {   
+      const option = leftCmb.options[i];
+      if( option.selected ){
+         const removeOption =  leftCmb.removeChild( option );
+         rightCmb.appendChild(removeOption);
+         i--;
+      }
+   } // for
+  }
+</script>
+</body>
+</html>

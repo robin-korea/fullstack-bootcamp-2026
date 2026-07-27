@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오전 11:23:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[this 정리]
+		1. 이벤트 핸들러 안에서의 this는 이벤트를 받은 객체(요소)
+		2. 함수 안에서의 this는 Window 객체
+		3. person 객체의 메서드 안에서의 this는 객체 자기 자신을 나타낸다.
+		4. "use script" 엄격 모드에서 
+		    단독으로 사용되는 this는 [object Window] 이고
+		    let x = this
+		    
+		    함수 안에서의 this는 undefined 이다.
+	</xmp>
+	
+	<!-- 이벤트 핸들러: 이벤트가 발생할 때 호출되는 함수 -->
+	<button onclick="btn1_click(this);">버튼 1</button>
+	<button id ="btn2">버튼 2</button>
+</div>
+<script>
+	"use script"; // 엄격 모드
+	let x = this;
+	alert(x);   // [object Window]
+	
+	function test(){
+		alert(this); // undefined
+		return this;
+	}
+	
+	test();
+</script>
+<script>
+	// 화살표 함수 (람다식)
+	document.querySelector("#btn2").onclick = () => {
+		alert(this); // [object Window]
+	};
+	
+	/* document.querySelector("#btn2").onclick = function(){
+		alert(this); // [object HTMLButtonElement]
+	}; */
+</script>
+<script>
+	// js 배열 []
+	// js 객체 {}
+	const person = {
+			// 필드
+			name: "홍길동",
+			age : 20,
+			// 메서드
+			disp: function (){
+				return this.name + " / " + this.age; // 객체 안에서의 this는 객체 자기 자신을 나타낸다
+					// person
+			}
+	};
+	
+	// 필드
+	alert(person.name);
+	alert(person["name"]);
+	// 메서드
+	// person.disp();
+</script>
+<script>
+	function btn1_click(btn){
+		alert(btn); // [object HTMLButtonElement]
+		alert(this); // [object Window]
+	}
+</script>
+</body>
+</html>

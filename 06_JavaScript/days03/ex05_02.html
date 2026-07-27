@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오후 2:43:50</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">My Home</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> </xmp>
+
+		<div
+			style="display: flex; justify-content: space-around; align-items: baseline;">
+			<input type="text" autofocus="autofocus"> 
+			<select name="operator" id="operator">
+				<option value="">선택.</option>
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
+				<option value="**">**</option>
+			</select> 
+			<input type="text"> 
+			= 
+			<input type="text" disabled="disabled">
+		</div>
+	</div>
+	<script>
+	const txt1 = document.querySelector("input[type=text]:first-of-type");
+	const txt2 = document.querySelector("input[type=text]:nth-of-type(2)");
+	const txt3 = document.querySelector("input[type=text]:last-of-type");
+	const operator = document.querySelector("#operator");
+
+	txt1.onkeydown = function (event){
+		// 숫자 아니면 경고/ 백스페이스, 삭제, 탭, 소수점, 엔터 허용
+		const allowedKeys = ["Backspace", "Delete", "ArrowLeft"
+	        , "ArrowRight", "Tab", ".", "Enter"];
+		
+		const isNumberKey = (event.key >= "0" && event.key <= "9")
+		|| event.code.startsWith("Numpad");
+		
+		if(!isNumberKey && !allowedKeys.includes(event.key)){
+			alert("입력 잘못!!");
+			event.preventDefault();
+		}
+		
+		if (event.key === 'Enter') {
+			txt2.focus();
+			txt2.select();
+		}
+	}
+	
+	txt2.onkeydown = function(event){
+	
+    if(event.key === "Enter"){
+    	operator.focus();
+    	}
+
+	}
+	
+	operator.onchange = function (){
+		let result ;
+		switch(operator.value){
+			case "+":
+	            result = parseFloat(txt1.value) + parseFloat(txt2.value);
+	            break;
+        	case "-":
+            	result = parseFloat(txt1.value) - parseFloat(txt2.value);
+            	break;
+        	case "*":
+            	result = parseFloat(txt1.value) * parseFloat(txt2.value);
+            	break;
+        	case "/":
+            	result = parseFloat(txt1.value) / parseFloat(txt2.value);
+            	break;
+        	case "%":
+            	result = parseFloat(txt1.value) % parseFloat(txt2.value);
+            	break;
+        	case "**":
+            	result = parseFloat(txt1.value) ** parseFloat(txt2.value);
+            	break;
+            default:
+            	break;
+		}
+		
+		 txt3.value = result;
+	     txt1.focus();
+	     txt1.select();
+	}
+	
+	
+</script>
+</body>
+</html>

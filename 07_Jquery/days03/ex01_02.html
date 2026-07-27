@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오전 9:18:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+	
+	</xmp>
+		<input type="radio" id="rdbp" name="group" value="1" checked="checked">
+		<label for="rdbp">p 요소</label>
+		<input type="radio" id="rdbp" name="group" value="2">
+		<label for="rdbp">select 요소</label>
+		
+		<br>
+		팀원 이름 입력:
+		<input type="text" id="name" name="name" autofocus="autofocus">
+		
+		<br>
+		<div id="container" style="display: flex; align-items: center;">
+			<p id="demo"></p>
+			<select></select>
+		</div>
+</div>
+<script>
+	
+	const p = $("#demo");
+	const select = $("select");
+	
+	$("#name").on("keydown", function(event){
+		if(event.key === "Enter"){
+			let teamName = $(this).val();
+			
+			 let checkedRadioValue = $(":radio[name=group]:checked").val();
+			 if(checkedRadioValue == 1){
+				 let ul = p.children("ul");
+			     if(ul.length == 0){
+			    	 ul = $("<ul></ul>");
+			    	 p.append(ul);
+			     }
+			     const li = $("<li></li>");
+			     li
+			     	.text(teamName)
+			     	.appendTo(ul); // 부모요소.append(자식요소)  자식요소.appendTo(부묘오소)
+			     
+			 }else{
+				 select.append(`<option value="${teamName}">${teamName}</option>`);
+			 }
+			 $(this).focus();
+			 $(this).select();
+		}
+	});
+</script>
+</body>
+</html>
