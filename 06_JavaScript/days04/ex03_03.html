@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 28. 오전 11:29:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+	<input type="text" class="full" value="조지훈, 문규리, 신창만, 오수빈">
+	
+	<p id="demo"></p>
+	
+</div>
+<script>
+/*
+	indexOf()
+	lastIndexOf()
+	search()
+	
+	startsWith()
+	endsWith()
+	
+	match()
+	matchAll()
+	
+	includes() 지정된 문자열을 포함 여부 true/false 반환
+*/
+	// alert("나는 홍길동입니다.".indexOf("홍길동"));
+	// alert("나는 홍길동입니다.".search(/홍길동/));
+	
+	alert("http://www.sist.co.kr".includes("sist"));
+	// alert("http://www.sist.co.kr".startsWith("http://"));
+	// alert("http://www.sist.co.kr".endsWith(".com"));
+</script>
+<script>
+	$(":text").on("keydown",function (){
+		if(event.key === 'Enter'){
+			let data = $(this).val();
+			const names = data.split(/\s*,\s*/);
+			let content = "<ul><li>" + names.join("</li><li>")
+			+ "</li></ul>";
+			$("#deom")
+				.empty()
+				.html(content);
+		}
+	});
+</script>
+<script>
+	let msg = "홍길동님 안녕하세요. 강남 사는 홍순동입니다.";
+	// 문제) 홍길동을 모두 XXX 로 바꾸는 (alert)
+	// replace(), replaceAll()
+	//          검색된 첫번째 문자열만 변경
+	// alert(msg.replace(/홍길동/, "XXX"));
+	// alert(msg.replace("홍길동", "XXX"));
+	// alert(msg.replace(/홍길동/, "XXX"));
+	// alert(msg.replaceAll(/홍길동/g, "XXX"));
+	// alert(msg.replaceAll(/홍[가-힣]동/g, "XXX"));
+</script>
+<script>
+	let no = "15";
+	// alert( no.padStart(4, "0") );
+	// alert("0".repeat(4-no.length) + no);
+	
+</script>
+</body>
+</html>

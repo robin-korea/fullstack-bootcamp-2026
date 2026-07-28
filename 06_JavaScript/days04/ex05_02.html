@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 28. 오후 12:37:13</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[js 문자열 -> 숫자 변환 함수]
+		1. Number() 객체 생성자
+		2. parseInt() / parseFloat()
+		3. eval()
+	</xmp>
+</div>
+<script>
+	// eval()
+	//  ㄴ js 코드를 해석해서 실행하는 함수
+	//  ㄴ js 문자열 "" 안에 잇는 코드를 실제 코드처럼 실행하는 함수
+	// eval("alert('홍길동')");
+	let result = eval("1+2+3"); // 보안 등등 사용하지 말라고 권장.
+	
+	
+	// 1785215639993     1970.1.1 00:00:00 밀리세컨드
+	document.write(Number(new Date()) + "<br>");
+	
+	/*
+	let n = true;
+	document.write(Number(n) + "<br>");       // 1
+	document.write(parseInt(n) + "<br>");     // NaN
+	document.write( parseFloat(n) + "<br>");  // NaN
+	document.write( eval(n) + "<br>");        // true
+	*/
+	
+	/*
+	let n = "10,20,30";
+	document.write(Number(n) + "<br>");       // NaN
+	document.write(parseInt(n) + "<br>");     // 10
+	document.write( parseFloat(n) + "<br>");  // 10
+	document.write( eval(n) + "<br>");        // 30
+	*/
+	
+	/*
+	let n = "10 20 30";
+	document.write(Number(n) + "<br>");        // NaN 
+	document.write(parseInt(n) + "<br>");      // 10
+	document.write( parseFloat(n) + "<br>");   // 10 
+	document.write( eval(n) + "<br>");         // Uncaught SyntaxError: Unexpected number
+	*/
+	
+	/*
+	let n = "10.34"
+	document.write(Number(n) + "<br>");      // 10.34
+	document.write(parseInt(n) + "<br>");    // 10
+	document.write( parseFloat(n) + "<br>"); // 10.34
+	document.write( eval(n) + "<br>");       // 10.34
+	*/
+	
+	/*
+	let n = "   10   ";
+	document.write(Number(n) + "<br>");
+	document.write(parseInt(n) + "<br>");
+	document.write( parseFloat(n) + "<br>");
+	document.write( eval(n) + "<br>");
+	*/
+	
+	/*
+	let n = "10";
+	document.write( Number(n) + "<br>");
+	document.write( parseInt(n) + "<br>");
+	document.write( parseFloat(n) + "<br>");
+	document.write( eval(n) + "<br>");
+	*/
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 28. 오전 8:45:56</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+	
+	<table id="tblDept">
+		<thead>
+			<tr>
+				<th><input type="checkbox" id = "all" class="all">모두 선택</th>
+				<th>이름</th>
+				<th>지역</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" id="ck1" data-name = "Setonsd."></td>
+				<td>Setonsd.</td>
+				<td>Ypigs.</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="ck2" data-name = "Tenetur."></td>
+				<td>Tenetur.</td>
+				<td>Aliquid.</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="ck3" data-name = "Beatae?"></td>
+				<td>Beatae?</td>
+				<td>Excepturi!</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="ck4" data-name = "Ducimus!"></td>
+				<td>Ducimus!</td>
+				<td>Iure.</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3" align="center">
+					<button>선택 확인</button>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<p id ="demo"></p>
+</div>
+<script>
+	document.querySelectorAll("table#tblDept > tbody > tr > td:first-child")
+	.forEach(td => {
+		td.style.textAlign = "center";
+	});
+</script>
+<script>
+	/*
+	const checkAll = document.getElementById("all");
+	checkAll.addEventListener("click",function(){
+		const checkboxs = document.querySelectorAll("table#tblDept > tbody > tr > td:first-child input[type='checkbox']");
+		checkboxs.forEach(checkbox => {
+			checkbox.checked = checkAll.checked;
+		});
+	});
+	*/
+	
+	const ckbAll = document.getElementById("all");
+	const ckbList = document.querySelectorAll("table#tblDept > tbody input[id^=ck]");
+	
+	ckbAll.onclick = function(){
+		//alert(this.checked);
+		ckbList.forEach((element,index) => {
+			element.checked = this.checked;
+		});
+	}
+	
+	ckbList.forEach((element, index) => {
+		element.onclick = function (){
+			
+			let is4checked = true;
+			for (let i = 0; i < ckbList.length; i++) {
+				if(!ckbList[i].checked){
+					is4checked = false;
+					break;
+				}
+			}
+			
+			ckbAll.checked = is4checked;
+		}
+	});
+	
+	const btn = document.querySelector("#tblDept > tfoot > tr > td > button");
+	const demo = document.getElementById("demo");
+	btn.onclick = function(){
+		 let content = "<ul>";
+		 
+		for (let i = 0; i < ckbList.length; i++) {
+			if(ckbList[i].checked){
+				// let name = ckbList[i].parentElement.nextElementSibling.innerText;
+				let name = ckbList[i].dataset.name;
+				content += `<li>${name}</li>`;
+			}
+		}
+		
+		content += "</ul>";
+		
+		demo.innerHTML = content;
+	}
+	
+</script>
+</body>
+</html>

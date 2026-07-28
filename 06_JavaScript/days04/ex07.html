@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 28. 오후 4:30:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		버튼을 클릭하면
+		로또번호 1,2,3,4,5,6
+		오름차순으로 정렬해서
+		demo 요소에 출력
+		(중복 X)
+	</xmp>
+	<button id = "lotto">로또 번호 발생기</button>
+	<p id = "demo"></p>
+</div>
+<script>
+	const btn = document.getElementById("lotto");
+	const demo = document.getElementById("demo");
+	
+	btn.addEventListener("click",function(){
+		const lotto = [];
+		
+		while (lotto.length < 6){
+			const num = Math.floor(Math.random()*45)+1;
+			
+			// js every(): 모두 만족하면 true 반환하는 메서드
+			// js some(): 하나라도 만족하면 true를 반환하는 메서드
+			// js filter(): 조건을 만족하는 모든 요소를 반환하는 메서드 
+				
+			if(!lotto.includes(num)){
+				lotto.push(num);
+			}
+		}
+			
+		lotto.sort((a,b)=>a-b);
+		
+		let result = "<ul>";
+		for (var i = 0; i < lotto.length; i++) {
+			result += `<li>${lotto[i]}</li>`;
+		}
+		result += "</ul>"
+		
+		demo.innerHTML = result;
+	});
+</script>
+</body>
+</html>
