@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오후 5:19:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[js 변수 3가지 범위(scope) 정리]
+		1) 전역 범위(global scope)   : 전역변수
+		2) 함수 범위(function scope) : 지역변수
+		3) 블럭 범위(block scope)    : 지역변수
+	</xmp>
+</div>
+<script>
+	// 1) 전역변수(전역 범위)
+	//      브라우저가 닫히면 전역변수는 제거된다.
+	let firstName = "aaa";
+	var lastName = "bbb";
+	const fullName = "aaa bbb";
+	
+	// 2) 함수 범위
+	function test(param1, param2){
+		// 전역 범위(전역 변수)
+		age = 30;
+		
+		{   // 블럭 범위(지역 변수)
+			let y = 200;
+		}
+		
+		// 함수 범위(지역 변수)
+		let gender = true;
+		var t1 = 20;
+		const c1 = 100;
+	}
+</script>
+</body>
+</html>

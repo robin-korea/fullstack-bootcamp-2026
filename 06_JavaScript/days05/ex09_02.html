@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오후 4:25:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		throw 예외 강제로 발생시키는 문
+	</xmp>
+	
+	<input type="text" id="msg" class="long">
+	<button onclick="btn_exec();">실행</button>
+	<p id="demo"></p>
+	
+</div>
+<script>
+	function btn_exec(){
+		let msg = $("#msg").val();
+		$("#demo").empty();
+		
+		try {
+			if(msg.trim() == "") throw "empty";
+			if(isNaN(msg)) throw "not a number";
+			
+			let n = Number(msg);
+			if(n < 10) throw "too low";
+			if(n > 10) throw "too high";
+		} catch (e) {
+			$("#demo").html(`Input is ${e}`);
+		} finally{
+			$("#msg").val("").focus(); // 초기화
+		}
+	}
+</script>
+</body>
+</html>

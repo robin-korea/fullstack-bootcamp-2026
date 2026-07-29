@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오전 8:44:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		Set
+		Map
+	</xmp>
+</div>
+<script>
+	// js Set() : 중복 허용 X, 순서 X
+	// [1] const a = new Set();
+	// [2] 배열 -> Set 객체 생성
+	const m = [1,2,3];
+	const a = new Set(m);
+	// add()
+	a.add(4);
+	a.add(5);
+	a.add(6);
+	a.add(6);
+	a.add(6);
+	// 출력 for~of 문
+	for (let e of a) {
+		console.log(e);
+	}
+	
+	// console.log(typeof a); // object
+	// console.log(a instanceof Set); // true
+	// console.log(a.size); // 6
+	// a.has(3); // true
+	
+	/*
+	let sum = 0;
+	a.forEach(function(e){
+		sum += e;
+	})
+	*/
+	
+	// a 셋 집합안의 모든 요소 반복자를 반환
+	/*
+	const ir = a.values();
+	for(let e of ir){
+		
+	}
+	*/
+	
+	// keys() : Set 안에 있는 요소의 반복자를 반환
+	// entries() : [키,값] 엔트리를 반복하는 반복자를 반환
+	
+	const x = new Set([1,2,3]);
+	const y = new Set([3,4,5]);
+	
+	// const z = x.union(y); // 합집합 1,2,3,4,5
+	// const z = x.intersection(y) // 교집합 3
+	const z = x.difference(y);  // 차집합 1,2
+	
+	// WeakSet 객체
+	//   ㄴ 반드시 객체를 요소로 추가한다.
+	const ws = new WeakSet();
+	const o = {name:"aaa",age:20};
+</script>
+</body>
+</html>

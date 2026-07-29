@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오전 11:52:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<script src="/javascript/days02/ex04_script.js"></script>
+<style>
+/* 
+ select {
+   width: 100px;
+   text-align: center;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+ul {
+   list-style-type: none;
+}
+
+body {
+   font-family: Verdana, sans-serif;
+}
+
+.month {
+   padding: 70px 25px;
+   width: 100%;
+   background: #1abc9c;
+   text-align: center;
+}
+
+.month ul {
+   margin: 0;
+   padding: 0;
+}
+
+.month ul li {
+   color: white;
+   font-size: 20px;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+}
+
+.month .prev {
+   float: left;
+   padding-top: 10px;
+}
+
+.month .next {
+   float: right;
+   padding-top: 10px;
+}
+
+.weekdays {
+   margin: 0;
+   padding: 10px 0;
+   background-color: #ddd;
+}
+
+.weekdays li {
+   display: inline-block;
+   width: 13.6%;
+   color: #666;
+   text-align: center;
+}
+
+.days {
+   padding: 10px 0;
+   background: #eee;
+   margin: 0;
+}
+
+.days li {
+   list-style-type: none;
+   display: inline-block;
+   width: 13.6%;
+   text-align: center;
+   margin-bottom: 5px;
+   font-size: 12px;
+   color: #777;
+}
+
+.days li .active {
+   padding: 5px;
+   background: #1abc9c;
+   color: white !important
+}
+*/
+</style>
+<style>
+  /* 챗GPT 네이버 달력 스타일 */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f6f8;
+    font-family:"Malgun Gothic","맑은 고딕",sans-serif;
+    color:#333;
+}
+
+/* ========================= */
+/* body > div */
+/* ========================= */
+
+body>div{
+    width:95%;
+    max-width:1200px;
+    margin:30px auto;
+    background:#fff;
+    border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    padding:30px;
+}
+
+/* ========================= */
+/* Select */
+/* ========================= */
+
+select{
+
+    width:100px;
+    height:38px;
+
+    padding:0 10px;
+
+    border:1px solid #dcdfe6;
+    border-radius:6px;
+
+    background:white;
+
+    font-size:15px;
+
+    outline:none;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+select:hover{
+
+    border-color:#1a73e8;
+
+}
+
+select:focus{
+
+    border-color:#1a73e8;
+
+    box-shadow:0 0 0 3px rgba(26,115,232,.15);
+
+}
+
+/* ========================= */
+/* Month Header */
+/* ========================= */
+
+.month{
+
+    margin-top:25px;
+
+    width:100%;
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-bottom:none;
+
+    border-radius:12px 12px 0 0;
+
+    padding:18px 25px;
+}
+
+.month ul{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    list-style:none;
+}
+
+.month ul li{
+
+    font-size:22px;
+
+    color:#333;
+}
+
+#month{
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+#year{
+
+    margin-left:10px;
+
+    color:#888;
+
+    font-size:18px;
+}
+
+/* ========================= */
+/* Prev / Next */
+/* ========================= */
+
+.prev,
+.next{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:#666;
+
+    font-size:28px;
+
+    transition:.25s;
+}
+
+.prev:hover,
+.next:hover{
+
+    background:#f1f3f4;
+
+    color:#1a73e8;
+}
+
+/* ========================= */
+/* Week */
+/* ========================= */
+
+.weekdays{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    list-style:none;
+
+    background:#fafafa;
+
+    border-left:1px solid #e5e7eb;
+
+    border-right:1px solid #e5e7eb;
+}
+
+.weekdays li{
+
+    text-align:center;
+
+    padding:15px 0;
+
+    font-weight:bold;
+
+    color:#666;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+/* 일요일 */
+
+.weekdays li:first-child{
+
+    color:#ff4d4f;
+}
+
+/* 토요일 */
+
+.weekdays li:last-child{
+
+    color:#3b82f6;
+}
+
+/* ========================= */
+/* Calendar */
+/* ========================= */
+
+.days{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    list-style:none;
+
+    border:1px solid #e5e7eb;
+
+    border-top:none;
+
+    border-radius:0 0 12px 12px;
+
+    overflow:hidden;
+}
+
+.days li{
+
+    min-height:95px;
+
+    padding:10px;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:flex-start;
+
+    font-size:15px;
+
+    border-right:1px solid #ececec;
+
+    border-bottom:1px solid #ececec;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.days li:hover{
+
+    background:#f7fbff;
+}
+
+.days li:nth-child(7n){
+
+    border-right:none;
+}
+
+.days li:nth-last-child(-n+7){
+
+    border-bottom:none;
+}
+
+/* 일요일 */
+
+.days li:nth-child(7n+1){
+
+    color:#ff4d4f;
+}
+
+/* 토요일 */
+
+.days li:nth-child(7n){
+
+    color:#3b82f6;
+}
+
+/* ========================= */
+/* Today */
+/* ========================= */
+
+.days li .active{
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#1a73e8;
+
+    color:white;
+
+    font-weight:bold;
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width:900px){
+
+    body>div{
+
+        width:98%;
+
+        padding:15px;
+    }
+
+    .month{
+
+        padding:15px;
+    }
+
+    #month{
+
+        font-size:22px;
+    }
+
+    #year{
+
+        font-size:15px;
+    }
+
+    .days li{
+
+        min-height:75px;
+
+        font-size:14px;
+
+        padding:8px;
+    }
+
+    select{
+
+        width:85px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .days li{
+
+        min-height:55px;
+
+        font-size:12px;
+
+        padding:4px;
+    }
+
+    .weekdays li{
+
+        font-size:12px;
+    }
+
+    .prev,
+    .next{
+
+        width:34px;
+
+        height:34px;
+
+        font-size:22px;
+    }
+
+    #month{
+
+        font-size:18px;
+    }
+
+    #year{
+
+        font-size:14px;
+    }
+
+    select{
+
+        width:75px;
+
+        height:34px;
+
+        font-size:13px;
+    }
+
+}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[만년 달력]
+	</xmp>
+	<h3>달력(일정 관리)</h3>
+	<select name="" id="cmbYear"></select>
+	<select name="" id="cmbMonth"></select>
+	<select name="" id="cmbDate"></select>
+	<br>
+	<br>
+	
+	<div class="month">
+		<ul>
+			<li class="prev">&#10094;</li>
+			<li class="next">&#10095;</li>
+			<li>
+				<span id="month">August</span>
+				<span id="year" style="font-size: 18px">2017</span>
+			</li>
+		</ul>
+	</div>
+	
+	<ul class="weekdays">
+			<li>Su</li>
+			<li>Mo</li>
+			<li>Tu</li>
+			<li>We</li>
+			<li>Th</li>
+			<li>Fr</li>
+			<li>Sa</li>
+	</ul>
+	
+	<ul class="days">
+		<li></li>
+		<li></li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li><span class="active">10</span></li>
+		<li>11</li>
+		<li>12</li>
+		<li>13</li>
+		<li>14</li>
+		<li>15</li>
+		<li>16</li>
+		<li>17</li>
+		<li>18</li>
+		<li>19</li>
+		<li>20</li>
+		<li>21</li>
+		<li>22</li>
+		<li>23</li>
+		<li>24</li>
+		<li>25</li>
+		<li>26</li>
+		<li>27</li>
+		<li>28</li>
+		<li>29</li>
+		<li>30</li>
+		<li>31</li>
+	</ul>
+</div>
+<script>
+	const today = new Date();
+	
+	let tYear = today.getFullYear();
+	let tMonth = today.getMonth() + 1;
+	let tDate = today.getDate();
+	
+	// 달력에 표시되는 년도, 월
+	let year = tYear;
+	let month = tMonth;
+	
+	// [1] #cmbYear
+	/*
+	for (var i = 1970; i <= 2050; i++) {
+		if(tYear == i){
+			$("#cmbYear").append($(`<option selected='selected'>${i}</option>`));
+		}else{
+			$("#cmbYear").append($(`<option>${i}</option>`));
+		}
+	}
+	*/
+	
+	// [2]
+	for (var i = 1970; i <= 2050; i++) {
+		$("#cmbYear").append($(`<option>${i}</option>`));
+	}
+	$("#cmbYear").val(tYear);
+	
+	// [3] #cmbMonth
+	for (var i = 1; i <= 12; i++) {
+		$("#cmbMonth").append($(`<option>${i}</option>`));
+	}
+	$("#cmbMonth").val(tMonth);
+	
+	// [4] #cmbDate
+	let lastDay = getLastDay(tYear, tMonth);
+	for (var i = 1; i <= lastDay; i++) {
+		$("#cmbDate").append($(`<option>${i}</option>`));
+	}
+	$("#cmbDate").val(tDate);
+	
+ </script>
+ <script>
+ 	// 달력을 그리는 함수 선언
+ 	function printCalendar(year, month){
+ 		
+ 		$("#month").text(month);
+ 		$("#year").text(year);
+ 		
+ 		// <li> 1~31 </li>
+ 		// <li>1~31</li>
+     	// 반환 객체의 속성명과 동일하게 받아야 합니다
+     	const { firstDay, lastDate }  = getCalendarInfo(year, month );
+     	// alert( firstDay );
+     	// alert( lastDate );
+     
+     	/* 원하는 변수명으로 받고자 할 때
+     	const { 
+          	// 객체속성명   사용할 변수명
+          	firstDay  : firstDayOfWeek,
+          	lastDate  : lastDay
+      	} 	= 	getCalendarInfo(year, month);
+
+      	console.log(firstDayOfWeek); // 3
+      	console.log(lastDay);        // 31
+    	*/   
+    
+    	/* 
+    	// 배열일 때는 변수명은 중요하지 않다. 순서가 중요하다
+    	const [firstDay, lastDate] = getCalendarInfo2(2026, 7);
+    	const [firstDayOfWeek, lastDay] = getCalendarInfo2(2026, 7);
+
+    	console.log(firstDay);  // 3
+    	console.log(lastDate);  // 31
+    	*/
+    	$("ul.days").empty();
+    	
+    	// [5] 날짜 출력
+    	// <li></li> 생성해서 추가
+    	for (var i = 0; i < firstDay; i++) {
+    		$("ul.days").append($("<li></li>"));	
+		}
+    	
+    	// today.setHours(0,0,0,0);
+    	
+    	for (var i = 1; i <= lastDate; i++) {
+    		let liday = new Date(year, month-1,i);
+    		
+    		// today - liday == 0
+    		if(today.toLocaleDateString() == liday.toLocaleDateString()){
+    			$("ul.days").append($(`<li><span class="active">${i}</span></li>`));
+    		}else{			
+	    		$("ul.days").append($(`<li>${i}</li>`));	
+    		}
+		}
+ 	}
+ 	
+ 	printCalendar(year, month);
+ 	
+</script>
+<script>
+	// prev, next 버튼 이벤트 처리
+	$("ul > li.prev").on("click", function(){
+		changeCalendar(-1);
+		changeDate();
+	});
+	$("ul > li.next").on("click", function(){
+		changeCalendar(1);
+		changeDate();
+	});
+	
+	function changeCalendar(value){
+		month += value;
+		if(month == 13){
+			year++;
+			month = 1 ;
+		}else if(month == 0){
+			year--;
+			month = 12;
+		}
+		
+		$("#cmbYear").val(year);
+		$("#cmbMonth").val(month);
+		
+		printCalendar(year, month);
+	}
+	
+	$("#cmbYear").on("change", function(){
+		// 날짜 select 바꾸는 함수 호출
+		changeDate();
+	});
+	$("#cmbMonth").on("change", function(){
+		// 날짜 select 바꾸는 함수 호출
+		changeDate();
+	});
+	
+	function changeDate(){
+		// 전역변수
+		year = parseInt($("#cmbYear").val());
+		month = parseInt($("#cmbMonth").val());
+		
+		// 
+		$("#cmbDate").empty();
+		lastDay = getLastDay(year, month);
+		for (var i = 1; i <= lastDay; i++) {
+			$("#cmbDate").append($(`<option>${i}</option>`));
+		}
+		
+		printCalendar(year, month);
+	}
+</script>
+</body>
+</html>
