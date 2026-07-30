@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오전 11:27:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		1. apply() : 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+		2. call() : 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+			차이점: apply() 매개변수로 배열 사용
+			       call() 매개변수로  매개변수,,, 나열
+	</xmp>
+</div>
+<script>
+	// js 객체 생성 person1 ~ person 100
+	// 다른 객체 생성 + print() 구현
+	let otherPerson = {
+		print: function(){
+			return this.name + "/" + this.age;
+		},
+		printf: function(city,gender){
+			return this.name + "/" + this.age + "/" + city + "/" + gender;
+		} 
+	}
+	
+
+
+	let person1 = {
+			name:"hong",
+			age:20,
+			/* print: function(){
+				return this.name + "/" + this.age;
+			} */
+	};
+	let person2 = {
+			name:"park",
+			age:32,
+			/* print: function(){
+				return this.name + "/" + this.age;
+			} */
+	};
+	let person100 = {
+			name:"back",
+			age:26,
+			/* print: function(){
+				return this.name + "/" + this.age;
+			} */
+	};
+	document.write( otherPerson.printf.apply(person1, ["seoul",true]) + "<br>");
+	document.write( otherPerson.printf.call(person1, "seoul",true) + "<br>");
+	
+	document.write("<hr>");
+	document.write( otherPerson.print.apply(person1, null) + "<br>");
+	document.write( otherPerson.print.apply(person2, null) + "<br>");
+	document.write( otherPerson.print.apply(person100, null) + "<br>");
+	document.write("<hr>");
+	document.write( otherPerson.print.call(person1, null) + "<br>");
+	document.write( otherPerson.print.call(person2, null) + "<br>");
+	document.write( otherPerson.print.call(person100, null) + "<br>");
+</script>
+<script>
+	const m = [3,5,2,4,1];
+	let max = Math.max.aplly(null,m);
+	let min = Math.min.call(null,...m);
+</script>
+</body>
+</html>

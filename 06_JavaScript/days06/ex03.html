@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오전 10:02:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+</div>
+<script>
+	class Car{
+		// java 필드 선언
+		// public String name;
+		// public int year;
+		// js 는 name, year 필드를 미리 선언할 필요가 없다.
+		//    ㄴ 생성자에서 값이 할당 될 때 필드(속성)가 생성된다.
+		
+		// 생성자 Car(){}
+		// js 생성자 오버로딩 X
+		constructor(name, year){
+			// 필드 초기화
+			this.name = name;
+			this.year = year;
+		}
+		
+		// js 메서드 선언
+		// 메서드 선언 - 생성자는 오버로딩이 불가능하지만 메서드는 오버로딩 지원 불가.
+		method1(){}
+		method2(){}
+		// age() 메서드 선언: 올해년도 - 년식(year)
+		age(){
+			// js는 변수를 선언하지 않아도 사용할 수 있지만
+			// 클래스 안에서는 엄격모드 이기에 반드시 선언하고 사용해야 된다
+			const now = new Date();
+			return now.getFullYear - this.year;
+		}
+		// 생성자는 오버로딩 X, 메서드는 오버로딩 O
+		age(d){
+			const now = new Date();
+			return d - this.year;
+		}
+	}
+	
+	const myCar = new Car("BMW", 2022);
+	// [오버로딩: 이전 메서드를 덮어쓰기]
+	// alert(myCar.age());
+	alert(myCar.age(2025));
+</script>
+</body>
+</html>

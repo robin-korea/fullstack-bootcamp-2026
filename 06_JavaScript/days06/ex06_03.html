@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오후 2:34:51</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		TypeWriter( 타자기 ) 구현
+	</xmp>
+	
+	<button>TypeWriter</button>
+	<p id="demo"></p>
+</div>
+<script>
+
+	let content;
+	let timer;
+	let length;
+	
+	$("button").on("click", function(){
+		// <body> 요소
+		// content = $("body").html();
+		
+		// <html> 요소
+		// content = document.documentElement.innerHTML;
+		content = $("html").html();
+		// alert(content);
+		length = content.length;
+		// alert(lenght);
+		
+		typeWriter();
+		timer = setInterval(typeWriter,50);
+		
+	});
+	
+	let index = 0;
+	function typeWriter(){
+		let oneChar = content.charAt(index++);
+		
+		// $("#demo").html($("#demo").html() + (oneChar == '\n' ? "<br>" : oneChar));
+		$("#demo").html(function(index,oldHtml){
+			return oldHtml + (oneChar == '\n' ? "<br>" : oneChar);
+		});
+		
+		$('html,body')
+			.animate({
+				scrollTop: $("#demo").prop("scrollHeight")
+			},50);
+		
+		if(index == length){
+			clearInterval(timer);
+		}
+	}
+</script>
+</body>
+</html>
