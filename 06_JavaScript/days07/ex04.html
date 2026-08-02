@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오후 4:18:49</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+  .myDiv{
+    background-color: #f1f1f1;
+    text-align: center;
+    border:1px solid #d3d3d3; 
+    position: absolute; 
+    z-index:9;
+  }
+  .myDivHeader{
+    padding: 10px;
+    cursor: move;
+    z-index:10;
+    background-color: #2396F3;
+    color:#fff;
+  }
+  #myDiv2{
+    left: 150px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div style="position: relative;">
+  <xmp class="code">
+    ex08_02.html
+  </xmp>
+   
+  <div id="myDiv1" class="myDiv">
+  	<div id="myDiv1Header" class="myDivHeader">Click Here 1</div>
+  	<p>Lorem.</p>
+  	<p>Esse!</p>
+  	<p>Voluptas!</p>
+  </div>
+  
+  <div id="myDiv2" class="myDiv">
+  	<div id="myDiv2Header" class="myDivHeader">Click Here 1</div>
+  	<p>Lorem.</p>
+  	<p>Esse!</p>
+  	<p>Voluptas!</p>
+  </div>
+  
+</div>
+<script>
+
+  // 함수 클로저
+  function draggable( elemt ){  // 외부함수
+	
+	// 마우스 다운할 때 클릭한 위치를 저장   
+	let elemtX = 0, elemtY = 0; // 지역변수(== 전역변수처럼 사용)
+	let moveX = 0, moveY = 0; // 지역변수(== 전역변수처럼 사용)
+	 
+	// myDiv1 >  부모ID+Header   
+	if ( document.querySelector(`#${elemt.id}Header`) ) {
+		document.querySelector(`#${elemt.id}Header`).onmousedown = dragMouseDown; 
+	} // if
+	
+	function dragMouseDown(e){  // 내부함수
+	  e = window.event || e;
+	  console.log(`[md] ${ e.clientX } / ${ e.clientY }`);
+	  
+	  elemtX = e.clientX;
+	  elemtY = e.clientY;
+	  
+	  // myDiv1Header 아이디를 가진 div 태그에 마우스무브, 마우스업 이벤트 등록
+	  document.onmousemove = dragMouseMove;	
+	  document.onmouseup = dragMouseUp;	
+	} // dragMouseDown
+	
+	function dragMouseMove(e){  // 내부함수
+		e = window.event || e;
+		console.log(`[mm] ${ e.clientX } / ${ e.clientY }`);
+		
+		 moveX = elemtX - e.clientX;
+         moveY = elemtY - e.clientY;
+         elemt.style.left = (elemt.offsetLeft - moveX )+"px";
+         elemt.style.top = (elemt.offsetTop - moveY )+"px";
+		
+         // 움직인 좌표가 다시 마우스 다운한 위치로 셋팅 .. 
+         elemtX = e.clientX;
+         elemtY = e.clientY;
+	}
+	
+	function dragMouseUp(e){  // 내부함수
+		// myDiv1Header 아이디를 가진 div 태그에 마우스무브, 마우스업 이벤트 제거
+		document.onmousemove = null;	
+		document.onmouseup = null;
+	} 
+	  
+  } // draggable
+
+  
+  // $( ".draggable" ).draggable();
+  draggable( document.querySelector("#myDiv1") );
+  draggable( document.querySelector("#myDiv2") );
+</script>
+</body>
+</html>
+
+
+

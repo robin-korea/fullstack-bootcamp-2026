@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오전 11:38:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [js 중첩함수 설명]
+    중첩함수 ?  외부함수 안에 선언된 내부함수    
+    왜? 함수 안에 함수를 선언하는가? 
+  </xmp>
+  
+  <button>count!!</button>  
+  <p id="demo"></p> 
+  
+</div>
+<script>
+
+  $("button").on("click", function (){
+	  $("#demo").html(  plus()  );
+  });
+  
+  //  자체호출 함수
+  let plus = (function (){         // 익명 외부함수
+				  let counter = 0;  // 지역 변수	
+				  // 내부함수를 리턴
+				  return function plus(){
+							  // 외부함수의 선언된 지역변수를 내부함수에서 사용할 수 있다.
+							  counter++;
+							  return counter;
+						};
+			  })();
+  /*
+     변수에는 내부함수 plus() 저장된다. 
+  let plus = function plus(){
+				  // 외부함수의 선언된 지역변수를 내부함수에서 사용할 수 있다.
+				  counter++;
+				  return counter;
+			};
+  */
+
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오전 7:35:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [ html DOM ]
+  </xmp>
+
+  <h2>js HTML DOM</h2>
+  <p>Displaying document.body</p>
+  
+  <p id="demo" style="border:1px solid gray">demo</p>  
+   
+</div>
+
+<a href="javascript:history.back();">이전 페이지로 이동</a>
+<br>
+<script>
+    // document.querySelector() : DOM 메서드
+   	//let h2Element = document.querySelector("h2");
+    //let pdemo = h2Element.nextElementSibling.nextElementSibling;
+    
+    // alert( h2Element ); [object HTMLHeadingElement]
+    
+    
+    // [js HTML DOM 텍스트 노드]
+    // alert(  h2Element.nextSibling  ); // [object Text]  Node
+    // 3가지 속성 확인...
+    //alert(h2Element.nextSibling.nodeType); //3
+    //alert(h2Element.nextSibling.nodeName); // #text
+    //alert(h2Element.nextSibling.nodeValue); // X
+</script>
+<script>
+  // h2 태그명으로 요소를 얻어오기
+  let  h2Element =  document.getElementsByTagName("h2");
+  // alert( h2Element[0].innerHTML ); // undefiend   "js HTML DOM"
+  //console.log( h2Element );
+  
+  // h2 요소가 여러개 존재하더라도 첫 번째 h2 요소를 반환하는 메서드
+  let h2Elem = document.querySelector("h2");
+  
+  //           div
+  // NodeList
+  let divChilds = h2Elem.parentElement.childNodes;
+  // console.log( divChilds );
+  // divChilds[divChilds.length -1]
+  
+</script>
+</body>
+</html>
+
+
+
