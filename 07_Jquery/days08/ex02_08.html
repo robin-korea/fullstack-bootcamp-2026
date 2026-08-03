@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 3:08:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		
+	</xmp>
+	  <table border=1>
+    <tr>
+       <td>Lorem.</td>
+       <td></td>
+       <td>Sapiente.</td>
+       <td>Minus?</td>
+    </tr>
+    <tr>
+       <td>Lorem.</td>
+       <td>Sapiente!</td>
+       <td></td>
+       <td>Veniam.</td>
+    </tr>
+    <tr>
+       <td>Lorem.</td>
+       <td>Voluptatibus.</td>
+       <td>Nulla!</td>
+       <td></td>
+    </tr>
+    <tr>
+       <td>Lorem.</td>
+       <td></td>
+       <td>Debitis.</td>
+       <td>Quis.</td>
+    </tr>
+    <tr>
+       <td>Lorem.</td>
+       <td>Nesciunt!</td>
+       <td>Sed!</td>
+       <td>Assumenda!</td>
+    </tr>
+  </table>
+  
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Omnis voluptates voluptatem illo beatae!</p>
+  <p style="display: none">3. Hic illo suscipit nam libero.</p>
+  <p>Obcaecati autem fugit natus quaerat!</p>
+  <p>Natus esse eum odio aspernatur.</p>
+</div>
+<script>
+	// html 태그
+	$(":root").css("border","1px solid red");
+	
+	// content 가 없는 td
+	$("td:empty").css("background-color","red");
+	
+	// content 가 있는 td - 배경색 파랑
+	// $("td:not(:empty)").css("background-color","blue");
+	// $("td").not(":empty").css("background-color","blue");
+	
+	// 자식이 있는 부모가 되는 td
+	$("td:parent").css("background-color","green");
+	
+	$("p:hidden").show(5000, function(){
+		$("p:visible").hide(5000);
+	});
+</script>
+</body>
+</html>

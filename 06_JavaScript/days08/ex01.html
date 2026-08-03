@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오전 8:56:16</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	.modal{
+		display: none;
+		
+	 	position: fixed; /* Stay in place */
+     	z-index: 1; /* Sit on top */
+     	left: 0;
+     	top: 0;
+     	width: 100%; /* Full width */
+     	height: 100%; /* Full height */
+     	overflow: auto; /* Enable scroll if needed */
+     	background-color: rgb(0,0,0); /* Fallback color */
+     	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+     	-webkit-animation-name: fadeIn; /* Fade in the background */
+     	-webkit-animation-duration: 0.4s;
+     	animation-name: fadeIn;
+     	animation-duration: 0.4s;
+	}
+	
+	.modal_content{
+	 	position: fixed;
+     	top: 200px;
+     	background-color: #fefefe;
+     	
+     	width: 50%;
+     	left: 50%;
+     	transform: translateX(-50%);
+     
+     	-webkit-animation-name: slideIn;
+     	-webkit-animation-duration: 0.4s;
+    	animation-name: slideIn;
+     	animation-duration: 0.4s;
+	}
+	
+	.modal-header {
+  		padding: 2px 16px;
+  		background-color: #5cb85c;
+  		color: white;
+
+	}
+	
+	.modal-body {padding: 2px 16px;}
+
+	.modal-footer {
+  		padding: 2px 16px;
+  		background-color: #5cb85c;
+  		color: white;
+	}
+	
+    .close {
+  		color: white;
+  		float: right;
+  		font-size: 28px;
+  		font-weight: bold;
+	}
+
+	.close:hover, .close:focus {
+  		color: #000;
+  		text-decoration: none;
+  		cursor: pointer;
+	}
+	
+	@-webkit-keyframes slideIn {
+  		from {top: -300px; opacity: 0} 
+ 		 to {top: 100; opacity: 1}
+	}
+
+	@keyframes slideIn {
+  		from {top: -300px; opacity: 0}
+  		to {top: 100; opacity: 1}
+	}
+
+		@-webkit-keyframes fadeIn {
+  		from {opacity: 0} 
+  		to {opacity: 1}
+	}
+
+		@keyframes fadeIn {
+  		from {opacity: 0} 
+  		to {opacity: 1}
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		모달(modal) 창
+	BOM - window.open()/close()
+	</xmp>
+	
+	<button id = "myBtn">Open Modal</button>
+	
+	<div id="myModal" class="modal">
+		<div class="modal_content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>Modal Header</h2>
+			</div>
+			<div class="modal-body">
+				<p>Some text in the Modal Body</p>
+				<p>Some other text...</p>
+			</div>
+			<div class="modal-footer">
+				<h3>Modal Footer</h3>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$("#myBtn").on("click",function(){
+		$(".modal").show();
+	});
+	
+	$(".modal_content .close").on("click",function(){
+		$(".modal").hide();
+	});
+	
+	$(window).on("click",function(){
+		if($(event.target).is(".modal")){
+			$(".modal").hide();
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 12:36:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+	   $(jquery selector).action();
+		css 선택자(selector): 스타일 적용할 대상
+		
+	 1. jquery selector  >  css selector
+	 
+       1) *          $("*") 모든 요소를 선택자로 사용(범용 선택자)
+       2) #아이디명    $("#아이디명")
+       3) .클래스명    $(".클래스명")
+       4) 태그명       $("p"), $("div")
+       5) 콤마 연산자로 나열
+          $("p, div, span").action();
+          
+       6) :first, :last, :even  :odd    jquery selector
+          first()   last()
+          ex02_02.html
+          
+       7) :first-child
+          :last-child
+          :nth-child(n)   
+          :nth-last-child(n)
+         
+          :first-of-type
+          :last-of-type
+          :nth-of-type(n)
+          :nth-last-of-type(n)
+          
+        8) :only-child
+           :only-of-type  
+           ex02_03.html
+           
+        9) :eq(index)       eq()
+           :gt(no)
+           :lt(no)
+           ex02_04.html  
+       
+       10)  element element   후손
+            element > element   직계자손   
+            element +  element   형제   
+            element ~  element   형제  
+            
+       11) :not( jquery selector )
+           not()
+           ex02_05.html      
+           
+       12)  :header 
+           ex02_06.html
+             
+       13) :animated
+           :focus
+           ex02_07.html   
+           
+       14) :empty
+           :parent
+           :root
+           :hidden
+           :visible           
+           ex02_08.html    
+           
+       15)  :has( jquery selector)
+            has()
+            ex02_09.html   
+            
+      16) [attribute]
+      [attribute=value]
+      [attribute^=value]
+      [attribute$=value]
+      [attribute*=value]
+      [attribute~=value]
+      [attribute|=value]
+      
+      17)  :checked  체크된 요소
+           :selected 선택된 options
+           :enabled  활성화된 요소
+           :disabled 비활성화된 요소...
+           
+      18) <input>     :input
+          <input type=text>  :text
+          <input type=password>  :password
+          <input type=radio>  :radio
+          <input type=checkbox>  :checkbox
+          <input type=submit>  :submit
+          <input type=reset>  :rest
+          <button></button>   :button
+          <input type=image>  :image
+          <input type=file>  :file
+	</xmp>
+</div>
+</body>
+</html>

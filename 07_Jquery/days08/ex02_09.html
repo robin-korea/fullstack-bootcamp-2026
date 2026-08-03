@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 3:17:50</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minima.</p>
+	<p>Non nisi optio <span>quis</span> quod rem vitae aut quisquam aliquid!</p>
+	<p>Odio eaque maiores rerum doloremque laborum aliquam dolor sunt voluptatem!</p>
+	<p>Nobis sapiente laboriosam consequatur aspernatur natus eius ex adipisci vel.</p>
+	<p>Odio illum culpa deserunt esse quasi consequuntur unde blanditiis debitis.</p>
+</div>
+<script>
+	// span 태그를 가지고 있는 p 태그의 글자색을 빨강
+	$("p").has("span").css("color","red");
+	
+	// p 태그의 내용 중에 "lor" 문자열 포함하는 p 태그의 배경색을 빨강색으로 설정
+	// jquery method: each()
+	// js     method: forEach()
+	/* [1]
+	$("p").each(function(index, element){
+		let content = $(element).text();
+		if(content.includes("lor")){
+			$(element).css("background-color","red");
+		}
+	});
+	*/
+	
+	// jq method: filter()
+	/* [2]
+	$("p").filter(":contains('lor')")
+			.css("background-color","blue");
+	*/
+	
+	// [3]
+	$("p:contains('lor')").css("background-color","green");
+</script>
+</body>
+</html>

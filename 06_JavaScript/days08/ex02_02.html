@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오전 10:41:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+       js 쿠키 : document.cookie 속성을 사용해서 읽기/쓰기(쿠키 생성, 조회, 수정, 삭제)
+       쿠키를 저장, 삭제 할때 path 값을 맞쳐줘야 변경 가능
+	</xmp>
+	
+  	쿠키이름 : <input type="text" id="cookieName" autofocus="autofocus"><br>
+  	쿠키값 : <input type="text" id="cookieValue"><br>
+  	<br>
+  	<button onclick="setCookie()">쿠키생성</button>
+  	<button onclick="getAllCookies()">쿠키조회</button>
+  	<button onclick="getCookie()">쿠키확인</button>
+  	<button onclick="delCookie()">쿠키삭제</button>
+  
+  	<p id="demo"></p>  
+</div>
+<script>
+	function delCookie(){
+		// 만료시점을 과거로 설정해서 쿠키 새로 저장
+		let cname = $("#cookieName").val();
+		let cvalue = "";
+		
+		let now = new Date();
+		now.setDate(now.getDate() - 10);
+		let expires = now.toUTCString();
+		
+		document.cookie = `${cname}=${cvalue}; expires=${expires}; path=/`;
+		
+		$("#cookieName").val("");
+		$("#cookieValue").val("");
+		
+	}
+	function getCookie(){
+		let cname = $("#cookieName").val();
+		let cvalue;
+		let cookies = document.cookie;
+		let cookieArr = cookies.split(/;\s/);
+		console.log(cookieArr);
+		cookieArr.forEach(function(element, index, array){
+			let cnvArr = element.split("=");
+			if(cname == cnvArr[0]){
+				cvalue = cnvArr[1];
+			}
+		});
+		
+		if(cvalue){
+			$("#cookieValue").val(cvalue);
+		}else{
+			alert("> 존재하지 않는 쿠키이름입니다.")
+		}
+	}
+	
+	function getAllCookies(){
+		let cookies = document.cookie;
+		$("#demo").html(cookies);
+	}
+	
+	function setCookie(){
+		let cname = $("#cookieName").val();
+		// 쿠키의 값이 한글인 경우에는 escape() 함수를 사용해서 %uXXX 값으로 변환해서
+		// 쿠키에 저장해야 된다
+		// unescape(): %uXXX -> 한글로 반환하는 함수;
+		let cvalue = escape($("#cookieValue").val());
+		
+		// 만기날짜는 저장 후 10일 동안
+		let now = new Date();
+		now.setDate(now.getDate() + 10);
+		// 만기날짜는 UTC 날짜 형식으로 저장
+		let expires = now.toUTCString();
+		
+	
+		// 쿠키 저장
+		// document.cookie = `${cname}=${cvalue}; expires=${expires}; path=/`; 
+		document.cookie = `${cname}=${cvalue}; expires=${expires};`;
+		
+		$("#cookieName").val("");
+		$("#cookieValue").val("");
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 3:43:35</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		
+	</xmp>
+	<button>Click to fadeout boxes</button><br><br>
+	<button>Click to fadein boxes</button><br><br>
+	<button>Click to fadetoggle boxes</button><br><br> 
+	
+	<div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+	<div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+	<div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+	
+</div>
+<script>
+	// jq selector, jq method()
+	// $("button:first").on("click",function(){});
+	// $("button:eq(0)").on("click",function(){});
+	// $("button").first().on("click",function(){});
+	$("button").eq(0).on("click",function(){
+		// $("#div1").fadeOut();
+		// $("#div2").fadeOut("slow"); 
+		// $("#div3").fadeOut(5000);
+		
+		$("#div1").slideDown;
+	});
+	
+	// 두 번째 버튼 클릭
+	$("button").eq(1).on("click",function(){
+		// $("#div1").fadeIn();
+		// $("#div2").fadeIn("slow"); 
+		// $("#div3").fadeIn(5000);
+		
+		$("#div1").slideUp;
+	});
+	
+	// 세 번째 버튼 클릭
+	$("button").eq(2).on("click",function(){
+		// $("#div1").fadeToggle();
+		// $("#div2").fadeToggle("slow"); 
+		// $("#div3").fadeToggle(5000);
+		
+		$("#div1").slideToggle;
+	});
+</script>
+</body>
+</html>
