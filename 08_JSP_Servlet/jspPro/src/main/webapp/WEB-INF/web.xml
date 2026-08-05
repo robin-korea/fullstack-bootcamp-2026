@@ -2,21 +2,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
   
   <display-name>jspPro</display-name>
-  
-  <!-- Tomcat JSP 컴파일러 자바 버전을 21로 강제 설정 시작 -->
-  <servlet>
-      <servlet-name>jsp</servlet-name>
-      <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
-      <init-param>
-          <param-name>compilerSourceVM</param-name>
-          <param-value>19</param-value>
-      </init-param>
-      <init-param>
-          <param-name>compilerTargetVM</param-name>
-          <param-value>19</param-value>
-      </init-param>
-  </servlet>
-  <!-- 설정 끝 -->
 
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -29,4 +14,35 @@
     <welcome-file>default.xhtml</welcome-file>
   </welcome-file-list>
   
+  <servlet>
+      <servlet-name>jsp</servlet-name>
+      <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+      <init-param>
+          <param-name>compilerSourceVM</param-name>
+          <param-value>19</param-value>
+      </init-param>
+      <init-param>
+          <param-name>compilerTargetVM</param-name>
+          <param-value>19</param-value>
+      </init-param>
+  </servlet>
+  
+ <!--  Now.java 서블릿 객체 등록 -->
+ <!-- <servlet>
+ 	<servlet-name>snNow</servlet-name>
+ 	<servlet-class>days02.Now</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>snNow</servlet-name>
+ 	<url-pattern>*.htm</url-pattern>
+ 	<url-pattern>/days02/servlet/now</url-pattern>
+ 	<url-pattern>/days02/sample/*</url-pattern>
+	
+ 	<url-pattern>/foo/bar/*</url-pattern>
+ 	<url-pattern>/baz/*</url-pattern>
+ 	<url-pattern>/catalog</url-pattern>
+ 	<url-pattern>*.bop</url-pattern>
+ </servlet-mapping> -->
 </web-app>
+
+

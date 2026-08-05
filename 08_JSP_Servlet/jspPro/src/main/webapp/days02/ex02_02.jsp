@@ -9,7 +9,20 @@
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	int deptno = Integer.parseInt(request.getParameter("deptno"));	
+
+	String[] deptnoArr = request.getParameterValues("deptno");
+	
+	String deptnos = "";
+	if (deptnoArr != null) {
+	    for (String deptno : deptnoArr) {
+	        // out.println(deptno + "<br>");
+	        deptnos += deptno + ", ";
+	    }
+	}
+	
+	deptnos = deptnos.substring(0, deptnos.lastIndexOf(","));
+%>
+<%
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null; 
@@ -23,14 +36,16 @@
 	String sql = """
 			SELECT empno, ename, job, mgr, TO_CHAR(hiredate, 'yyyy-MM-dd') hiredate, sal, comm, deptno
 			FROM emp
-			WHERE deptno = %d
+			WHERE deptno IN (%s)
 			ORDER BY deptno ASC
-			""".formatted( deptno );
+			""".formatted( deptnos );
+	
 	try {
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
+
         
-        int empno, mgr;
+        int empno, mgr, deptno;
         double sal, comm;
         String ename, job;
         LocalDateTime hiredate;
@@ -122,8 +137,8 @@
   		<td><%= evo.getHiredate().toLocalDate() %></td>
   		<td><%= evo.getSal() %></td>
   		<td><%= evo.getComm() %></td>
-  		<td><%= evo.getDeptno() %></td>
-  	</tr>
+  		<td><%= evo.getDeptno() %></td>  	
+  	</tr>	
   	<% 
   			}
   		}
