@@ -229,7 +229,6 @@
       </tr>
     </tfoot>
   </table>
-  
 </div>
 
 <script>
@@ -238,20 +237,36 @@
      location.href = `ex04.jsp?deptno=\${deptno}`;
   });
 </script>
+
 <script>
    // ex04.jsp?deptno=30
   $("#deptno").val(${ param.deptno });
 </script>
+<script>
+   // 모두 선택 체크박스 처리 X
+   $("tfoot button").on("click", function (){
+      const ckbs = $("tbody :checkbox:checked");
+      if ( ckbs.length  ==  0 ){
+         alert("사원을 체크하세요!!");
+         return ;
+      }
+      
+      const empnos = [];
+      ckbs.each( function (index, element){
+         /* <input type="checkbox" id="ckb-7369" data-empno="7369"> */
+         let empno = $(element).data("empno");
+         empnos.push( empno );
+      } );
+      
+      // http://localhost/days02/ex04_ok.jsp?empno=7369&empno=7788&empno=7876
+      // empnos[] -> empno=7369&empno=7902&empno=1111
+      location.href = `ex04_ok.jsp?empno=\${empnos.join("&empno=")}`;
+   });
+   
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
