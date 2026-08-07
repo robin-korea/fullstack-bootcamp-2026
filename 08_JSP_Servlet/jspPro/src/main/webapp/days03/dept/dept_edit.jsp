@@ -116,5 +116,44 @@
     location.href = "dept_list.jsp";  
   });
 </script>
+<script>
+	
+	var deptno = $("#deptno")
+		, dname = $("#dname")
+		, loc = $("#loc")
+		, allFields = $( [] ).add( deptno ).add( dname ).add( loc )
+	    , tips = $( ".validateTips" );
+	
+	 function updateTips( t ) {
+	      tips
+	        .text( t )
+	        .addClass( "ui-state-highlight" );
+	      setTimeout(function() {
+	        tips.removeClass( "ui-state-highlight", 1500 );
+	      }, 500 );
+	    }
+	 
+	 function checkLength( o, n, min, max ) {
+	      if ( o.val().length > max || o.val().length < min ) {
+	        o.addClass( "ui-state-error" );
+	        updateTips( "Length of " + n + " must be between " +
+	          min + " and " + max + "." );
+	        return false;
+	      } else {
+	        return true;
+	      }
+	    }
+	
+	function checkForm(){
+		var valid = true;
+	    allFields.removeClass( "ui-state-error" );
+	 
+	    valid = valid && checkLength( deptno, "deptno", 2, 2 );
+	    valid = valid && checkLength( dname, "dname", 3, 14 );
+	    valid = valid && checkLength( loc, "loc", 3, 13 );
+	    
+	    return valid;
+	}
+</script>
 </body>
 </html>

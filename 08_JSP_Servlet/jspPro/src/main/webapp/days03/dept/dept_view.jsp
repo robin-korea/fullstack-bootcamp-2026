@@ -98,6 +98,7 @@
 			  		<button class="list">목록</button>
 			  		<button class="edit">수정</button>
 			  		<button class="delete">삭제</button>
+			  		<button class="elist">부서원 목록</button>
 			  	</div>		
   			</td>
   		</tr>
@@ -118,6 +119,11 @@
     if(confirm("정말 삭제하시겠습니까?")){
    		location.href = `dept_delete.jsp?deptno=<%=deptno%>`;  
     }
+  });
+</script>
+<script>
+  $(".btn-area button.elist").on("click", function (){
+    location.href = `emp_list2.jsp?deptno=<%=deptno%>`;  
   });
 </script>
 </body>

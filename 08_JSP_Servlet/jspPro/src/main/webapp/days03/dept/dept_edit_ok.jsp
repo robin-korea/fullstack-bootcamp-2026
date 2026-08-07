@@ -37,9 +37,7 @@
 		alert("<%=deptno%>번 부서 수정 성공!!!");
 		location.href="dept_list.jsp";
 	</script>
-            /* String location = "dept_list.jsp";
-            response.sendRedirect(location); */
- <%           
+<%           
          } else{
 %>
                  <script>
