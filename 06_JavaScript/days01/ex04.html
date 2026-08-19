@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오후 3:27:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+	
+	<label for="name">입력</label>
+	<input type="text" id="name" class="long" value="홍길동" autofocus="autofocus">
+	<br>
+	<input id="fsRange" class="long" type="range" min="1" max="100" step="1">
+	<!-- 계산 결과나 처리 결과를 화면에 표시하기 위한 태그 -->
+	<output id="out">50</output>
+	<p id="demo">홍길동</p>
+</div>
+<script>
+	const name = document.getElementById("name");
+	const fsRange = document.getElementById("fsRange");
+	const out = document.getElementById("out");
+	const demo = document.getElementById("demo");
+	
+	// getComputedStyle() 현재 화면에 실제로 적용되어 있는 스타일 정보를 얻어와서 반환하는 함수
+	const demoStyle = window.getComputedStyle(demo);
+	let demoFontSize = demoStyle.fontSize;
+	out.innerText = demoFontSize; // "16px" -> 16
+	fsRange.value = parseInt(demoFontSize);
+	
+	name.addEventListener("keydown", function(e){
+		//console.log(e.key);
+		if(e.key == 'Enter'){
+			demo.innerText = this.value;
+		}
+	});
+	
+	fsRange.addEventListener("input", function(){
+		out.innerText = this.value + "px";
+		demo.style.fontSize = this.value + "px";
+	});
+</script>
+</body>
+</html>

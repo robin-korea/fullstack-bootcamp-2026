@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오후 12:04:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body onload="init()">
+
+<!-- 슬라이더를 움직일때 마다(동안) 실시간으로 input 이벤트가 발생
+슬라이더를 움직이다가 손을 뗐을 때 발생하는 이벤트: change 이벤트 -->
+
+볼륨: <input type="range" min="0" max="100" value="10">
+<div id="demo"></div>
+
+<script>
+  function init(){
+	  const volumnRange = document.querySelector("input[type=range]");
+	  const demo = document.querySelector("#demo");
+	  
+	  volumnRange.addEventListener("input", function (e){
+		  // console.log(volumnRange.value);
+		  // console.log("> " + this.value);
+		  console.log(">> " + e.target.value);
+		  
+		  demo.innerHTML = `<span style='color:red'>${volumnRange.value}</span>`;
+		  demo.style.fontSize = e.target.value + "px";
+	  });
+	  
+	  // demo.innerText = `<span style='color:red'>${volumnRange.value}</span>`
+	  demo.innerHTML = `<span style='color:red'>${volumnRange.value}</span>`;
+	  demo.style.fontSize = volumnRange.value + "px";
+  }
+</script>
+
+<br>
+
+<input type="image" src="../images/programming.gif">
+<br>
+
+<input type="month">
+<br>
+
+<!-- <input type="text"> -->
+국어 : <input type="number" min="0" max="100" value="0">
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오전 9:33:49</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+   span.leader{
+     border:1px solid blue;
+     font-weight: bold;
+   }
+   
+   span.team1{
+     color:green;
+   }
+</style>
+<script>
+  function team1Hide() {
+	event.preventDefault();
+	/* 
+	alert('team1Hide() 호출됨.');
+	console.log("team1Hide() 호출됨.");
+	*/
+	
+	// document.getElementById();
+	
+	// document.querySelector();
+	const spanList = document.querySelectorAll("body > span.team1");
+	// alert( spanList.length );  3
+	spanList.forEach(s => {
+		s.style.display = "none";
+	});
+  }
+</script>
+</head>
+<body>
+<!-- div: division, 구역, 영역, 부분
+          웹 페이지를 여러 구역으로 나누는 태그
+   , span 설명:  
+   
+   [권장] event.preventDefault();   // 기본 동작(페이지 이동) 중지
+   onclick="return false;"
+   <a href="javascript:void(0)">클릭</a>
+   <a href="#">클릭</a>
+ -->
+ 
+ <div class="team1">
+	 <span class="leader">양인석</span>
+	 <span>안정빈</span>
+	 <span>신창만</span>
+ </div>
+ 
+ <div class="team2">
+	 <span class="leader">문규리</span>
+	 <span>조지훈</span>
+	 <span>이시연</span> 
+ </div>
+ <hr>
+ 
+ <a href="http://www.naver.com" onclick="team1Hide();">1조 숨기기</a>
+ <button onclick="team2Hide();">2조 숨기기</button>
+ 
+ <script>
+   function team2Hide() {
+	   $("div.team2").toggle();
+   }
+ </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 24. 오후 3:16:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+	</xmp>
+	
+	<label for="n">정수 n 입력: </label>
+	<input type="text" id = "n" class="short" autofocus="autofocus">
+	
+	<p id="demo" style="color:red"></p>
+	
+</div>
+<script>
+	const inputNum = document.getElementById("n");
+	const demo = document.getElementById("demo");
+	
+	inputNum.addEventListener("keydown", function(e){
+		if( e.key == 'Enter'){
+			
+			const n = Number(inputNum.value);
+			
+			if(!Number.isInteger(n) || n < 1){
+				alert("1 이상의 정수를 입력하세요");
+				inputNum.value = "";
+				inputNum.focus();
+				return;
+			}
+			
+			let sum = 0;
+			let text = "";
+				
+			for (let i = 1; i <= n; i++) {
+				sum += i;
+				text += i;
+				
+				if(i < n){
+					text += "+";
+				}
+			}
+			demo.innerText = `${text} = ${sum}`;
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오후 2:05:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	body{
+		text-align:center;
+	}
+	
+	.tooltip{
+		border-bottom: 1px dotted;
+		display: inline-block;
+		
+		position: relative;
+	}
+	.tooltip .tooltiptext{
+		visibility: hidden;
+		
+		position: absolute;
+		
+		left:50%;
+		top:150%;
+		margin-left:-60px;
+		
+		z-index: 1;
+		background-color: black;
+		color: white;
+		
+		width: 120px;
+		text-align: center;
+		padding: 5px 0;
+		border-radius: 6px;
+	}
+	.tooltip:hover .tooltiptext{
+		visibility: visible;
+	}
+	
+	.tooltip .tooltiptext::after{
+		content: "";
+		position: absolute;
+		bottom: 100%;
+		left: 50px;
+		
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent transparent black transparent;
+		
+		margin-left: 5px;
+	}
+</style>
+</head>
+<body>
+<!-- 
+	 [css 툴팁기능( Tooltip)]
+	    ㄴ 요소에 마우스를 올리면 추가 정보를 풍선 도움말처럼 보여주는 기능
+	 
+  -->
+  <div class="tooltip">Hover Me
+  	<span class="tooltiptext">Tooltip Info</span>
+  </div>
+</body>
+</html>

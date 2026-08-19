@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오후 3:36:55</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">  
+  </xmp>
+  
+  <table border="1" style="width:100%;">
+    <tr>
+      <td>
+        검색할 동 입력 : 
+        <input type="text" id="dong" name="dong" value="당산">
+        <input type="button" value="검색" onclick="search_dong()">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div id="searchResult" class="box" style="visibility: hidden ;">
+          <a href="javascript:sendAddr('123','451','서울 영등포구 당산 1동')">123-451</a>서울 영등포구 당산 1동<br>
+          <a href="javascript:sendAddr('123','452','서울 영등포구 당산 2동')">123-452</a>서울 영등포구 당산 2동<br>
+          <a href="javascript:sendAddr('123','453','서울 영등포구 당산 3동')">123-453</a>서울 영등포구 당산 3동<br>
+          <a href="javascript:sendAddr('123','454','서울 영등포구 당산 4동')">123-454</a>서울 영등포구 당산 4동<br>
+          <a href="javascript:sendAddr('123','455','서울 영등포구 당산 5동')">123-455</a>서울 영등포구 당산 5동<br>
+          <a href="javascript:sendAddr('123','456','서울 영등포구 당산 6동')">123-456</a>서울 영등포구 당산 6동<br>
+          <a href="javascript:sendAddr('123','457','서울 영등포구 당산 7동')">123-457</a>서울 영등포구 당산 7동<br>
+          <a href="javascript:sendAddr('123','458','서울 영등포구 당산 8동')">123-458</a>서울 영등포구 당산 8동<br>
+          <a href="javascript:sendAddr('123','459','서울 영등포구 당산 9동')">123-459</a>서울 영등포구 당산 9동<br>
+          <a href="javascript:sendAddr('123','460','서울 영등포구 당산 10동')">123-461</a>서울 영등포구 당산 10동<br>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="box" style="visibility: hidden;">
+          '당산'  검색 결과 10개 검색되었습니다. 
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+</div>
+<script>
+
+   function search_dong(){
+	   $(".box").css("visibility", "visible");
+   }
+   
+   //  sendAddr('123','456','서울 영등포구 당산 6동')
+   function sendAddr( zip1, zip2, addr1 ) {
+	   // 
+	   window.opener.document.getElementById("zip1").value = zip1;
+	   window.opener.document.getElementById("zip2").value = zip2;
+	   window.opener.document.getElementById("addr1").value = addr1;
+	   
+	   window.opener.handle = undefined;
+	   self.close();
+	   
+	   window.opener.document.getElementById("addr2").focus();
+   }
+
+</script>
+</body>
+</html>
+
+
+

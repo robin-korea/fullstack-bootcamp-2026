@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 5:06:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h1>Welcome to My Homepage</h1>
+<p>This is a paragraph.</p>
+<div style="border: 1px solid black;">
+  테스트
+  <p>A paragraph in a div.</p>
+  <p>Another paragraph in a div.</p>
+</div>
+<br>
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<br>
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p  class="info" >Another paragraph in another div.</p>
+</div>
+
+
+<script>
+	$("div")
+		.css("background-color","yellow")
+		.first()
+			.css("color","red")
+			.css("border","10px solid red")
+		.end() // first css 종료
+		.last()
+			.children("p")
+				.filter(".info")
+					.css("border","10px solid blue");
+	
+	// $("div:last").css("border","10px solid blue");
+	
+</script>
+</body>
+</html>

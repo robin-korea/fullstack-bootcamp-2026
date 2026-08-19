@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오후 3:45:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ /* head > style 태그 스타일 지정: 내부적(internal) 스타일 적용방법 */
+ 
+ p#first{ /* 101점 */
+ 	color:darkblue;
+ }
+ 
+ #first{ /* 100점 */
+	color: green; 
+ }
+ 
+ body p{ /* 2점 */
+ 
+ }
+ 
+ p{ /* 1점 */ /* 동일 특이성인 경우에는 나중 것이 적용된다. */
+   color: red;
+   text-align:center;
+ }
+ 
+ p{ /* 1점 */
+   color: blue;
+ }
+ 
+ p.second{ /* 11점 */
+ 	color:orange;
+ }
+ 
+ .second{ /* 10점 */
+ 	color:yellow;
+ }
+ 
+</style>
+</head>
+<body>
+<!-- 
+	웹 표준 기술 = html(웹 페이지 구성) + css(스타일 지정) + javascript(사용자 반응 처리)
+	
+	CSS: Cascading Style Sheets 약어
+		ㄴ 문서 스타일 지정하는 언어
+		ㄴ html 문서의 요소가 화면/종이/기타 미디어에 표시되는 방법을 지정하는 언어
+ 		ㄴ 여러 웹 페이지의 레이아웃을 한번에 제어할 수 도 있다
+ 	
+ 	CSS 구문
+ 		스타일적용할대상(selector, 선택자){         css selector
+ 		 (1) 태그명
+ 		 (2) #아이디명
+ 		 
+ 		 
+ 			속성명: 속성값;
+ 			속성명: 속성값;
+ 		}
+ 		
+ 	css 특이성: 요소에 어떤 스타일 선언이 최종적으로 적용될지 결정하는 알고리즘
+		3개 이상의 동일한 규칙이 선언된 경우 어떤 규칙이 우선해서 적용
+		*{}       0점
+		태그명{}    1점
+		.클래스명{} 10점
+		#아이디명{} 100점
+		
+		!important 규칙: 가장 우선 순위가 높은 규칙
+		
+		p{
+		  color : red !important;
+		}
+ -->
+ 
+ <!-- p*2>lorem5^div*4>lorem4 -->
+ <p id="first">Lorem ipsum dolor sit amet.</p>
+ <p class ="second">Deserunt numquam eum excepturi maiores.</p>
+ <div>Lorem ipsum dolor sit.</div>
+ <div class ="second">Delectus quae vero quidem!</div>
+ <div>Commodi assumenda quo magnam.</div>
+ <div>Iure distinctio ut impedit!</div>
+ 
+ 
+ 
+</body>
+</html>

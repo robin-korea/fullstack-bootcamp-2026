@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오전 10:30:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		js 클래스 상속 가능: extends 키워드를 사용
+		클래스 선언은 호이스팅 되지 않기 때문에 사용하기 전에
+		항상 먼저 클래스 선언을 해야 된다
+	</xmp>
+</div>
+<script>
+	class Car{
+		constructor(brand){
+			this.carname = brand;
+		}
+		present(){
+			return this.carname + "!!!";
+		}
+		// getter, setter
+		get cname(){
+			return this.carname;
+		}
+		set cname(x){
+			this.carname = x;
+		}
+		
+		static hello(){
+			return "hello!";
+		}
+	}
+	
+	class Model extends Car{
+		constructor(brand,mod){
+			super(brand);
+			this.model = mod;
+		}
+		
+		show(){
+			return this.present() + "/" + this.model;
+		}
+	}
+	
+	const myCar = new Model("Kia","K9");
+	alert(myCar.show());
+</script>
+</body>
+</html>

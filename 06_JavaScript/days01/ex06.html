@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오후 4:29:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	.item{
+		color:red;
+		font-size : 30px;
+		border: 5px solid gray;
+	}
+	
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		div 태그 위에 마우스를 올릴 때
+		1. 글 색상
+		2. 글 크기
+		3. 테두리
+		를 지정(적용)
+	</xmp>
+		
+	<div id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas soluta temporibus tempore voluptate doloribus molestias laudantium ex at corrupti quisquam corporis hic illum nisi quos blanditiis quis ratione. Unde beatae.</div>
+</div>
+<script>
+	/*[1] 여러 개의 이벤트 등록, removeEventListener() 이벤트 제거 (권장)
+		- 캡처링, 버블링 등의 옵션도 설정할 수 있다.
+	
+	document.getElementById("demo").addEventListener("mouseover",function(){
+		
+	});
+	*/
+	
+	// [2] 하나의 이벤트 등록
+	document.getElementById("demo").onmouseover = function() {
+		// event.srcElement : 이벤트가 발생한 요소
+		// event.target : 이벤트가 발생한 요소 (권장)
+		
+		/* [1]
+		this.style.color = "red";
+		event.srcElement.style.fontSize = "30px";
+		event.target.style.border = "1px solid gray";
+		*/
+		
+		// [2] .item 클래스 속성 추가 (권장)
+		/* 
+		this.classList.add("item"); 
+		this.classList.add("box");
+		this.classList.add("test");
+		
+		this.classList.remove("box");
+		*/
+		
+		// [3] 기존의 클래스 속성이 있다면 모두 제거하고 item 클래스 속성만 추가.
+		// this.className = "item box test";
+		
+		// [4]
+		/* this.setAttribute("속성명", "속성값"); */
+		this.setAttribute("class", "item");
+		this.getAttribute("type");
+	};
+	
+	// document.getElementById("demo").onmouseover = null;
+	
+</script>
+</body>
+</html>

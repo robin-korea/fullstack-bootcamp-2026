@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오전 8:49:41</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style> 
+</style>
+</head>
+<body>
+
+<form action="" method="get">
+	<p>좋아하는 동물 ? </p>
+	<!-- 여러 동물을 좋아할 수 있다(가정) -->
+	<input type="checkbox" name="animals" value="dog">개<br>
+	<input type="checkbox" name="animals" value="cat">고양이<br>
+	<input type="checkbox" name="animals" value="pig">돼지<br>
+	
+	<input type="submit">
+</form>
+
+<form action="" method="get" onsubmit="return checkForm()">
+	<p>소속된 부서를 선택 ? </p>
+	<!-- 사원은 하나의 부서에만 소속된다.(가정) -->
+	<input type="radio" name="deptno" value="10">ACCOUNTING<br>
+	<input type="radio" name="deptno" value="20">RESEARCH<br>
+	<input type="radio" name="deptno" value="30">SALES<br>
+	<input type="radio" name="deptno" value="-1">X<br>
+	
+	<label>Email: </label>
+	<!-- <input type="email" value="sample@aa.com" placeholder="sample@aa.com" name="email" required="required"> -->
+	<input type="email" placeholder="sample@aa.com" name="email" id="email">
+	<br>
+	<p>좋아하는 색 ?</p>
+	<select name="color">
+	 <option value="">...</option>
+	 <option value="red">빨강</option>
+	 <option value="green">녹색</option>
+	 <option value="blue">파랑</option>
+	</select>
+	<br>
+	<input type="submit">
+</form>
+<script>
+	function checkForm(){
+		const email = document.querySelector("#email");
+		if (email.value == ""){
+			alert("이메일은 필수 입력 항목입니다!!!");
+			email.focus();
+			return false;
+		}
+		
+		const color = document.querySelector("select[name='color']");
+		if (color.value == ""){
+			alert("좋아하는 색상 선택하세요!!");
+			color.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+
+
+</body>
+</html>
+
+
+

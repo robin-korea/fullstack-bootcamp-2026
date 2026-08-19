@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 24. 오전 7:34:29</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+  .box{
+    color: red;
+    display: inline-block;
+    width: 200px;
+    border: 1px solid gray;
+  }  
+</style>
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">My Home</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> fieldset: 관련된 폼 요소들을 하나의 그룹으로 묶는 태그 </xmp>
+
+		<fieldset>
+			<legend>html 적용 여부</legend>
+
+			<form action="">
+				<input type="radio" name="htmlApply" id="hyes" checked="checked">				
+				<label for="hyes">적용</label>
+				
+				<input type="radio" name="htmlApply" id="hno"> 
+				<label for="hno">미적용</label> 
+				
+				<br> 
+				<input type="text" id="message" class="full"
+					value="<span class='box'>홍길동</span>"> 
+				<br>
+				<button type="button">실행</button>
+			</form>
+		</fieldset>
+		<p id="demo"></p>
+	</div>
+
+<script>
+  $("body > div > fieldset > form > button").on( "click",  function (){	 
+	 let message = $("#message").val();	 
+	 // attr(), prop()
+	 if ( $("input[name='htmlApply']:checked").prop("id") == "hyes" ){
+		 $("#demo").html( message );
+	 }else{
+		 $("#demo").text( message );
+	 }	 
+  } );
+</script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오전 11:21:42</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">  
+    counter 전역변수로 선언하면 증가값을 유지, 
+    문제점) increment() 함수 외에 어디서든지 호출.사용 가능
+    --> 전역변수로 변환하지 않더라도 counter  값을 유지하고 사용 가능 방법: 함수 클로저 기능
+               지역변수 유지   +  함수를 호출할 때 마다 값을 유지 
+               
+    사전지식 1) 자체 호출 함수
+            days03.ex02_02.html           
+  </xmp>
+  
+  <button>count!!</button>  
+  <p id="demo"></p> 
+  
+</div>
+<script>
+  // 자체 호출 함수 설명
+  
+  /*
+  function test(){
+	  alert("test...");
+  }  
+  test();
+  */
+  /*
+  //  변수   =  함수 표현식
+  let fnTest = function (){
+	  alert("test...")
+  }
+  fnTest();
+  */
+  
+  // 자체 호출 함수
+  ( function (){
+	  // 명령코딩;
+	  // 명령코딩;
+	  // 명령코딩;
+  } )();
+  
+</script>
+<script>
+  $("button").on("click", function (){
+	  increment();
+  });
+  
+  // 어디서든지 접근해서 사용 가능
+  let counter = 0;  // 지역변수 -> 전역변수
+  
+  function increment(){	  
+	  // let counter = 0;  // 지역변수  
+	  // 반드시 increment() 함수를 호출해야지만 counter 지역변수 접근 가능.
+	  
+	  counter += 1;
+	  $("#demo").html(counter);
+  }
+</script>
+</body>
+</html>
+
+
+

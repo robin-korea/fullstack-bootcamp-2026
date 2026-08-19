@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오후 12:34:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<!-- autocomplet: 자동 완성 기능  -->
+<!-- readonly 읽기 전용 -->
+<!-- disabled 비활성화, submit 할 때 전송되지 않는다. -->
+<!-- novalidate="novalidate" 입력값에 대한 유효성 검사 하지 않는다. -->
+<form enctype="application/x-www-form-urlencoded">
+	아이디: <input type="text" name="id" value="admin" readonly="readonly" size="10">
+	<br>	
+	<!-- 이메일: <input type="email" name="email" value="admin@naver.com" disabled="disabled"> -->
+	이메일: <input type="email" name="email">
+	<br>
+	연락처: <input type="text" pattern="\d{3}-\d{4}-\d{4}">
+	<br>
+	time: <input type="time">
+	<br>
+	url: <input type="url">
+	<br>
+	search: <input type="search">
+	<br>
+	number: <input type="number" max="100" min="0" step="3">
+	<br>
+	<input type ="submit"
+		formaction="ex10.html"
+		formmethod="post"
+		formnovalidate="formnovalidate"
+		formenctype="multipart/form-data"
+	>
+</form>
+
+</body>
+</html>

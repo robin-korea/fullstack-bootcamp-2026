@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오후 2:26:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+	
+	<h1 id="out"></h1>
+	
+	<button>setInterval()</button>
+	<button>clearInterval()</button>
+</div>
+<script>
+	$("button").first().on("click",function(){
+		// setInterval
+		// 0.01 초 간격으로 dispTime 콜백함수 호출
+		dispTime();
+		timer = setInterval(dispTime,10);
+	});
+	
+	let timer;
+	
+	function dispTime(){
+		const now = new Date();
+		const mill = String(now.getMilliseconds()).padStart(3,'0');
+		const time = now.toLocaleTimeString();
+		
+		$("#out").html(`${time}.${mill}`);
+	}
+	$("button").last().on("click",function(){
+		clearTimeout(timer);
+	});
+</script>
+</body>
+</html>

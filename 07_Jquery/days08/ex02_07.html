@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 2:40:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div id="content">
+	<xmp class="code">
+
+	</xmp>
+	<button class="btn1">change color</button>
+	
+	<div>Div 1</div>
+	<div>Div 2</div>
+	<div>Div 3</div>
+	
+	<input type="text"><br>
+	<input type="text"><br>
+	<input type="text"><br>
+	<input type="text"><br>
+	<input type="text"><br>
+</div>
+<script>
+	$(":text").addClass("full");
+	$(":text:eq(2)").focus();
+	
+	$("#content div:first-of-type").css("background-color","red");
+	$("#content div:eq(1)").css("background-color","green");
+	$("#content div:last-of-type").css("background-color","blue");
+
+	function div_animate(){
+		$("#content div:eq(0)")
+			.animate({width:"50%"},"slow")
+			.animate({width:"100%"},"slow", div_animate);
+	}
+	
+	div_animate();
+	
+	$(":focus").css("background-color","yellow");
+	
+	$("button.btn1").on("click",function(){
+		$("#content div:animated").css("background-color","yellow");
+	});
+	
+</script>
+</body>
+</html>

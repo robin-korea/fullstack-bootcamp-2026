@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오후 2:49:42</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ *{
+    box-sizing: border-box;
+ }
+ 
+ body{
+  font-family: Arial, Verdana, sans-serif;
+ }
+ 
+ .open-button{
+ 	background-color: #555;
+ 	color: white;
+ 	padding: 16px 20px;
+ 	border: none;
+ 	
+ 	cursor: pointer;
+ 	opacity: 0.8;
+ 	
+ 	width: 280px;
+ 	
+ 	position: fixed;
+ 	right: 28px;
+ 	bottom: 23px;
+ }
+ 
+ .form-popup{
+ 	border: 3px solid #f1f1f1;
+ 	position: fixed;
+ 	right: 15px;
+ 	bottom: 0;
+ 	z-index: 10;
+ 	
+ 	display: none;
+ }
+ .form-container{
+ 	max-width: 300px;
+ 	padding: 30px;
+ 	background-color: white;
+ }
+ .form-container input[type=text]
+   , .form-container input[type=password]{
+   border: none;
+   width: 100%;
+   background-color: #f1f1f1;
+   margin: 5px 0 22px 0;
+   padding: 15px;
+ }
+ .form-container input[type=text]:focus
+   , .form-container input[type=password]:focus{
+   background-color: #ddd;
+   outline: none;
+ }
+ .form-container .btn{
+ 	background-color: #4caf50;
+ 	color: white;
+ 	border: none;
+ 	padding: 16px 20px;
+ 	cursor: pointer;
+ 	width: 100%;
+ 	margin-bottom: 10px;
+ 	opacity: 0.8;
+ 	
+ }
+ .form-container .btn.cancel{
+ 	background-color: red;
+ }
+ .form-container .btn:hover, .open-button:hover{
+ 	opacity:1;
+ }
+ 
+</style>
+</head>
+<body>
+<h3>팝업(popup) 폼(form)</h3>
+<button class="open-button">Open Form</button>
+
+<div class="form-popup" id="myForm">
+	<form action="" class="form-container" autocomplete="off">
+	<h1>Login</h1>
+	<label for ="email"><b>Email</b></label>
+	<input type="text" placeholder="Enter Email"
+	id="email" name="email" required>
+	<label for ="pwd"><b>Password</b></label>
+	<input type="password" placeholder="Enter Password"
+	id="pwd" name="psw" required>
+	<button type="submit" class="btn">Login</button>
+	<button type="button" class="btn cancel">Close</button>
+	</form>
+</div>
+<script>
+	$("body > button.open-button").on("click", function (){
+		$("#myForm").show();
+	});
+	
+	$("#myForm button.btn.cancel").on("click", function (){
+		$("#myForm").hide();
+		$("#email").val("");
+		$("#pwd").val("");
+	});
+	
+
+
+
+
+</script>
+</body>
+</html>

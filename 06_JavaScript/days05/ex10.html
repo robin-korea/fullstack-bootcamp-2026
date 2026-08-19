@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오후 4:35:44</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[js 정규표현식 정리]
+		1. js 선언 형식
+		   /pattern/modifier
+		     \d   g(global) 전체일치, i(대소문자 구분 X), m(multiline) 여러 라인
+		     
+		2. js 정규표현식 사용하는 함수
+		  1) text(): 패턴과 일치하면 true/ false 반환
+		  2) replace(): 패턴과 일치하는 문자열을 변경하는 함수, 변경한 문자열을 반환
+		  3) exec(): 패턴과 일치하면 검색한 문자열 반환, null 반환
+		  4) search(): 검색한 후에 찾은 위치값을 반환
+		  5) match(): 패턴과 일치하는 첫 번째 문자열 반환
+	</xmp>
+</div>
+<script>
+	let msg = "Hello World!!!";
+	// const pattern = /wor/;
+	const pattern = /wor/i;
+	// alert(pattern.test(msg));
+	
+	// alert(msg.search(pattern));
+	let result = msg.replace(pattern,"XXX");
+	// alert(result);
+</script>
+<script>
+	// let text = "Black, white, red, green, blue, yellow";
+	// alert(text.match(/red|green|yellow/g));
+	
+	let text = "Is this all there is?";
+	alert(text.match(/is/i));
+</script>
+</body>
+</html>

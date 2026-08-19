@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오전 11:10:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ .boxStyle{
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  text-align:center;
+ }
+</style>
+</head>
+<body>
+	<!-- 
+   [ 동적으로 요소를 생성 ]
+   js 변수 선언: var, const, let 키워드
+ -->
+<script>
+	document.body.onload = function() {
+		// alert("XXX");
+		// 1. <div></div> 요소 생성
+		const box = document.createElement("div");
+		
+		// 2. <div>Box - 1 </div>
+		// box.innerText="Box - 1";
+		const content = document.createTextNode("박스 - 1");
+		box.appendChild(content);
+		
+		
+		// 2-2. div 의 스타일 적용
+		/*
+		box.style.border = "1px solid gray";
+		box.style.width = "100px";
+		box.style.height = "100px";
+		box.style.textAlign = "center";
+		*/
+		
+		// box.className = "boxStyle";
+		box.classList.add("boxStyle");
+		
+		
+		// 3. 생성된 요소는 body 요소의 자식으로 추가: appendChild(), prepend()
+		document.body.appendChild(box);
+		
+		// 4.
+		box.addEventListener("click", function (){
+			alert("동적으로 생성한 div 요소에 클릭 이벤트 처리 하는 예제")
+		});
+	}
+</script>
+</body>
+</html>

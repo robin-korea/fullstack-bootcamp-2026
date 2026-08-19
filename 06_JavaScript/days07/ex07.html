@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오후 3:36:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">  
+  </xmp>
+
+    <table border="1" style="width: 500px;margin: 0 auto">
+    <tr>
+      <td>우편번호</td>
+      <td>
+    <input type="text" id="zip1" name="zip1" size="3" readonly="readonly" />
+    -
+    <input type="text" id="zip2" name="zip2" size="3" readonly="readonly"/>
+    <input type="button" value="우편번호 검색"  onclick="search_zipcode();"  /> 
+      </td>
+    </tr>
+    <tr>
+      <td>주소</td>
+      <td><input type="text" id="addr1" name="addr1" style="width:90%" /></td>
+    </tr>
+    <tr>
+      <td>상세주소</td>
+      <td><input type="text" id="addr2" name="addr2" style="width:90%" /></td>
+    </tr>
+  </table>  
+  
+  
+</div>
+<script>
+ 
+  var handle ; // undefined            -> false
+
+  function search_zipcode(){
+	  if ( handle && !handle.closed ) {   // 권장.
+		  handle.focus();
+		  return ;
+	  } // 
+	  
+	  const windowFeatures = "left=100,top=200,width=600,height=600";
+	  handle = window.open(
+				    "ex07_02.html",
+				    "",
+				    windowFeatures,
+	            );  
+  }
+
+</script>
+</body>
+</html>
+
+
+

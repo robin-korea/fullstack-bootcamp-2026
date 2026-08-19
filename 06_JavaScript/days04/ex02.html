@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 28. 오전 10:50:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[js 이벤트 처리 정리]
+		1. on이벤트명 속성
+	</xmp>
+	
+	<button onclick="alert(this)">버튼 1</button>
+	<button onclick="dispDate(this)">버튼 2</button>
+	<button>버튼 3</button>
+	<button>버튼 4</button>
+</div>
+<script>
+	function dispDate(element){
+		element.innerHTML = Date();
+	}
+</script>
+<script>
+	document.querySelector("button:nth-of-type(3)").addEventListener("click",function(){
+		alert("이벤트 수신기...");
+	});
+	
+	document.querySelector("button:nth-of-type(3)").addEventListener("click",function(){
+		alert("여러 개의 수신기 등록...");
+	});
+	
+	document.querySelector("button:nth-of-type(4)").onclick = function(){
+		alert("이벤트 발생...");
+	}
+</script>
+</body>
+</html>

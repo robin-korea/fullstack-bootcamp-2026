@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오후 12:17:55</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		bind() 예제
+	</xmp>
+	<p id="demo"></p>
+</div>
+<script>
+	const person = {
+			name: "홍길동",
+			age: 20,
+			info: function(){
+				$("#demo").html(this.name + " / " + this.age);
+			}
+	};
+	
+	// person.info();
+	// setTimeout(person.info, 3000); this == windwo
+	
+	let disp = person.info.bind(person); // this == object Object
+	setTimeout(disp, 3000)
+</script>
+<script>
+	// person js 객체 생성
+	/*
+	const person = {
+			name: "홍길동",
+			age : 20,
+			info: function(){
+				return this.name + " / " + this.age;
+			}
+	};
+	*/
+	
+	// $("#demo").html(person.info());
+	
+	const member = {
+			name: "서영학",
+			age : 35,
+			gender : true,
+			/* person 객체의 info() 메서드를 빌려 쓰겠다
+			info: function(){
+				return this.name + " / " + this.age;
+			}
+			*/
+	};
+	
+	// [1]
+	// $("#demo").html( "><" + person.info.apply(member,null));
+	
+	// [2]
+	// let result = person.info.bind(member);
+	// $("#demo").html("><><" + result());
+</script>
+</body>
+</html>

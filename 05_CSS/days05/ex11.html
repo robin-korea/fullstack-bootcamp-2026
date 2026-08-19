@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오후 4:05:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	.grid-container{
+		background-color: green;
+		/* 그리드 컨테이너 지정 */
+		display: grid;
+		
+		/* 그리드 항목의 수직선(column)을 열,
+					  수평선(row)을 행 이라고 한다
+
+			각 열 사이의 공간: 그리드 갭(column gap)
+			각 행 사이의 공간: 그리드 갭(row gap)
+		*/
+		
+		/* column-gap, row-gap, gap */
+		/* 열과 열 사이의 선을 열선: column lines
+		행과 행 사이의 선을 행선: row lines; */
+		
+		/*
+		1. 그리드 컨테이너의 속성
+			grid-template-column 열 갯수 + 열의 너비 정의 속성
+			grid-template-rows   행의 높이 정의
+			justify-content: 수평으로 전체 항목들을 정렬
+			align-content  : 수직으로 전체 항목들을 정렬
+			
+		2. 그리드 항목의 속성
+			grid-column-start, grid-column-end  배치할 열 위치 지정
+			약식: grid-column:
+			
+			grid-row-start, grid-row-end  배치할 열 위치 지정
+			약식: grid-row:
+		*/
+		
+		grid-template-columns: 50px 50px 50px;
+		gap: 10px;
+		padding: 10px;
+		
+		justify-content: space-between;
+		align-content: center;
+	}
+	
+	.grid-container > .grid-item{
+		background-color: #f1f1f1;
+		border: 1px solid rgba(0,0,0, 0.8);
+		padding: 20px 0;
+		font-size: 30px;
+		text-align: center;
+		
+	}
+</style>
+</head>
+<body>
+<!-- 
+	float, position X
+	flexbox
+	[ css grid ] 행과 열 기반으로 배치 시스템
+	부모 요소: 그리드 컨테이너
+	  여러 개의 자식 요소 : 그리드 항목
+ -->
+  <div class="grid-container">
+   <div class="grid-item item1">1</div>
+   <div class="grid-item item2">2</div>
+   <div class="grid-item">3</div>
+   <div class="grid-item">4</div>
+   <div class="grid-item">5</div>
+   <div class="grid-item">6</div>
+   <div class="grid-item">7</div>
+   <div class="grid-item item8">8</div>
+   <div class="grid-item">9</div>
+   <div class="grid-item">10</div>
+   <div class="grid-item">11</div>
+   <div class="grid-item">12</div>
+   <div class="grid-item">13</div>
+   <div class="grid-item">14</div>
+   <div class="grid-item">15</div>
+ </div> 
+</body>
+</html>

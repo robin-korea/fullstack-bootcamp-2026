@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오전 10:31:24</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<script src="/javascript/days02/ex04_script.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     [js 날짜] 
+     java 날짜 : Date, Calendar, LocalDate, LocalTime, LocalDateTime 등등
+     js   날짜 : Date()  객체 생성자   9개 오버로딩..
+      new Date()
+      new  Date(date string)
+      
+      new  Date(year,month)
+      new  Date(year,month,day)
+      new  Date(year,month,day,hours)
+      new  Date(year,month,day,hours,minutes)
+      new  Date(year,month,day,hours,minutes,seconds)
+      new  Date(year,month,day,hours,minutes,seconds,ms)
+      
+      new  Date(milliseconds)
+  </xmp>
+</div>
+<script>
+ // const d = new Date(); // 현재 날짜, 시간 
+ // const d = new Date("2025-03-29");
+ // const d = new Date(2022, 15, 35, 10, 23, 33);
+ 
+ // Wed Jul 29 2026 10:34:45 GMT+0900 (GMT+09:00)
+ // Sat Mar 29 2025 09:00:00 GMT+0900 (GMT+09:00)
+ // Fri Apr 29 2022 10:23:33 GMT+0900 (GMT+09:00)
+ /*
+ document.write(d + "<br>");
+ document.write(d.toLocaleString() + "<br>");
+ document.write(d.toLocaleDateString() + "<br>");
+ document.write(d.toLocaleTimeString() + "<br>");
+ // 년
+ document.write(d.getFullYear() + "<br>");
+ // 월  1월(0) ~12월(11)
+ document.write(( d.getMonth() +1 ) + "<br>");
+ // 일
+ document.write(d.getDate() + "<br>");
+ // 시간
+ document.write(d.getHours() + "<br>");
+ // 분
+ document.write(d.getMinutes() + "<br>");
+ // 초
+ document.write(d.getSeconds() + "<br>");
+ // 밀리초
+ document.write(d.getMilliseconds() + "<br>");
+ // 요일  일(0)~ 토(6)         .charAt()
+ document.write("일월화수목금토".at( d.getDay() ) + "<br>");
+ */
+</script>
+<script>
+  /*
+  // 개강일로 부터  몇일 지났는지 체크하는 코딩... 
+  // 2026.5.11
+  const today = new Date();
+  const startDate = new Date(2026, 5-1, 11, 9, 0, 0);
+  // 시간, 분, 초, 밀리초는 모두 0으로 초기화
+  today.setHours(0,0,0,0);
+  startDate.setHours(0,0,0,0);
+  
+  // const startDate = new Date("2026-05-11");
+  // document.write(startDate.toLocaleString() + "<br>");
+  
+  // 1778457600000 ms
+  document.write(startDate.getTime() + "<br>");
+  // 1785291122655 ms
+  document.write(today.getTime() + "<br>");
+  // const diff = today.getTime() - startDate.getTime()  ;
+  const diff = today - startDate  ;
+  // 6833589585 ms
+  document.write( diff + "밀리초 <br>");
+  // 6833637초
+  document.write( Math.floor( diff/1000 ) + "초 <br>");
+  document.write( Math.floor( diff/(1000*60) ) + "분 <br>");
+  document.write( Math.floor( diff/(1000*60*60) ) + "시간 <br>");
+  document.write( Math.floor( diff/(1000*60*60*24) ) + "일 <br>");
+  */
+</script>
+<script>
+  let year = 2026;
+  let month = 2;
+  
+  // ES6
+  //  구조 분해 할당( 배열 리턴값 )
+  // const  [ firstDay, lastDate ] =   getCalendarInfo2(year, month );
+  
+  //  구조 분해 할당( 객체 리턴값 )
+  const  { firstDay, lastDate } =   getCalendarInfo(year, month );
+  
+  
+  /*
+  const  info =   getCalendarInfo(year, month );
+  document.write( info.firstDay + "<br>")  ; 
+  document.write( info.lastDate + "<br>")  ; 
+  /*
+  
+  /*
+  document.write( getDayOfWeek(year, month, 1 ) + "<br>")  ;  
+  document.write( getLastDay(year, month ) + "<br>")  ;
+  */
+  
+  // days02.ex04_script.js
+  // 1) 2026.2.1  무슨 요일 ?    getDayOfWeek(year, month, day )
+  // 2) 마지막 날짜 몇 일 ?         getLastDay(year, month)
+  
+  //  2026. 2. 1. 오전 12:00:00
+  // const d = new Date(year, month-1 );
+  
+  /*
+  document.write(d.toLocaleString() + "<br>")  ;
+  // 0 일요일
+  document.write(d.getDay() + "<br>");  
+  d.setMonth(  d.getMonth() + 1 );
+  // 2026. 3. 1. 오전 12:00:00
+  document.write(d.toLocaleString() + "<br>")  ;  
+  d.setDate( d.getDate()-1 );
+  // 2026. 2. 28. 오전 12:00:00
+  document.write(d.toLocaleString() + "<br>")  ;
+  document.write(d.getDate() + "<br>");
+  */        
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오전 9:42:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  *{
+  	box-sizing: border-box;
+  }
+  
+  body{
+  	border: 1px solid red;
+  	padding: 20px;
+  	font-family: Arial;
+  	
+  	margin: 0 auto;
+  	max-width: 800px;
+  	height: 100%;
+  }
+  
+  .row::after{
+  	content: "";
+  	clear: both;
+  	display: table;
+  }
+</style>
+<style>
+  /* 막대그래프 그리기 */
+  .row .side{
+  	float: left;
+  	width: 15%;
+  	margin-top: 10px;
+  }
+  .row .middle{
+  	float: left;
+  	width: 70%;
+  	margin-top: 10px;
+  }
+  .row .middle .bar-container{
+  	width: 100%;
+  	background-color: #f1f1f1;
+  	text-align: center;
+  	color: white;
+  }
+  .row .middle .bar-1{
+  	background-color: red;
+  	height: 18px;
+  	width: 20%;
+  }
+  
+  .row .middle .bar-2{
+  	background-color: green;
+  	height: 18px;
+  	width: 80%;
+  }
+  
+  .row .middle .bar-3{
+  	background-color: blue;
+  	height: 18px;
+  	width: 55%;
+  }
+  
+  .row .right{
+  	text-align: right;
+  }
+</style>
+</head>
+<body>
+<h3>설문조사 - 막대그래프</h3>
+<!-- .row>.side>div^.middle>.bar-container>.bar-1 -->
+<div class="row">
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <!-- ■■■■■■■■■■■ -->
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <!-- ■■■■■■■■■■■ -->
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>80</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <!-- ■■■■■■■■■■■ -->
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>55</div>
+  </div>
+</div>
+
+<script>
+	// jq
+	let n = Math.random();
+ 	let min = 0, max = 100;
+ 	
+	$(".row .middle .bar-container div").each(function (index,element){
+		n = Math.floor(Math.random() * (max - min + 1)) + min;
+		$(element)
+			.css("width",`${n}%`)
+			// .parent().parent().next().first().text(`${n}%`);
+			.closest(".middle").next().first().text(`${n}%`);
+	});	
+</script>
+
+
+
+<script>
+  /* js
+  // 웹 페이지가 로딩될 때 js로 막대그래프의 값을 랜덤하게 처리
+  let n = Math.random();
+  let min = 0, max = 100;
+  
+  // bar-1: body > div:nth-child(2) > div.middle > div > div
+  // bar-2: body > div:nth-child(3) > div.middle > div > div
+  // bar-3: body > div:nth-child(4) > div.middle > div > div
+  
+  // 20: body > div:nth-child(2) > div.side.right > div
+  // 80: body > div:nth-child(3) > div.side.right > div
+  // 55: body > div:nth-child(4) > div.side.right > div
+  
+  for (var i = 2; i <= 4; i++) {
+	n = Math.floor(Math.random() * (max - min + 1)) + min;
+	
+	const barDiv = document.querySelector(`body > div:nth-child(${i}) > div.middle > div > div`);
+	barDiv.style.width = `${n}%`
+	
+	const rightDiv = document.querySelector(`body > div:nth-child(${i}) > div.side.right > div`);
+  	rightDiv.innerText = n;
+  }
+  */
+</script>
+</body>
+</html>

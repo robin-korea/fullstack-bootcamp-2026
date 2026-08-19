@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오후 12:27:28</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  div#header{
+    background-color: #777;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+  
+  div#footer{
+    background-color: #777;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  div#section{
+    border: 1px solid red;
+  }
+  
+  div#nav{
+    width: 30%;
+    background-color: #ccc;
+    height: 300px;
+    padding:20px;
+    
+    float: left;
+  }
+  
+  div#article{
+    width: 70%;
+    background-color: #f1f1f1;
+    padding:20px;
+    
+    min-height: 300px; 
+    /* height: 300px; */
+    
+    float: left;
+  }
+  /* 
+  [ css float 속성으로 배치(layout)하는 작업에서 
+     가장 많이 사용하는 Clearfix 기법 ]
+    - ::after라는 가상요소를 만들어서 
+      부모(section) 가   float된 자식(nav, article)
+      의 높이를 제대로 인식하도록하는 코딩 
+    - section 마지막 보이지 않는 가상 요소를 추가: section::after
+    - content: 가상 요소의 내용을 지정  
+    - display: table > block;  가상 요소가 하나의 블록처럼 자리 잡도록 하는 코딩.
+    - clear: float 속성 left, right   끝낸다. 
+    
+   */
+  div#section::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+<style>
+/* 
+  css2에 도입된 "미디어 쿼리" 규칙을 사용하면
+  미디어 유형마다 다른 스타일을 정의할 수 있다.
+  
+  @media  not|only mediatype and (적용규칙) and (적용규칙){
+     css 코딩된 스타일을 적용.
+     
+     mediatype : all, print, screen
+     적용규칙    : max-heght, min-height, height
+                 max-width, min-width, width
+                 orientation
+  } 
+ */ 
+ @media  screen and (max-width:800px){
+     div#nav, div#article{
+          width: 100%;
+          height: auto;
+      }
+ }
+</style>
+</head>
+<body>
+
+<!-- (#header>h2)+(#section>(#nav>ul>li*3>a[href=#])+#article>(h2+p+p)*3)+#footer>h2 -->
+<div id="header">
+	<h2>Cites-시멘틱태그(sementic elements)</h2>
+</div>
+<div id="section">
+	<div id="nav">
+		<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+		</ul>
+	</div>
+	<div id="article">
+		<h2>London</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nulla soluta sunt aut assumenda fugiat deleniti magnam sequi minima explicabo debitis perspiciatis iusto amet corporis minus illo aperiam quasi numquam!</p>
+		<p>Aliquid laudantium ducimus assumenda sequi dolore blanditiis temporibus esse iure! Veniam numquam aspernatur excepturi ipsum nemo inventore! Quaerat autem inventore voluptatibus deserunt dolores iste explicabo odit eum asperiores saepe dolor.</p>
+		 
+		<h2>Paris</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corrupti itaque aliquid magni porro aspernatur possimus est nulla doloribus dignissimos modi nam nemo! Maiores veniam inventore sequi aliquid aut omnis!</p>
+		<p>Eveniet quod cupiditate ratione soluta sed maxime vitae consequatur placeat consectetur fuga ipsum repellat laborum reiciendis cumque aperiam atque provident inventore quia assumenda aliquam. Quas dolor accusantium possimus ex maiores!</p>
+		<h2>Seoul</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde asperiores commodi aperiam hic. Dolorum asperiores nemo voluptates quo architecto ullam. Delectus aut quas facere. Voluptas fugiat omnis veritatis in fuga!</p>
+		<p>Dolorem tempora aperiam nam ullam vel expedita maiores magnam labore ratione vitae adipisci laboriosam cumque tenetur possimus hic est eum necessitatibus nulla minus dolore dignissimos autem quam distinctio omnis quia.</p>		 
+	</div>
+    <!-- ::after 가상 요소 추가 -->
+</div>
+<div id="footer">
+	<h2>Footer</h2>
+</div>
+
+</body>
+</html>

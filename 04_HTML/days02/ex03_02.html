@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오전 11:42:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid gray;
+}
+
+/* tr:fisrt-child td:nth-child(4) */
+#rb {
+	text-align: right;
+	vertical-align: bottom;  /* 보통 inline-block 요소에 사용된다 */
+}
+
+</style>
+</head>
+<body>
+<!-- 
+	td는 수직정렬은 기본: 가운데
+	     수평정렬은 기본: 왼쪽
+ -->
+<table>
+	<tr>
+		<td width="50" valign="top">1</td>
+		<td align="center">2</td>
+		<td align="right" valign="bottom">3</td>
+		<td id = "rb">4</td>
+		<td rowspan="5">5</td>
+	</tr>
+	<tr>
+		<td colspan="3">6</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td rowspan="3">11</td>
+		<td>12</td>
+		<td>13</td>
+		<td>14</td>
+	</tr>
+	<tr>
+		<td>17</td>
+		<td>18</td>
+		<td>19</td>
+	</tr>
+	<tr>
+		<td>22</td>
+		<td colspan="2">23</td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 12:17:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		jQuery는 
+    	  ㄴ 빠르고 작으며 풍부한 기능을 갖춘 JavaScript 라이브러리
+    	  ㄴ 다양한 브라우저에서 작동하는 사용하기 쉬운 API
+    	  ㄴ  HTML 문서 탐색 및 조작,  
+        	 이벤트 처리, 
+             애니메이션, 
+             Ajax 등을 훨씬 간편하게 구현
+    
+    	1) 다운로드
+    	2) CDN( Content Delivery Network)    
+       		분산된 서버에서 jQuery를 호스팅하여 성능상의 이점을 제공하는 방식.
+       		
+       		.js           개발(디버깅)              압축 X
+       		.min.js       배포                     압축 O
+       		.slim.min.js  용량이 중요(일부기능제외)    압축 O 
+    
+    	[jquery 구문 형식]
+    		$(jquery selector).action();    
+    		1) jquery selector 정리
+    		2) action() 정리 
+    		
+    		$().on();
+    		$().show() / hide()
+    
+    	[***]
+    	웹 페이지에서 jquery 외에 다른 프레임워크를 사용할 때 
+    	jquery에서 사용하는 $ 기호를 다른 프레임워크에서 다른 의미의 
+    	변수로 벌써 사용하고 있다면, $ 기호의 충돌이 발생할 것이다. 
+    
+    	다른 프레임워크( Angular, knokout, ember, backbone 등등)
+    	$를 다른 의미로 사용할 수 있다. 
+    	
+	</xmp>
+	
+	<button>확인</button>
+	<p id="demo"></p>
+	
+</div>
+<script>
+	// [가정] 다른 프레임워크의 사용으로 $ 기호 충돌나는 상황
+	// jqueryx.x.js : $ == jQuery == window.jQuery
+	
+	// 새로운 별칭을 사용
+	var jq = $.noConflict();
+	// $.noConflict() 의미 : $ 기호가 다른 프레임워크와 충돌이 나기 때문에
+	// 다른 프레임워크가 사용할 수 있도록 $ 기호 해제(반환)
+	// jq 라는 변수를 사용
+	
+	$("button").on("click",function(){
+		alert("XXX");
+	});
+</script>
+</body>
+</html>

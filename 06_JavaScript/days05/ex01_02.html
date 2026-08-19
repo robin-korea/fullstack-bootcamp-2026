@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오전 9:17:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[Map 객체]
+		   ㄴ 키,값 한쌍(엔트리) 으로 처리
+		   ㄴ 삽입 순서 유지(키)
+		   ㄴ 크기 : size 속성
+		   ㄴ for~of문, forEach()
+		   ㄴ 키 : 문자열, 숫자, 객체 등 모든 타입이 가능
+	</xmp>
+</div>
+<script>
+/*
+	const a = new Map();
+	a.set(1,"aaa");
+	a.set(2,"bbb");
+	a.set(3,"ccc");
+*/
+
+	const m = [
+		[1,"aaa"],
+		[2,"bbb"],
+		[3,"ccc"],
+	];
+	const a = new Map(m);
+	// 추가: set()
+	a.set(4,"ddd");
+	// 4 키의 값을 "fff" 변경
+	a.set(4,"fff");
+	// 4 키의 값을 얻어오기: get()
+	// alert(a.get(4));
+	// alert(typeof a); // object
+	// alert(a instanceof Map); // true
+	// alert(a.size); // 4 엔트리의 갯수
+	// 엔트리 삭제: delete()
+	// a.delete(4);
+	// a.clear(); // 모든 엔트리 삭제
+	// a.has(4); // 4 키가 존재하는 지 체크
+	
+	// Map 출력
+	/*
+	a.forEach(function(value,key){
+		console.log(value,key);
+	});
+	*/
+	
+	/*
+	const eIr = a.entries();
+	for (let e of eIr){
+		console.log(e, e[0], e[1]);
+	}
+	*/
+	
+	const eIr = a.entries();
+	for (let [key, value] of eIr){
+		console.log(key, value);
+	}
+	
+	// keys()
+	// values()
+	// entries()
+	
+	// 반드시 키는 객체여야 한다.
+	// WeakMap 객체는 for/ forEach/ keys() 사용할 수 없다.
+	const b = new WeakMap();
+	const o_key = {};
+	b.set(o_key, "test");
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 24. 오후 3:17:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">My Home</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> </xmp>
+		<label for="n">정수 n 입력: </label> <input type="text" id="n"
+			class="short" autofocus="autofocus">
+		<p id="demo" style="color: red"></p>
+	</div>
+
+	<script>
+		let txtN = $("#n");
+		let pDemo = $("#demo");
+
+		txtN.on("keydown", function(e) {
+			if (e.key == 'Enter') {
+				let n = $(this).val().trim();
+				let regexp = /^[1-9]\d*$/;
+				if (!regexp.test(n)) {
+					alert("1이상의 정수만 입력하세요!!!");
+					txtN.focus();
+					txtN.select();
+					return;
+				}
+				
+				let content = "";
+				let sum = 0;
+				for (var i = 1; i <= n; i++) {
+					sum += i;
+					content += i + (i == n ? "" : "+");
+				}
+				content += "=" + sum;
+				pDemo.text(content);
+			}
+		});
+	</script>
+</body>
+</html>

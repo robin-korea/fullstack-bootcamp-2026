@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오전 9:09:27</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+.imgbox {
+	width: 120px;
+	border: 1px solid gray;
+	padding: 6px;
+	margin: 4px;
+}
+
+.imgbox img {
+	width: 100%;
+}
+</style>
+</head>
+<body>
+	<!-- 
+	[display 속성] inline, block, inline-block
+	    ㄴ 배치(layout)를 제어하는 가장 중요한 속성
+	    
+	    ㄴ display(표시) = "none",
+	         ㄴ 요소가 없는 것 처럼 표시, 공간 차지 X
+        , visibility = "hidden" 속성 차이점
+             ㄴ 숨기기, 공간 차지 O ,숨겨진 요소를 사용할 수 있다.
+             
+             
+             
+ -->
+
+	<div style="display: flex">
+		<div id="imgbox1" class="imgbox">
+			Box1 <img src="../images/img_5terre.jpg" alt="" />
+			<button>Remove</button>
+		</div>
+		<div id="imgbox2" class="imgbox">
+			Box2 <img src="../images/img_lights.jpg" alt="" />
+			<button>Hide</button>
+		</div>
+		<div id="imgbox3" class="imgbox">
+			Box3 <img src="../images/img_forest.jpg" alt="" />
+			<button>ResetAll</button>
+		</div>
+	</div>
+
+	<script>
+		// jq
+		$("#imgbox1 > button").on("click", function() {
+			/* $(this).parent().css("display", "none"); */
+			$(this).parent().hide();
+		});
+
+		$("#imgbox2 > button").on("click", function() {
+			$(this).parent().css("visibility", "hidden");
+		});
+
+		$("#imgbox3 > button").on("click", function() {
+			$("#imgbox2 > button").parent().css("visibility", "visible");
+			$("#imgbox1 > button").parent().show();
+		});
+	</script>
+
+
+	<!-- <script>
+
+  const btnRemove = document.querySelector("#imgbox1 > button");
+  const btnHide = document.querySelector("#imgbox2 > button");
+  const btnResetAll = document.querySelector("#imgbox3 > button");
+  
+  btnRemove.addEventListener("click", function(){
+	  btnRemove.parentElement.style.display = "none";
+  });
+  
+ btnHide.addEventListener("click", function(){
+	  btnHide.parentElement.style.visibility = "hidden";
+  });
+  
+ btnResetAll.addEventListener("click", function(){
+	 btnRemove.parentElement.style.display = "block";
+	 btnHide.parentElement.style.visibility = "visible";
+ });
+
+
+</script> -->
+
+
+</body>
+</html>

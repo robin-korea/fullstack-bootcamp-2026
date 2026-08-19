@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오후 12:34:24</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+ #container{
+   width:400px;
+   height:400px;
+   
+   position:relative;
+   background-color:yellow;
+ }
+
+ .animate{
+    width:50px;
+    height:50px;    
+             position:absolute;    
+    background-color:red;
+    border-radius: 50%;             
+ } 
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  
+  </xmp>
+
+  <button onclick="make();">Click Me</button>
+  <br>
+  <br> 
+  
+  <div id="container">	
+  </div>   
+  
+</div>
+<script>
+  let no = 1;
+  
+  function make(){
+	 // <div class="animate" id="animate1"></div>
+	 
+	 // let newCircle = $("<div class='animate' id='animate${no}'></div>")
+	 
+	  //  let newCircle = $("<div></div>")  // jq
+	  let newCircle = document.createElement("div");
+	  //  newCircle.addClass("animate")  // jq
+	  newCircle.className = "animate";
+	  // newCircle.attr("id", `animate${no}`)  // jq
+	  // newCircle.prop("id", `animate${no}`)  // jq
+	  newCircle.setAttribute("id", `animate${no}` );	
+	  // $("#container").append(newCircle);  // jq
+	  document.getElementById("container").appendChild(newCircle);
+	  
+	  myMove(  newCircle );
+	  
+	  no++;
+  }  
+  
+  function myMove( elem ){ // 외부함수
+	  
+	  let posX=0, posY = 0; // 원   x, y 좌표 지역변수(==클로저 전역변수역할)
+	  
+	  var x = parseInt( Math.random()*8 )+2;
+	  var y = parseInt( Math.random()*8 )+2;
+  
+	  var timer = setInterval(function() {  // 익명함수( 내부 함수)
+		  
+		  posX += x;
+	      posY += y;
+	      
+	      elem.style.left = posX+"px";
+	      elem.style.top = posY+"px";
+		  
+	  }, 10);
+	  
+  }
+</script>
+</body>
+</html>
+
+
+

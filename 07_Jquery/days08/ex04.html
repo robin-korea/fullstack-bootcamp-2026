@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 4:05:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	div{
+		border: 1px solid red;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		wrap() / unwrap()
+		감싸다()
+		포장하다
+	</xmp>
+	
+	<button>wrap()/unwrap()</button>
+	
+	<p>Lorem.</p>
+	<p>Illum.</p>
+	<p>Consequatur.</p>
+	
+</div>
+	<p>Lorem ipsum.</p>
+	<p>Alias totam.</p>
+	
+<script>
+	$("button").on("click", function(){
+		if($("p").parent().is("div")){
+			$("p").unwrap();
+		}
+		
+		$("p")
+			.last()
+				.css("color","red")
+				.wrap("<div></div>");
+	});
+</script>
+</body>
+</html>

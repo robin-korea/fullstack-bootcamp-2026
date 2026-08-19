@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 24. 오후 2:34:19</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+
+	</xmp>
+</div>
+<script>
+	// js 는 == 비교연산자를 처리하기 전에 자동으로 형 변환을 한다.
+	
+	document.write("5" == 5); document.write("<br>"); // true
+		 		// 양쪽 타입까지 다 비교
+	document.write("5" === 5); document.write("<br>"); // false
+	
+	document.write("5" != 5); document.write("<br>"); // false
+	           // 양쪽 타입까지 다 비교
+	document.write("5" !== 5); document.write("<br>"); // true
+	
+	//  >   <   >=   <=   ==   ===   !=   !==
+	
+	// 일반 논리 연산자 : &&  ||  !
+	
+	// 삼항 연산자     ?  : 
+	let age = 20;
+	let result =  age > 20 ? "성인" : "미성년자";
+	
+	// instanceof 연산자
+	// class Person{}
+	
+	const m = [];
+	// alert(m instanceof Array);
+	
+	// ?? 연산자 : ES2020
+	//   ㄴ x의 변수값이 undefined 또는 null 인 경우에는 5값을 할당..
+	let x ;
+	x ??=5;
+	// alert(5);
+	
+	// 2**3 == Math.pow(2,3)
+	
+	// Number("24")
+	// 12 > 24
+	// alert( 12 > "24" );
+	
+	//        12 > NaN
+	// alert( 12 > "abc" ); false
+	
+	// alert(Number("abc")); NaN
+	
+	// 비트 연산자  $  |  ^  ~  <<  >>  >>>
+	
+	/* 실무에서 가장 많이 사용하는 연산자
+
+	실무에서는 다음 연산자들이 가장 자주 사용됩니다.
+
+	산술 연산자: +, -, *, /, %
+	대입 연산자: =, +=
+	비교 연산자: ===, !==, >, <
+	논리 연산자: &&, ||, !
+	조건 연산자: ? :
+	최신 연산자: ?., ??, ...
+	타입 확인: typeof */
+	
+	/* 
+		?. 연산자 : Optional Chaining Operator, ES2020
+	    객체가 null 또는 undefined 인 경우 오류를 발생시키지 않고 undefined를 반환
+	 */
+	 
+	const person = null;
+	
+	// console.log(person.name); -> 오류
+	// console.log(person?.name); -> undefined
+	
+	const sum = function() {
+		console.log("xxx");
+	}
+	
+	// alert(typeof sum) -> function
+	
+	// ?, ?? 함께 많이 사용
+	const people = {};
+	console.log(person?.name?? "이름없음");
+	
+</script>
+</body>
+</html>

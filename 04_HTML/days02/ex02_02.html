@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오전 9:09:26</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+
+	#team2{
+	 border: 1px solid gray;
+	}
+	.teamleader{
+	 background-color: black;
+	 color: white;
+	}
+	
+</style>
+<script>
+ 
+</script>
+</head>
+<body>
+
+ <span id = "team1">
+ 	 1조 -
+	 <span class="teamleader">양인석</span>
+	 <span>안정빈</span>
+	 <span>신창만</span>
+	 <span>이지훈</span>
+	 <span>장미성</span>
+ </span>
+ 
+ <br>
+ 
+  <span id = "team2">
+ 	 2조 -
+	 <span class="teamleader">류호훈</span>
+	 <span>오수빈</span>
+	 <span>이시연</span>
+	 <span style="display: none;">조지훈</span>
+	 <span>문규리</span>
+ </span>
+ 
+ <br>
+
+ <button type="button">1조 숨기기</button>
+ <button>1조 보이기</button>
+ <br>
+ <button>2조 보이기/숨기기</button>
+ <br>
+ <button>팀장의 글자색을 빨강으로 변경하기</button>
+ 
+ <script>
+ 	// jquery selector: button:first
+ 	$("button:first").click(function(){
+ 		// alert("클릭 이벤트 활성");
+ 		$("#team1").hide();
+ 	});
+ 	$("button").eq(1).click(function(){
+ 		$("#team1").show();
+ 	});
+ 	$("button").eq(2).click(function(){
+ 		$("#team2").toggle();
+ 	});
+ 	$("button").last().click(function(){
+ 		$(".teamleader").css("color","red");
+ 	});
+ </script>
+</body>
+</html>

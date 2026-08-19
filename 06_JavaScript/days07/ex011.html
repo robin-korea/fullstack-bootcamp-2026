@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오후 5:19:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<script src="/javascript/days02/ex04_script.js"></script>
+<!-- getRndNumber -->
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    item01.gif~ item21.gif  
+  </xmp>
+  
+  <img src="../images/item01.gif" alt="">
+</div>
+<script>
+
+ document.oncontextmenu = function (){
+	 // alert("오른쪽 마우스는 사용할 수 없습니다.");
+	 return false;
+ }  
+
+ document.onmousedown = function (){
+	 // alert( event.button );  왼0 휠1 오2
+	 if (event.button == 0) {  // 왼(0)
+		 // <title>
+		 document.title = event.clientX +", " + event.clientY 
+			+ "/ " + $("img").width();
+		 
+		 // <img>
+		 let newImg = document.createElement("img");
+		 // 01 ~ 21
+		 let imgNo = getRndNumber( 1, 21).toString().padStart(2, 0);
+		 newImg.setAttribute("src", `../images/item${ imgNo }.gif`);
+		 
+		 // 마우스 클릭한 위치
+		let imgLeft = event.clientX -  $("img").width()/2;;  
+	    let imgTop = event.clientY- $("img").height()/2;
+	    newImg.setAttribute("style", `position:absolute;left:${imgLeft}px;top:${imgTop}px`);
+		 // <body>
+		 document.body.appendChild(newImg);
+	 }else if (event.button == 1) { // 휠(1)
+		 // event.target 또는 event.srcElement     <img> 확인 제거
+		 console.log( event );
+		 if (event.target.tagName === "IMG") {
+	        document.body.removeChild( event.target );
+		 }
+	 }else if (event.button == 2) { // 오(2)
+		 // 모든 이미지 삭제
+	 }
+	 
+ } // onmousedown
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

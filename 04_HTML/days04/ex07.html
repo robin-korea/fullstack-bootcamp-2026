@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오후 2:16:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+<!-- 
+	[canvas 태그]
+	    ㄴ js 를 사용해서 그래픽 처리를 하는 데 사용되는 태그
+	    ㄴ 빈 도화지( 그래픽 컨테이너 역할 )
+	    ㄴ 모든 브라우저에서 지원
+	    ㄴ 선, 원, 사각형, 텍스트, 이미지 등등
+ -->
+ <canvas id="myCanvas2" width="250" height="300" style="border:1px solid black"></canvas>
+ <p>
+ 	<!-- 이미지를 캔버스에게 그리기 작업 -->
+ 	<button>클릭 미!!!</button>
+ 	<button>캔버스 지우기</button>
+ </p>
+ <img id="scream" src="../images/img_the_scream.jpg" alt="The Scream" width="220" height="277">
+ 
+ <script>
+ 	document.querySelector("button:nth-child(1)").addEventListener("click", function (){
+ 		var img = document.getElementById("scream");
+ 		var c2 = document.getElementById("myCanvas2");
+ 		let ctx = c2.getContext("2d");
+ 		ctx.drawImage(img, 10, 10)
+ 	});
+ 	
+ 	document.querySelector("button:nth-child(2)").addEventListener("click", function (){
+ 		var c2 = document.getElementById("myCanvas2");
+ 		let ctx = c2.getContext("2d");
+ 		// Canvas 전체 지우기
+ 		ctx.clearRect(0,0,c2.width, c2.height);
+ 	});
+ </script>
+ 
+ 
+ 
+ 
+ <hr>
+ <canvas id="myCanvas" width="200" height="200" style="border:1px solid black"></canvas>
+
+<script>
+  // 1. 빈도화지 얻어오기
+  var c = document.getElementById("myCanvas");
+  
+  // 2. 2차원 그리기 도구(Context)
+  var ctx = c.getContext("2d");
+  
+  // 3. 선
+  //    ㄴ 시작점
+  ctx.moveTo(0,0);
+  //    ㄴ 끝점
+  ctx.lineTo(200,100);
+  //    ㄴ 그리기
+  ctx.stroke();
+  
+  // 4. 원
+  //    ㄴ 새로운 경로 시작
+  ctx.beginPath()
+  //    ㄴ 원
+  // ctx.arc(x,y,반지름,시작각,끝각);
+  // 0.5 * 180도 = 90도 Math.PI = 180도
+  ctx.arc(95,50,40,0,2 * Math.PI);
+  
+  ctx.stroke();
+  
+  // 5. 텍스트
+  //      ㄴ strokeText(): 글자의 윤곽선만 그린다.
+  //      ㄴ fillText(): 글자의 내부도 채워서 그린다.
+  ctx.font="30px Arial";
+  // ctx.strokeText("Hello World",10,50);
+  ctx.fillText("Hello World",10,50);
+
+</script>
+
+
+</body>
+</html>

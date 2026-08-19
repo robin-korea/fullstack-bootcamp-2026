@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 14. 오후 12:27:28</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  header{
+    background-color: #777;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+  }
+  
+  footer{
+    background-color: #777;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  section{
+    border: 1px solid red;
+    
+    display: flex;
+  }
+  
+  nav{
+    width: 30%;
+    background-color: #ccc;
+    height: 300px;
+    padding:20px; 
+  }
+  
+  article{
+    width: 70%;
+    background-color: #f1f1f1;
+    padding:20px;
+    
+    min-height: 300px; 
+    /* height: 300px; */ 
+  }
+   
+  section::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+<style>
+ 
+ @media  screen and (max-width:800px){
+ 
+     section{
+        flex-direction: column;
+     }
+ 
+     nav, article{
+          width: 100%;
+          height: auto;
+      }
+ }
+</style>
+</head>
+<body>
+<!-- 
+      [시멘틱태그( sementic elements )]
+       ㄴ 시맨틱 태그(Semantic Tag)​는 태그 이름만 보고도 그 역할과 의미를 알 수 있는 HTML 태그
+       <header>: 페이지 또는 특정 영역의 머리말
+       <nav>: Navigation의 약자입니다. 메뉴
+       <main>: 문서의 핵심 내용
+       <section>: 주제별 영역
+       <article>: 독립적으로 존재할 수 있는 콘텐츠
+       <aside>: 본문과 관련 있는 부가 정보
+       <footer>: 페이지의 마지막 영역
+       등등
+        <mark> - 표시/강조 내용(텍스트) 정의 
+	    <details>  상세정보 - 사용자가 보거나 숨길 수 있는 
+	              추가 세부 정보를 정의  
+	    <figcaption> -	<figure> 요소의 캡션을 정의.
+			            -  그림, 사진, 도표, 목록 내용을 정의하는 태그
+				<figure> -사진,  도표        
+		<summary> 요약 	
+		<time>    날짜/시간 정의	 
+ -->
+<!-- (#header>h2)+(#section>(#nav>ul>li*3>a[href=#])+#article>(h2+p+p)*3)+#footer>h2 -->
+<header>
+	<h2>Cites-시멘틱태그(sementic elements)</h2>
+</header>
+<section>
+	<nav>
+		<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+		</ul>
+	</nav>
+	<article>
+		<h2>London</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nulla soluta sunt aut assumenda fugiat deleniti magnam sequi minima explicabo debitis perspiciatis iusto amet corporis minus illo aperiam quasi numquam!</p>
+		<p>Aliquid laudantium ducimus assumenda sequi dolore blanditiis temporibus esse iure! Veniam numquam aspernatur excepturi ipsum nemo inventore! Quaerat autem inventore voluptatibus deserunt dolores iste explicabo odit eum asperiores saepe dolor.</p>
+		 
+		<h2>Paris</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corrupti itaque aliquid magni porro aspernatur possimus est nulla doloribus dignissimos modi nam nemo! Maiores veniam inventore sequi aliquid aut omnis!</p>
+		<p>Eveniet quod cupiditate ratione soluta sed maxime vitae consequatur placeat consectetur fuga ipsum repellat laborum reiciendis cumque aperiam atque provident inventore quia assumenda aliquam. Quas dolor accusantium possimus ex maiores!</p>
+		<h2>Seoul</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde asperiores commodi aperiam hic. Dolorum asperiores nemo voluptates quo architecto ullam. Delectus aut quas facere. Voluptas fugiat omnis veritatis in fuga!</p>
+		<p>Dolorem tempora aperiam nam ullam vel expedita maiores magnam labore ratione vitae adipisci laboriosam cumque tenetur possimus hic est eum necessitatibus nulla minus dolore dignissimos autem quam distinctio omnis quia.</p>		 
+	</article>
+    <!-- ::after 가상 요소 추가 -->
+</section>
+<footer>
+	<h2>Footer</h2>
+</footer>
+
+</body>
+</html>

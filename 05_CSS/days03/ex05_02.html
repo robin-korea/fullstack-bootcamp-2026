@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오전 11:10:18</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ .boxStyle{
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  text-align:center;
+ }
+</style>
+</head>
+<body>
+<script>
+	// jq
+	const box = $("<div></div>")
+	               .text("박스 - 1")
+	               .addClass("boxStyle")
+	               .on("click", function(){
+	            	   alert("동적으로 생성한 div 요소에 클릭 이벤트 처리 하는 예제")
+	               });
+	$("body").append(box);
+	
+</script>
+</body>
+</html>

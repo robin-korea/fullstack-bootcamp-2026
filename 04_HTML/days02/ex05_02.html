@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오후 4:07:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<!-- 속성 연산자 [] -->
+<!-- <시작태그 속성명=속성값  속성명=속성값></시작태그> -->
+
+<!-- div[id=box1] -->
+<div id="box1"></div>
+
+<!-- #box1 -->
+<div id="box1"></div>
+
+<!-- div#box1 -->
+<div id="box1"></div>
+
+<!-- #header.team -->
+<div id="header" class="team"></div>
+
+<!-- #nav.box1.box2.box3 -->
+<div id="nav" class="box1 box2 box3"></div>
+
+<!-- font[size=7][color="red"][face="궁서체"] -->
+<!-- font[size=7 color="red" face="궁서체"] -->
+<font size="7" color="red" face="궁서체"></font>
+
+<!-- 항목에 번호 메기기: $ -->
+<!-- h$*6 -->
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+
+<!-- ul>li.item$*5 -->
+<ul>
+	<li class="item1"></li>
+	<li class="item2"></li>
+	<li class="item3"></li>
+	<li class="item4"></li>
+	<li class="item5"></li>
+</ul>
+
+<!-- ul>li.item$$$*5 -->
+<ul>
+	<li class="item001"></li>
+	<li class="item002"></li>
+	<li class="item003"></li>
+	<li class="item004"></li>
+	<li class="item005"></li>
+</ul>
+
+<!-- 항목의 번호 메김이 3부터 시작 -->
+<!-- ul>li.item$$$@3*5 -->
+
+<!-- -를 붙일 경우가 번호가 뒤에서부터 생성된다 -->
+<!-- ul>li.item$@-*5 -->
+<ul>
+	<li class="item5"></li>
+	<li class="item4"></li>
+	<li class="item3"></li>
+	<li class="item2"></li>
+	<li class="item1"></li>
+</ul>
+
+<!-- 텍스트 {} 사용 -->
+<!-- div{홍길동} -->
+<div>홍길동</div>
+
+<!-- a[href=#]{Click me} -->
+<a href="#">Click me</a>
+
+<!-- ul>li*5>{item$} -->
+<!-- ul>li{item$}*5 -->
+<ul>
+	<li>item1</li>
+	<li>item2</li>
+	<li>item3</li>
+	<li>item4</li>
+	<li>item5</li>
+</ul>
+
+<!-- a{click}>b{here} -->
+<a href="">click<b>here</b></a>
+
+<!-- p{Click}>a{here}+{ to continue} -->
+<!-- p>{Click }+a{here}+{ to continue} -->
+<p>Click<a href="">here</a> to continue</p>
+
+<!-- (header>ul.nav>li{item$}*5)+footer -->
+<header>
+	<ul class="nav">
+		<li>item1</li>
+		<li>item2</li>
+		<li>item3</li>
+		<li>item4</li>
+		<li>item5</li>
+	</ul>
+</header>
+<footer></footer>
+
+<!-- hr+div#page>.logo+ul#navigation>li*5>a -->
+<hr />
+<div id="page">
+	<div class="logo"></div>
+	<ul id="navigation">
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

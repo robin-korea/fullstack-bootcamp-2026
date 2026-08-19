@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 16. 오전 10:26:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		background-color: rgb(4,170,109);
+		padding: 10px;
+	}
+</style>
+
+<style>
+	img{
+	 opacity: 0.5;
+	 border: 1px solid gray;
+	 padding: 5px;
+	 border-radius: 3px;
+	 
+	 /* 3 */
+	  transition: opacity 0.3s, border-color 0.3s;
+	}
+	
+	img:hover{
+		opacity: 1.0;
+		border-color: red;
+		cursor: pointer;
+		
+		/* 2 */
+		animation: shake 0.4s;
+	}
+	/* 1 */
+	@keyframes shake {
+	    0%   { transform: scale(1.08) translateX(0); }
+	    20%  { transform: scale(1.08) translateX(-5px); }
+	    40%  { transform: scale(1.08) translateX(5px); }
+	    60%  { transform: scale(1.08) translateX(-5px); }
+	    80%  { transform: scale(1.08) translateX(5px); }
+	    100% { transform: scale(1.08) translateX(0); }
+}
+	
+	
+</style>
+</head>
+<body>
+
+<img src="../images/img_forest.jpg" alt="" width="170" height="100" />
+<img src="../images/img_mountains.jpg" alt="" width="170" height="100" />
+<img src="../images/img_5terre.jpg" alt="" width="170" height="100" />
+
+
+<hr>
+
+<div class="first" style="background-color: rgba(4,170,109,0.1)">
+	<p>background-color: rgb[a](4,170,109,0.1);</p>
+</div>
+<div class="second" style="background-color: rgba(4,170,109,0.3)">
+	<p>opacity 0.3</p>
+</div>
+<div class="third" style="background-color: rgba(4,170,109,0.6)">
+	<p>opacity 0.6</p>
+</div>
+<div>
+	<p>opacity 1.0(기본값)</p>
+</div>
+
+<hr>
+
+
+<!-- opacity 속성으로 투명도를 설정하면 자식 요소 -->
+<div class="first" style="opacity:0.1">
+	<p>opacity 0.1</p>
+</div>
+<div class="second" style="opacity:0.3">
+	<p>opacity 0.3</p>
+</div>
+<div class="third" style="opacity:0.6">
+	<p>opacity 0.6</p>
+</div>
+<div>
+	<p>opacity 1.0(기본값)</p>
+</div>
+
+
+</body>
+</html>

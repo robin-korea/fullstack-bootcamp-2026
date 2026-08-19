@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오후 12:18:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	ul#navlist{
+		position: relative;
+		/* border: 1px solid red; */
+	}
+	
+	ul#navlist li{
+		position: absolute;
+		top: 0;
+		
+		margin: 0;
+		padding: 0;
+		
+		border: 1px solid blue;
+		
+	}
+	
+	ul#navlist li, ul#navlist li a{
+		width: 43px;
+		height: 44px;
+		display: block;
+	}
+	
+	ul#navlist li#home{
+		left: 0;
+		background: url('../images/img_navsprites_hover.gif');
+	}
+	
+	ul#navlist li#prev{
+		left:63px;
+		background: url('../images/img_navsprites_hover.gif') -47px 0;
+	}
+	
+	ul#navlist li#next{
+		left:129px;
+		background: url('../images/img_navsprites_hover.gif') -91px 0;
+	}
+	
+	ul#navlist li#home:hover{
+		background: url('../images/img_navsprites_hover.gif') 0 -45px;
+	}
+	
+	ul#navlist li#prev:hover{
+		background: url('../images/img_navsprites_hover.gif') -47px -45px;
+	}
+	
+	ul#navlist li#next:hover{
+		background: url('../images/img_navsprites_hover.gif') -91px -45px;
+	}
+</style>
+</head>
+<body>
+<!-- [이미지 스프라이트( sprites )]
+	 단일 이미지에 여러개의 이미지 모음
+	 이미지가 많은 웹페이지인 경우에는
+	 로딩하는 데 서버에 많은 이미지를 요청하는 문제를 해결
+ -->
+<img src="../images/img_navsprites_hover.gif" alt="">
+ <ul id="navlist">
+    <li id="home"><a href="#"></a></li>
+    <li id="prev"><a href="#"></a></li>
+    <li id="next"><a href="#"></a></li>
+ </ul> 
+</body>
+</html>

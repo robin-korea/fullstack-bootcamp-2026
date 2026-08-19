@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오후 5:05:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ /* css selector(선택자) 
+ 	1) 태그명           1
+ 	2) #아이디명        100
+ 	3) .클래스명        10
+ 	4) * 범용 선택자     0
+ 	5) 그룹화 선택자      h1, h2, h3, h4, h5, h6
+ 	
+ 	6) 조합 선택자: 요소와 요소 간의 특정 관계를 기반으로 하는 선택자
+ 	   ㄱ. 요소 요소 : div 태그 안에 있는 직계 자식 a 또는 후손 a
+ 	   		div a{}
+ 	   ㄴ. 요소 > 요소 : div 태그 안에 있는 직계 자식 a
+ 	   ㄷ. 요소 + 요소 : div 태그 바로 뒤에 따라오는 형제 p 태그
+ 	   ㄹ. 요소 ~ 요소 : p 태그 뒤에 따라오는 모든 div 형제 태그
+ */
+ 
+ h1, h2, h3, h4, h5, h6 {
+ 	border: 1px solid gray;
+ }
+ 
+ /* div a{ */
+ div > a{
+   color:red;
+ }
+ 
+ /* div + p{ */
+ p ~ div{
+ 	border:1px solid red;
+ }
+ 
+</style>
+</head>
+<body>
+ <a href="#">Lorem.</a>
+ <a href="#">Earum!</a>
+ <a href="#">Eligendi.</a>
+ 
+ <div>
+ 	111
+ 	<a href="#">XXX</a>
+ 	<a href="#">XXX</a>
+ 	<p>
+ 		222
+ 		<a href="#">YYY</a>
+ 	</p>
+ 	<a href="#">XXX</a>
+ </div>
+ 
+ 
+ <p id="p1" class ="second">Lorem.</p>
+ <p id="p2" class ="second">Rerum.</p>
+ <div>Lorem.</div>
+ <div class="second">ZZZ</div>
+ <div>Lorem.</div>
+</body>
+</html>

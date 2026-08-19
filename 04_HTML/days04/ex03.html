@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 15. 오전 11:02:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+
+상품 등록 이미지: <br>
+첨부파일 1: <input type="file" name="attach"><br>
+첨부파일 2: <input type="file" name="attach"><br>
+첨부파일 3: <input type="file" name="attach"><br>
+첨부파일 4: <input type="file" name="attach"><br>
+첨부파일 5: <input type="file" name="attach"><br>
+
+<hr>
+
+다중 첨부파일 : <input type="file" name="attachs" multiple="multiple"><br> 
+
+
+<hr>
+
+
+<select multiple="multiple" size="5" style="width:150px">
+	<option>옵션1</option>
+	<option selected="selected">옵션2</option>
+	<option>옵션3</option>
+	<option selected="selected">옵션4</option>
+	<option>옵션5</option>
+</select>
+
+<hr>
+
+<select>
+	<optgroup label="color">
+		<option>red</option>
+		<option>green</option>
+		<option>blue</option>
+	</optgroup>
+	<optgroup label="animals">
+		<option>dog</option>
+		<option>cat</option>
+		<option>pig</option>
+	</optgroup>
+</select>
+
+
+<hr>
+
+<div>
+	설문 조사 시작일: <input type="date" id="survey_start"><br>
+	설문 조사 종료일: <input type="date" id="survey_end"><br>
+	
+	<button>설문 조사 확인</button>
+</div>
+
+<p>하고 싶은 말</p>
+<textarea rows="10" cols="30">초기값</textarea>
+
+<script>
+	// [1] js
+	const btnSurvey = document.querySelector("body > div > button")
+	btnSurvey.addEventListener("click", function (){
+		let s_start = document.querySelector("#survey_start").value;
+		let s_end = document.querySelector("#survey_end").value;
+		
+		const tArea = document.querySelector("textarea");
+		tArea.innerText = `설문조사기간: ${s_start} ~ ${s_end}`;
+	});
+</script>
+</body>
+</html>

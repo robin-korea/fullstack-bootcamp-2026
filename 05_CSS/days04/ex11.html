@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 21. 오후 2:29:21</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	/* 태그명을 선택자로 사용한 경우 */
+	/*input{*/
+	/* input[type]
+		width: 200px;
+		border: 1px solid red;
+		padding: 0;
+	} */
+	
+	/* a[title^='flower']{ */
+	/* a[title$='flower']{ */
+	/* a[title*='flower']{ */
+	/* a[title~='flower']{ */
+	a[title|='flower']{
+		width:200px;
+		border: 1px solid red;
+		padding:0;
+	}
+</style>
+</head>
+<body>
+<!-- 
+	[스타일 적용할 대상 == css 선택자 == css selector]
+	-> 속성을 사용하는 css 선택자 (암기)
+	  1. [속성명]
+	  2. [속성명='속성값']
+	  3. [속성명^='속성값']
+	  4. [속성명$='속성값']
+	  5. [속성명*='속성값']
+	  6. [속성명~='속성값']
+	      단어 공백 단어 O
+	      단어-단어     X
+	  7. [속성명|='속성값']
+	  			 flower
+	  			 flower-...
+	   
+ -->
+<a href="#" title="klematis flower">naver</a><br>
+<a href="#" title="flower">daum</a><br>
+<a href="#" title="flower-kbs">daum</a><br>
+<a href="#" title="kbsflower">sist</a><br>
+<a href="#" title="kbs-flower">taeyo</a><br>
+<a href="#" title="flowers">admin</a><br>
+<hr>
+<input><br>
+<input><br>
+<input type="text" ><br>
+<input type="text" ><br>
+<input type="text" ><br>
+<input type="submit" ><br>
+<input type="reset" ><br>
+</body>
+</html>

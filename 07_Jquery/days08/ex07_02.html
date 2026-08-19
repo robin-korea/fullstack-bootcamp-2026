@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 8. 3. 오후 4:47:24</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	.ancestors *{
+		  	display: block;
+  			border: 2px solid lightgrey;
+  			color: lightgrey;
+  			padding: 5px;
+ 		 	margin: 15px;
+	}
+</style>
+</head>
+<body>
+<div class="ancestors">
+  <div style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)  
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+
+  <div style="width:500px;">div (grandparent)   
+    <p>p (direct parent)
+      <span>span</span>
+    </p> 
+  </div>
+</div>
+<script>
+/*
+	$("span")
+		// .parent()
+		// .parents()
+		.parentsUntil("div")
+			.css({
+				"color": "red",
+				"border": "2px solid red"
+			});
+*/
+</script>
+<script>
+	// children() 자식 검색
+	$("div.ancestors")
+		// .children() // 직계 자식
+		// .children("ul") // 직계자식 중에 ul 태그인거
+		// .find("ul")        // 직계자식은 아니더라도 후손 중에 ul 태그 찾아서
+		.find("*")
+			.css({
+				"color":"red",
+				"border": "2px solid red"
+			});
+</script>
+	
+
+</body>
+</html>

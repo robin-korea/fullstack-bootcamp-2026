@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오전 11:11:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width: 300px;
+		height: 100px;
+		background-color: yellow;
+		border: 1px solid;
+	}
+	
+	div#box{
+		/* transform: rotateX(110deg); */
+		/* transform: rotateY(180deg); */
+		/* transform: rotate3d(1,1,1, 45deg); */
+	}
+</style>
+</head>
+<body>
+
+<!-- 
+	css 2D변환: transform 속성
+		  ㄴ 이동, 회전, 크기, 기울이기
+		    translate, rotate, scale, skew
+		    
+	css 3D변환: transform 속성
+		 ㄴ 이동, 회전, 크기,           기울이기 X
+		 translate3d() translateX, Y, Z(),
+		 rotate3d() rotateX,Y,Z(),
+		 scale3d() scaleX,Y,Z()
+		 약식
+		 matrix3D(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n);
+ -->
+
+ <button>회전 시작</button>
+ 
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<div>Lorem ipsum dolor sit.</div>
+<div id="box">Lorem ipsum dolor sit.</div>
+
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<script>
+	let angle = 1;
+	var timer;
+	
+	document.querySelector("button").onclick= function(){
+		// console.log(event.srcElement)	
+		
+		timer = setInterval(() => {
+			let target = document.querySelector("#box");
+			target.style.transform = `rotateY(${angle}deg)`;
+			angle++;
+		}, 10);
+	}
+</script>
+
+
+</body>
+</html>

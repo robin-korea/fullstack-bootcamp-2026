@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 30. 오후 2:00:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+	#out{
+		background-color: coral;
+		padding: 50px;
+	}
+	#in{
+		background-color: white;
+		font-size: 20px;
+		border:1px solid;
+		padding: 20px;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		1. 이벤트 버블링 O
+		   자식 요소에 발생한 이벤트가 부모요소에 이벤트가 전달되는것
+		2. 이벤트 캡처링
+		   부모요소에 발생한 이벤트가 자식요소에 이벤트가 전달되는 것
+	</xmp>
+	<div id="out">
+		<h2>이벤트 버블링 체크</h2>
+		<p id="in">자식 P 태그</p>
+	</div>
+</div>
+<script>
+	// 자식 요소 P  table click tr: click  td: click
+	$('#in').on("click",function(){
+		alert("IN");
+		// 부모요소에게 클릭이벤트 전달(확인): 이벤트 버블링
+		// event.preventDefault(); // 기본 동작 중지
+		// event.stopPropagation(); // 중지 + 전파
+	})
+	
+	// 부모 요소 DIV
+	$("#out").on("click", function(){
+		alert("OUT");
+		$(this).css("background-color","red");
+	});
+</script>
+</body>
+</html>

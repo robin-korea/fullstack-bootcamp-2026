@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 27. 오후 3:38:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		JSON: 파일 저장, 서버 데이터 교환
+		  서버   <-  JSON  -> 클라이언트
+		DB처리 -> JSON        JSON 응답/ js Object 변환 사용
+		         XML
+		         java Object 변환
+		         
+		       1) AJAX == XMLHttpRequest(XHR)을 비동기적으로 사용해서 처리
+		       2 fetch() 함수 + 비동기적 처리
+		       
+		       XMLHttpRequest(XHR)           fetch()함수
+		            문법 복잡                      간단
+		              X                     async/await 키워드 사용
+		          가독성 떨어진다               가독성 높다
+		          이전 코딩(유지보수)           현재 사용 빈도 높다
+		    
+		    response 응답 객체
+		    status
+		    headers
+		    body
+		    url
+		    json()         response.json()         JSON 읽기
+		    text()         response.text()         텍스트 읽기
+		    blob()         response.blob()         이미지, 파일
+		    arrayBuffer()  response.arrayBuffer()  이진데이터
+		                   response.formData()     FormData 읽기 
+		    등등 정보들이 들어있다.
+	</xmp>
+	
+	<button id="btnRequest">서버 customer.json 요청 1</button>     
+	<button id="btnRequest2">서버 customer.json 요청 2</button>     
+	<button id="btnResponse">서버 customer 데이터 전송</button>     
+</div>
+<script>
+	$("#btnResponse").on("click",function(){
+		// 고객 정보를 서버에 전달하면 전달된 고객정보를 가지고 DB 처리
+		// customerRegister.jsp -> Customer.java 자바 객체 변환 -> DB insert
+		fetch("customerRegister.jsp",{
+			method:"POST",
+			headers:{
+				"Content-Type" : "application/json"
+			},
+			// 서버에서 전달할 js Object => stringify() 로 JSON으로 변환
+			body: JSON.stringify({
+				id: 102,
+  				name: "Kim eric",
+  				city: "New York",
+  				member: true
+			})	
+		})
+	
+	});
+	
+	$("#btnRequest2").on("click",function(){
+		// 요즘 대부분은 async / await 사용해서 처리
+		loadCustomerJSON();
+	});
+	
+	// async 비동기적으로 loadCustomerJSON() 메서드 처리한다.
+	async function loadCustomerJSON(){
+		try{
+			const response = await fetch("customer.json"); // 동기적 처리
+			if(!response.ok){
+				throw new Error("파일을 찾을 수 없습니다.");
+			}
+			const customer = await reponse.json();
+			alert(customer.name);
+		} catch (e){
+			console.log(e.message);
+		}
+	}
+	
+	$("#btnRequest").on("click",function(){
+		// [1] fetch() + then() 사용해서 처리
+		fetch("customer.json")
+			.then(function(response){
+				return response.json();
+			})
+			.then(function(data){ 
+				console.log(data);
+				alert(data.name);
+			});
+	});
+</script>
+</body>
+</html>

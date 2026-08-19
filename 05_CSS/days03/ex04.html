@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 20. 오전 10:16:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+
+	p, div{
+	 border: 1px solid red;
+	}
+	
+	p{
+	 background-color: gray;
+	}
+	
+</style>
+<style>
+	div:nth-of-type(1){
+  	 background-color: red;
+  	 position: static;
+  	 left: 100px;
+  	 top: 100px;
+	}
+	
+</style>
+<style>
+	div:nth-of-type(2) >p:nth-of-type(1){
+  	 background-color: green;
+  	 position: relative;
+  	 left: 30px;
+  	 top: 30px;
+	}
+	
+	div:nth-of-type(2) >p:nth-of-type(2){
+  	 background-color: blue;
+  	 position: absolute;
+  	 left: 30px;
+  	 top: 30px;
+	}
+	
+</style>
+</head>
+<body>
+<!-- 
+	[ position (위치)속성 ]
+		ㄴ 배치(layout)
+		1. static( 기본값, 정적 ): 그 요소의 긱본 속성
+		   left, right, bottom, top 속성 사용할 수 없다.
+		  
+		2. relative( 상대적인 ): 그 요소의 기본 위치를 원점으로 배치.
+		
+		3. fixed( 고정 )
+		
+		4. absolute( 절대적인 ): 그 요소의 가장 가까운 [상대 relative] 부모 요소를 원점으로 배치
+		
+		5. sticky ( 끈적끈적한 )
+ -->
+ 
+ <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consectetur id quisquam maiores incidunt voluptates amet unde placeat quidem impedit voluptatem ratione aut rem deleniti dolorem soluta itaque. Optio officiis.</p>
+ <div>hello world!</div>
+ 
+ <div>
+ 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum mollitia recusandae reprehenderit ea quo reiciendis inventore non consequatur nesciunt blanditiis odio sit maiores beatae dignissimos id similique corporis aperiam debitis!</p>
+ 	<p>Earum architecto facere rerum aut possimus quibusdam numquam aperiam harum perferendis dolor non praesentium dignissimos iusto illo ab? Quaerat placeat id impedit adipisci voluptatem odio? Voluptates eos ipsam itaque inventore.</p>
+ 	<p>Tempore nobis ad officia velit eius! Amet ex magni quia at ut hic numquam impedit laborum et iusto a neque doloribus vero! Veniam atque dicta culpa voluptate numquam quo nostrum!</p>
+ </div>
+
+</body>
+</html>

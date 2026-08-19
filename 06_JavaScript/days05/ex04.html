@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 29. 오전 11:52:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<script src="/javascript/days02/ex04_script.js"></script>
+<style>
+ 
+ select {
+   width: 100px;
+   text-align: center;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+ul {
+   list-style-type: none;
+}
+
+body {
+   font-family: Verdana, sans-serif;
+}
+
+.month {
+   padding: 70px 25px;
+   width: 100%;
+   background: #1abc9c;
+   text-align: center;
+}
+
+.month ul {
+   margin: 0;
+   padding: 0;
+}
+
+.month ul li {
+   color: white;
+   font-size: 20px;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+}
+
+.month .prev {
+   float: left;
+   padding-top: 10px;
+}
+
+.month .next {
+   float: right;
+   padding-top: 10px;
+}
+
+.weekdays {
+   margin: 0;
+   padding: 10px 0;
+   background-color: #ddd;
+}
+
+.weekdays li {
+   display: inline-block;
+   width: 13.6%;
+   color: #666;
+   text-align: center;
+}
+
+.days {
+   padding: 10px 0;
+   background: #eee;
+   margin: 0;
+}
+
+.days li {
+   list-style-type: none;
+   display: inline-block;
+   width: 13.6%;
+   text-align: center;
+   margin-bottom: 5px;
+   font-size: 12px;
+   color: #777;
+}
+
+.days li .active {
+   padding: 5px;
+   background: #1abc9c;
+   color: white !important
+}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+		[만년 달력]
+	</xmp>
+	<h3>달력(일정 관리)</h3>
+	<select name="" id="cmbYear"></select>
+	<select name="" id="cmbMonth"></select>
+	<select name="" id="cmbDate"></select>
+	<br>
+	<br>
+	
+	<div class="month">
+		<ul>
+			<li class="prev">&#10094;</li>
+			<li class="next">&#10095;</li>
+			<li>
+				<span id="month">August</span>
+				<span id="year" style="font-size: 18px">2017</span>
+			</li>
+		</ul>
+	</div>
+	
+		<ul class="weekdays">
+			<li>Su</li>
+			<li>Mo</li>
+			<li>Tu</li>
+			<li>We</li>
+			<li>Th</li>
+			<li>Fr</li>
+			<li>Sa</li>
+		</ul>
+	<ul class="days">
+		<li></li>
+		<li></li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li><span class="active">10</span></li>
+		<li>11</li>
+		<li>12</li>
+		<li>13</li>
+		<li>14</li>
+		<li>15</li>
+		<li>16</li>
+		<li>17</li>
+		<li>18</li>
+		<li>19</li>
+		<li>20</li>
+		<li>21</li>
+		<li>22</li>
+		<li>23</li>
+		<li>24</li>
+		<li>25</li>
+		<li>26</li>
+		<li>27</li>
+		<li>28</li>
+		<li>29</li>
+		<li>30</li>
+		<li>31</li>
+	</ul>
+</div>
+<script>
+	const today = new Date();
+	
+	let tYear = today.getFullYear();
+	let tMonth = today.getMonth() + 1;
+	let tDate = today.getDate();
+	
+	// 달력에 표시되는 년도, 월
+	let year = tYear;
+	let month = tMonth;
+	
+	// [1] #cmbYear
+	/*
+	for (var i = 1970; i <= 2050; i++) {
+		if(tYear == i){
+			$("#cmbYear").append($(`<option selected='selected'>${i}</option>`));
+		}else{
+			$("#cmbYear").append($(`<option>${i}</option>`));
+		}
+	}
+	*/
+	
+	// [2]
+	for (var i = 1970; i <= 2050; i++) {
+		$("#cmbYear").append($(`<option>${i}</option>`));
+	}
+	$("#cmbYear").val(tYear);
+	
+	// [3] #cmbMonth
+	for (var i = 1; i <= 12; i++) {
+		$("#cmbMonth").append($(`<option>${i}</option>`));
+	}
+	$("#cmbMonth").val(tMonth);
+	
+	// [4] #cmbMonth
+	let lastDay = getLastDay(tYear, tMonth);
+	for (var i = 1; i <= lastDay; i++) {
+		$("#cmbDate").append($(`<option>${i}</option>`));
+	}
+	$("#cmbDate").val(tDate);
+	
+ </script>
+ <script>
+ 	// 달력을 그리는 함수 선언
+ 	function printCalendar(year, month){
+ 		
+ 		$("#month").text(month);
+ 		$("#year").text(year);
+ 		
+ 		// <li> 1~31 </li>
+ 		// <li>1~31</li>
+     	// 반환 객체의 속성명과 동일하게 받아야 합니다
+     	const { firstDay, lastDate }  = getCalendarInfo(year, month );
+     	// alert( firstDay );
+     	// alert( lastDate );
+     
+     	/* 원하는 변수명으로 받고자 할 때
+     	const { 
+          	// 객체속성명   사용할 변수명
+          	firstDay  : firstDayOfWeek,
+          	lastDate  : lastDay
+      	} 	= 	getCalendarInfo(year, month);
+
+      	console.log(firstDayOfWeek); // 3
+      	console.log(lastDay);        // 31
+    	*/   
+    
+    	/* 
+    	// 배열일 때는 변수명은 중요하지 않다. 순서가 중요하다
+    	const [firstDay, lastDate] = getCalendarInfo2(2026, 7);
+    	const [firstDayOfWeek, lastDay] = getCalendarInfo2(2026, 7);
+
+    	console.log(firstDay);  // 3
+    	console.log(lastDate);  // 31
+    	*/
+    	$("ul.days").empty();
+    	
+    	// [5] 날짜 출력
+    	// <li></li> 생성해서 추가
+    	for (var i = 0; i < firstDay; i++) {
+    		$("ul.days").append($("<li></li>"));	
+		}
+    	
+    	// today.setHours(0,0,0,0);
+    	
+    	for (var i = 1; i <= lastDate; i++) {
+    		let liday = new Date(year, month-1,i);
+    		
+    		// today - liday == 0
+    		if(today.toLocaleDateString() == liday.toLocaleDateString()){
+    			$("ul.days").append($(`<li><span class="active">${i}</span></li>`));
+    		}else{			
+	    		$("ul.days").append($(`<li>${i}</li>`));	
+    		}
+		}
+ 	}
+ 	
+ 	printCalendar(year, month);
+ 	
+ </script>
+</body>
+</html>

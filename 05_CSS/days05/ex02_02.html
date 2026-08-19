@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오전 9:35:56</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width: 300px;
+		height: 100px;
+		background-color: yellow;
+		border: 1px solid;
+	}
+</style>
+</head>
+<body>
+<input id="rdoClockWise" type="radio" name="direction" value="1" checked="checked">
+<label for="rdoClockWise">시계방향</label>
+
+<input id="rdoReverseClockWise" type="radio" name="direction" value="-1">
+<label for="rdoReverseClockWise">반시계방향</label>
+
+<br> 회전속도 :
+<input type="range" min="10" max="1000" value="10" id="rspeed">
+<br>
+<button>회전 시작</button>
+<button disabled="disabled">회전 멈춤</button>
+
+<script>
+	const btnStart = document.querySelector("body > button:first-of-type");
+	const btnStop = document.querySelector("body > button:last-of-type");
+	const rotateSpeed = document.querySelector("#rspeed");
+	
+	let direction = 1;
+	let angle = 1;
+	//
+	let timer;
+	
+	btnStart.addEventListener("click", function(){
+		// alert("1");
+		// type=radio 시계/반시계 체크
+		
+		/* [1] 풀이
+		const radios =  document.querySelectorAll("input[name='direction']");
+		
+		// console.log(radios);
+		radios.forEach(rdo => {
+			// console.log( rdo.id + " / " + rdo.checked );
+			if(rdo.checked) direction = rdo.value;
+		}); 
+		*/
+		
+		// [2] 풀이
+		const checkedRadio =  document.querySelector("input[name='direction']:checked");
+		direction = checkedRadio.value;
+		
+		
+		// js 함수 호출
+		
+		// targetRotate( target );
+		// 일정한 시간 간격으로 targetRotate() 계속 호출
+		timer = setInterval(targetRotate, rotateSpeed.value);
+		
+		btnStart.disabled = true;
+		btnStop.disabled = false;
+	});
+	
+	function targetRotate(){
+		const target = document.querySelector("body > div");
+		
+		target.style.transform = `rotate(${angle}deg)`;
+		angle += Number(direction);
+		
+	}
+	
+	btnStop.onclick = function(){
+		// alert("2");
+		
+		clearInterval(timer);
+		
+		btnStart.disabled = false;
+		btnStop.disabled = true;
+	}
+</script>
+
+<p>.</p>
+<p>.</p>
+<p>.</p>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur magnam eligendi voluptatem voluptas fugiat ad!</div>
+</body>
+</html>

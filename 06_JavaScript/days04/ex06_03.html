@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+<title>2026. 7. 28. 오후 3:32:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">My Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+	
+	</xmp>
+</div>
+<script>
+/*
+	[js 배열 - 검색]
+	indexOf() / lastIndexOf()
+	includes()
+	
+	find() / findIndex()
+	findLast() / findLastIndex()
+*/
+	const a = [27, 28, 30, 40, 42, 35, 30];
+	
+	// 배열에서 조건(element == 30)을 만족하는 첫 번째 요소를 반환하는 메서드
+	let x = a.find((element)=> element == 30);
+	document.write(x + "<br>");
+	
+	/*
+	// 찾은 위치 indexOf(찾을값 [,시작위치])
+	document.write(a.indexOf(30) + "<br>") // 2
+	document.write(a.indexOf(30,3) + "<br>") // 6
+	*/
+</script>
+<script>
+	const n = [3,4,11,2,5,1];
+	document.write(n.toString() + "<br>");
+	// 가장 큰 값을 찾아서 출력
+	// 가장 작은 값을 찾아서 출력
+	// [1] 풀이
+	/*
+	n.sort((a,b)=>a-b);
+	document.write(n.toString() + "<br>");
+	let max = n[n.length-1];
+	let min = n[0];
+	document.write(`max=${max}, min=${min}` + "<br>");
+	document.write("<hr>");
+	*/
+	// [2] 풀이 shift() 제거, pop() 제거
+	// const nCopy = [].concat(n); // 배열 복사
+	// const nCopy = n.slice(); // 배열 복사
+	/*
+	const nCopy = Array.from(n);
+	nCopy.sort((a,b)=>a-b);
+	let max = nCopy.pop();
+	let min = nCopy.shift();
+	document.write(`max=${max}, min=${min}` + "<br>");
+	document.write("<hr>");
+	*/
+	/*
+	// [3] 풀이 - (가장 권장)
+	let max = Math.max(...n);
+	let min = Math.min(...n);
+	// ...n
+	// ... Spread 연산자, 펼치다, 확장하다.
+	          ㄴ 반복 가능한 [배열], 객체의 개별 요소를 펼친다.
+	*/
+	
+	// [4] 풀이 reduce()
+	/*
+	let max = n.reduce((a,b)=> a>b?a:b);
+	let min = n.reduce((a,b)=> a<b?a:b);
+	document.write(`max=${max}, min=${min}` + "<br>");
+	*/
+	
+	// [5] 풀이    apply() 메소드
+	let max = Math.max.apply(null, n);
+	let min = Math.min.apply(null, n);
+</script>
+<script>
+	const m = [1,2,3];
+	// 배열의 마지막 요소로 추가
+	m.push(4);
+	m.push(5);
+	m.push(6);
+	document.write(m.toString() + "<br>");
+	
+	// pop(): 배열의 마지막 요소를 제거하고 반환하는 메서드
+	let last = m.pop();
+	document.write(last + "<br>");
+	document.write(m.toString() + "<br>");
+	
+	// unshift(): 첫 번째 요소를 추가하고 모든 요소를 1칸씩 뒤로 이동시키는 메서드
+	m.unshift(6);
+	document.write(m.toString() + "<br>");
+	
+	// shift(): 첫 번째 요소를 제거하고 모든 요소를 1칸씩 앞으로 이동시키는 메서드
+	m.shift();
+	document.write(m.toString() + "<br>");
+</script>
+</body>
+</html>

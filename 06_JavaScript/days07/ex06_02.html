@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 31. 오후 3:18:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex06_02.html
+  </xmp>
+  
+   <table border="1" style="width:100%">
+   <tr>
+   	<td>절대위치</td>
+   	<td onclick="fn_moveto()">moveTo()</td>
+   </tr>
+   <tr>
+   	<td>상대위치</td>
+   	<td onclick="fn_moveby()">moveBy()</td>
+   </tr>
+   <tr>
+   	<td>절대크기</td>
+   	<td onclick="fn_resizeto()">resizeTo</td>
+   </tr>
+   <tr>
+   	<td>상대크기</td>
+   	<td onclick="fn_resizeby()">resizeBy</td>
+   </tr>
+   <tr>
+   	<td><button onclick="win_shake();">창 흔들기</button></td>
+   	<td><button onclick="win_close();">창 닫기</button></td>
+   </tr>
+ </table>
+  
+</div>
+
+<script>
+   // window.open(), close()
+   // window.moveTo(),moveBy(), resizeTo(), resizeBy()
+   function fn_moveto(){ window.moveTo(10,10); }
+   function fn_moveby(){ window.moveBy(10, 10);}
+   function fn_resizeto(){ window.resizeTo(300,300); }
+   function fn_resizeby(){ window.resizeBy(10,10); }
+   function win_shake(){}
+   function win_close(){ self.close();}
+</script>
+
+</body>
+</html>
+
+
+
