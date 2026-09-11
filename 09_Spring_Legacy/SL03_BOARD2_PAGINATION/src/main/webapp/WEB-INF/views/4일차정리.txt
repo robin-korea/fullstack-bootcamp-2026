@@ -1,0 +1,42 @@
+1. SL03_BOARD -> SL03_BOARD2_PAGINATION 프로젝트 복사
+
+2. mybatis + 스프링 : 페이징 처리
+  1) Criteria 클래스 선언
+  	 현재 페이지 번호 ( pageNum ) 
+     한 페이지 출력할 게시글 수 ( amount )
+  
+  2) BoardMapper.java 추가
+     List<BoardVO> getListWithPaging(Criteria criteria);
+     int getTotalCount (Criteria criteria);   
+  
+  3) BoarMapper.xml 추기
+  
+  4) 단위 테스트
+     BoardMapperTest.testPaging()...
+  	
+  5) BoardService.java
+     BoardServiceImpl.java
+     
+     // [1-2] 게시글 목록 + 페이징 처리
+	 List<BoardVO> getListWithPaging(Criteria criteria);
+	
+	 // [1-3] 총 레코드 수
+	 int getTotal(Criteria criteria);
+	 
+  6) 단위 테스트
+  
+  7) BoardController.java 수정
+  	 @GetMapping(value = "list") 
+	 public void list(Model model, Criteria criteria) {
+	 }
+	 
+  8) 페이징 블럭 + list.jsp 처리 + get.jsp + 수정/삭제 페이지
+  	 PageDTO.java
+  	 o.d.i.domain.PageDTO.java
+  	 
+  	  
+  
+  
+  
+  
+  
