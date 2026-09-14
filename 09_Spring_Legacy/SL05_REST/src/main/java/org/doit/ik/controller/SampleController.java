@@ -5,8 +5,14 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.doit.ik.domain.SampleVO;
+import org.doit.ik.domain.Ticket;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,5 +42,49 @@ public class SampleController {
 		log.info("🤣 SampleController.getSampleVOList()...");
 		return IntStream.range(1, 10).mapToObj(i->new SampleVO(i,"first-"+i,"last-"+i)).collect(Collectors.toList());
 	}
+	
+	// http://localhost/sample/check?height=180.11&weight=76
+	@GetMapping(value="check", params = { "height", "weight" } )
+	public ResponseEntity<SampleVO> check(Double height, Double weight){
+		ResponseEntity<SampleVO> result = null;
+		
+		SampleVO sampleVO = new SampleVO(1, height+"", weight+"");
+		
+		// 키 < 250 비정상 처리
+		if (height > 250) {
+			result = ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(sampleVO);
+		} else {
+			result = ResponseEntity.status(HttpStatus.OK).body(sampleVO);
+		}
+				
+				
+		return result;
+	}
+	
+	@GetMapping("/product/{cat}/{pid}")
+	public String [] getPath(@PathVariable("cat")String cat, @PathVariable("pid")Integer pid) {
+		
+		return new String [] {
+			"카테고리: " + cat,
+			"제품ID: " + pid
+		};
+	}
+	
+	// json -> Java 객체 변환 응답
+	@PostMapping("/ticket")
+	public Ticket convert(@RequestBody Ticket ticket) {
+		log.info("🤣 SampleController.convert()... ticket:" + ticket );
+		
+		return ticket;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

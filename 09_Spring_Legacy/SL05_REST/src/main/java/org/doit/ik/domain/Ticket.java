@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SampleVO {
+public class Ticket {
 	
-	private Integer mno;
-	private String firstName; // height
-	private String lastName;  // weight
-	
+	private Integer tno;
+	private String owner;
+	private String grade;
 }

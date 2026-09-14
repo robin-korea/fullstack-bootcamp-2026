@@ -1,0 +1,45 @@
+1. SL03_BOARD3_SEARCH -> SL05_BOARD4_REPLY 프로젝트 복사
+
+2. REST 방식을 가장 많이 사용하는 형태 : 브라우저, 모바일 App 등 에서 Ajax를 이용한 호출
+
+3. 실습
+    ㄴ 게시판 (Board) 게시글 - 댓글 (reply) 기능 작성
+    ㄴ 1개의 게시글에
+          ㄴ 여러 개의 댓글이 작성...
+    ㄴ tbl_board  1 = N  tbl_reply
+   
+    
+    1) o.d.i.domain.ReplyVO.java
+    2) ReplyMapper.java
+       ReplyMapper.xml
+       
+    3) o.d.i.service.ReplyService.java 인터페이스
+       o.d.i.service.ReplyServiceImpl.java 클래스
+       
+    4) controller.ReplyController + 요청 처리 컨트롤러 메서드
+    댓글 등록 "/replies/new" + POST
+    댓글 상세보기 "/replies/:rno" + GET
+    댓글 삭제 "/replies/:rno" + DELETE
+    댓글 수정 "/replies/:rno" + PUT or PATCH
+    댓글 목록 페이지 "/replies/pages/:bno/:page" + GET 댓글 페이징 처리
+    
+    5) board/get.jsp + js ajax (reply.js)
+        - 댓글 목록 출력 ajax 처리 
+        - 댓글 추가     ajax 처리
+        - 댓글 상세보기  ajax 처리
+        - 댓글 삭제     ajax 처리
+        
+    6) 댓글도 페이징 처리 X 
+       [1] 2 3 4 5 
+       
+       
+    7) 아이디 중복 체크 실습...
+    
+    
+        
+        
+        
+        
+    
+  
+  
