@@ -1,0 +1,10 @@
+1. MyBatis 실습4
+     ㄴ DeptEmpSalgradeDTO -> <resultMap> 직접 매핑
+        ㄴ DeptDTO        1:1 연관관계
+        ㄴ EmpDTO         1:N 연관관계
+             ㄴ SalgradeDTO   1:1 연관관계
+     
+     매퍼파일 - resultMap 매핑
+    
+   
+	    

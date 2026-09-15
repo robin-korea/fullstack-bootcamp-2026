@@ -1,0 +1,25 @@
+1. MyBatis 연동 지원
+   
+   1) pom.xml 확인
+   
+   2) SqlSessionFactoryBean 을 이용해서 SqlSessionFactory 설정
+      ㄴ 스프링 + mybatis를 연동 처리하는 빈 객체
+      ㄴ root-context.xml 확인
+   
+   3) 트랜잭션 처리 설정
+   
+   4) MyBatis를 사용해서 DAO 구현
+     1) SqlSession 이용 구현
+        SqlSessionTemplate 을 이용해서 DAO 구현
+        
+     2) 매퍼 동적 생성 이용 구현
+        자동 매퍼 생성 기능을 이용한 DAO 구현
+     
+2. 실습
+   1) DeptDTO 생성
+   2) Scotcontroller 생성
+   3) dept.jsp 생성
+   4) DeptMapper 생성
+      DeptMapperDAO 생성   
+     
+   
