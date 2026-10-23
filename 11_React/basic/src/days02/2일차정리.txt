@@ -1,0 +1,47 @@
+1. ES6 템플릿 문자열 설명
+	const name = "hong";
+	const age = 20;
+	const message = "hello, " + name + ",\n age = " + age;
+	// 표현식 ${age + 10}
+	// 삼항연산자 ${ ? : }
+	const message = `
+						hello = ${name},
+						age = ${age + 10}
+					`
+	const html = `
+		<div>
+			<h2></h2>
+			<br></br>
+			<br />
+		</div>
+		`
+2. JSX (JavaScript XML 약어)
+	1) React에서 HTML 요소를 작성하는 문법
+	2) JSX  HTML 요소 생성 : App08.jsx
+	  - createElement()
+	  - appendChild()
+	3) JSX 표현식: App09.jsx
+	4) JSX 속성: App10.jsx
+	   <h1 속성명=속성값 속성명=속성값.></h1>
+	5) JSX 이벤트 처리 : App11.jsx
+	6) JSX if 문 : App12.jsx
+	   JSX 반복문 : App12_03.jsx
+	7) React 컴포넌트 : App13.jsx
+	   React 컴포넌트 : App13_03.jsx 클래스 컴포넌트
+	   (1) Lifecycle of Components
+			1) React의 각 컴포넌트는 세 가지 주요 단계(마운팅, 업데이트, 언마운팅)를 거치는 생명주기를 가지고 있으며,
+    			이 기간 동안 컴포넌트를 모니터링하고 조작할 수 있다.
+			2) Mounting: 
+			    constructor()
+			    getDerivedStateFromProps(): DOM에 요소를 렌더링하기 직전에 호출되는 메서드
+			    render(): 필수이며, 실제로 HTML을 DOM에 출력하는 메서드
+			    componentDidMount(): 컴포넌트가 렌더링된 후에 호출되는 메서드
+		    3) Updating
+         		getDerivedStateFromProps()
+         		shouldComponentUpdate()
+         		getSnapshotBeforeUpdate()
+        		componentDidUpdate()
+	8) React 조건부 렌더링 : App17.jsx
+	    ㄴ 조건부로 컴포넌트를 렌더링할 수 있다.
+		ㄴ if문, 삼항연산자
+		ㄴ 논리 && 연산자
