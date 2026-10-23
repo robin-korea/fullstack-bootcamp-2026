@@ -1,0 +1,33 @@
+1. 댓글 처리(Ajax) + @RestController.java + JSON: REST 방식
+	회원 + 게시판 + 댓글 엔티티
+	연관관계 1:N
+	댓글 : JSON + Ajax + @RestController
+	
+  -------------------------------------------------------------------------------------
+  방식      호출URL                  파라미터                기능            반환값
+  -------------------------------------------------------------------------------------
+  GET      /replies/board/{bno}   게시물번호            댓글 조회      JSON배열  [{},{}]
+  POST     /replies/              JSON 댓글 데이터      댓글 추가          댓글번호
+  DELETE   /replies/{rno}         댓글 번호               삭제          삭제결과문자열  
+  PUT      /replies/{rno}         댓글번호 + 수정할 내용    수정          수정결과문자열
+  -------------------------------------------------------------------------------------
+  
+2. 구현
+  1) Reply 엔티티 
+     (주의) 연관관계 있음 @ToString 쓰지 않기 fetch 지연 로딩으로 설정
+  
+  2) ReplyRepository 수정
+       ㄴ 단위 테스트
+  
+  3) ReplyDTO / ReplyService, Impl / ReplyController 추가...
+     (1) ReplyDTO 생성
+     
+  4) 댓글 추가 구현
+    (1) 모달창 구현
+    (2) 댓글 저장 js 코딩
+    (3) ReplyService, Impl register() 구현 확인 
+    (4) RestController 구현
+  
+  5) 댓글 삭제
+  	(1) read.html: 삭제할 댓글에 해당하는 div 태그를 클릭..
+  	

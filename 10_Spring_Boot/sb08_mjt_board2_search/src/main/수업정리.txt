@@ -1,0 +1,51 @@
+1. JPQL로 검색
+   ㄴ FK를 이용해서 @ManyToOne 연관관계가 있을 경우 가장 어려운 작업은
+      검색에 필요한 JPQL를 구성하는 것이다.
+   ㄴ Object [] 타입
+   ㄴ 단일 엔티티가 아니므로 Querydsl에서 필요한 쿼리를 직접 동적으로 실행 할 수 있는 구조가 필요하다
+   ㄴ Repository 를 확장해서 JPQLQuery 객체를 이용해서 직접 JPQL 구문을 생성해서 처리
+   
+2. Querydsl 설정
+  1) build.gradle 에 
+    configurations {
+   		compileOnly {
+      		extendsFrom annotationProcessor
+   			}
+		}
+		
+	// 1. QueryDSL Q-Class 생성에 필요
+    implementation "com.querydsl:querydsl-jpa:5.1.0:jakarta"
+    annotationProcessor "com.querydsl:querydsl-apt:5.1.0:jakarta"
+    annotationProcessor 'jakarta.persistence:jakarta.persistence-api'
+    annotationProcessor 'jakarta.annotation:jakarta.annotation-api'
+    
+    코딩 추가
+    
+3. Q클래스 생성
+
+4. Repository를 확장하는 방법
+     1단계: 쿼리 메서드나 @Query 등으로 처리할 수 없는 기능은 별도의 인터페이스로 설계   
+     2단계: 별도의 인터페이스에 대한 구현 클래스를 작성한다. 
+           이 때 QuerydslRepositorySupport 클래스 상속    
+     3단계: 구현 클래스에 인터페이스의 기능을 Q도메인 클래스와 JPQLQuery를 이용해서 구현
+
+4-2. 적용해서 구현
+   1) SearchBoardRepository 인터페이스 추가
+   2) SearchBoardRepositoryImpl 구현클래스 추가
+
+4-3. list.html 검색부분 추가...
+
+5. BoardServiceImpl.java 수정...
+
+[ 참고 ] 복잡한 쿼리(조인, 서브쿼리, 동적 쿼리)를 사용하는 Querydsl 적용 방법
+1) 기존 코드 방식   : QuerydslRepositorySupport 사용 
+                    ㄴ from(), getQuerydsl()메소드 사용
+2) 최근 추천되는 방식: JPAQueryFactory 사용.  ( 권장 )   
+
+
+
+
+
+
+
+   

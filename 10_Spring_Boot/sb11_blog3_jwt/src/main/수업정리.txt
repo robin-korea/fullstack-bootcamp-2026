@@ -1,0 +1,38 @@
+1. JWT 를 이용한 로그인/로그아웃 구현하기
+
+2. JWT 사전지식
+	1) 토큰 기반 인증이란?
+		인증: (1) 서버 기반 인증  (2) 토큰 기반 인증
+	2) 토큰을 전달하고 인증받는 처리 과정 이해
+	3) 토큰 기반 인증의 특징
+	  (1) 무상태성: 서버에 인증 정보 X 
+	  (2) 확장성:  서버+서버+서버+서버+서버...
+	  (3) 무결성:  토큰 발급 후 토큰 정보를 변경하는 행위 할 수 없다.
+	4) JWT
+	  (1) 요청 헤더 중에 Authorization 키 값에 Bearer + "JWT 토큰값"
+	  (2) 토큰 구조:   헤더.페이로드.서명
+	                    토큰 내용의 한 덩어리: 클레임
+	5) 리프레시 토큰
+	
+3. JWT 구현
+  1) 의존성 추가 확인
+  
+  
+  2) application-properties
+      (1) # JWT 토큰을 생성할 때 iss(토큰발급자), 비밀키, 토큰 만료 기간 설정
+      
+      (2) org.doit.ik.blog.config.jwt.JwtKeyGenerator.java
+      
+      (3) org.doit.ik.blog.config.jwt.JwtProperties.java
+    
+  3) org.doit.ik.blog.config.jwt.JwtTokenProvider
+      (1) Access Token 생성, Refresh Token 생성, Secrete Key 생성,
+          JWT 토큰 유효성 검증, JWT 토큰에서 사용자 정보(claim)를 가져오기,
+          AccessToken 검증, RefreshToken 검증, 토큰 - Authentication 반환
+          토큰 -> User ID를 반환 등등
+  
+  4) 리프레시 토큰 -> 서버 DB 저장 관리, Entity 구현
+    
+  5) 토큰 필터 구현
+    (1) JwtCookieAuthenticationFilter.java
+  

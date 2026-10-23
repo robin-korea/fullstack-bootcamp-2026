@@ -1,0 +1,19 @@
+1. 파일 업로드
+  1) Servlet 3.0 이상 자체적으로 파일업로드 라이브러리를 이용하는 방식
+  2) 별도의 라이브러리 (commons-fileupload 등) 이용하는 방식
+  
+2. 이번 프로젝트에서는 1번 방법 사용
+   1) 섬네일 처리
+   
+3. 파일 업로드를 위한 설정
+  1) application.properties 추가
+  2) 섬네일 처리 build.gradle 에 추가
+     implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.21'
+
+4. 파일 업로드를 위한 컨트롤러 + 화면처리 (html)
+  1) 파일 업로드와 관련된 모든 작업은 Ajax 방식으로 처리
+  2) 모든 업로드 결과는 JSON 형태로 제공
+  3) o.d.i.mreview.controller.UploadController.java
+  4) o.d.i.mreview.dto.UploadResultDTO.java
+  5) uploadEx.html ajax 처리 
+  

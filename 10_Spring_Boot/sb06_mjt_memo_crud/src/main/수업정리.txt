@@ -1,0 +1,17 @@
+메모 작성/수정/삭제/조회 CRUD
+
+1. application.properties 수정
+
+2. static 파일 복사
+
+3. index.html 복사
+   home.IndexController.java
+   
+4. 구현
+  1) /memo/list/1 메모 목록 처리 기능 구현
+  2) memo 패키지 추가
+      ㄴ Memo.java 엔티티(Entity) 클래스
+  3) MemoRepository.java 
+  3-2) 더미 데이터 INSERT: MemoRepositoryTests.java
+  
+  4) o.d.i.memo.MemoController.java

@@ -1,0 +1,39 @@
+1. Oracle 2lC -> MySQL DBMS 다운로드 및 설치
+
+커넥터 워브브랜치 다운
+
+scottdb 데이터베이스 생성
+  scott/tiger 계정 생성
+  dept/emp 테이블 생성
+  
+   1) 데이터베이스 생성
+   CREATE DATABASE scottdb CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+   
+   2) scott 계정 생성       
+   CREATE USER 'scott'@'localhost' IDENTIFIED BY 'tiger';    
+   CREATE USER 'scott'@'%' IDENTIFIED BY 'tiger';   
+
+   3) scott에게 scottdb 권한 부여   
+   GRANT ALL PRIVILEGES ON scottdb.* TO 'scott'@'localhost';
+   GRANT ALL PRIVILEGES ON scottdb.* TO 'scott'@'%';
+
+   4) 권한 적용/확인   
+   FLUSH PRIVILEGES;
+
+   5) 권한 확인:      
+   SHOW GRANTS FOR 'scott'@'localhost';
+   SHOW GRANTS FOR 'scott'@'%';
+   
+4. application.yml 설정 + 복사&붙이기
+   oracle db 부분 mysql 로 변경
+
+5. 테스트
+   IndexController.java
+   index.html
+   
+6. dept 패키지
+   emp 패키지
+   util 패키지
+   
+7. templates/dept/list.html 추가
+   templates/static 복사

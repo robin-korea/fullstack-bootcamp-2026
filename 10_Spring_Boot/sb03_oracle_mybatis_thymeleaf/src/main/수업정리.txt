@@ -1,0 +1,41 @@
+1. 프로젝트 복사 후 설정
+
+sb03_oracle_mybatis_thymeleaf
+
+	1) pom.xml
+	    artifactId 프로젝트명 교체
+	
+	2) application.properties
+		맨위 프로젝트명 교체
+	
+	3) org.doit.ik Sb03OracleMybatisThymeleafApplication.java 생성
+	
+2. application.properties -> application.yml 확장자 수정해서 설정
+	  계층 구조 (들여쓰기가 중요)
+	  
+3. pom.xml 타임리프
+	<dependency>
+         	<groupId>org.springframework.boot</groupId>
+         	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    
+    thymeleaf:
+	    prefix: classpath:/templates/
+	    suffix: .html
+	    cache: false
+
+4. html 페이지 추가
+   /templates/dept/list.html
+   /templates/error/error.html
+   /templates/index.html
+   
+   타임리프 설정
+   https://www.thymeleaf.org/eclipse-plugin-update-site/
+   
+	    
+	    
+	    
+	    
+	    
+	    
+	    

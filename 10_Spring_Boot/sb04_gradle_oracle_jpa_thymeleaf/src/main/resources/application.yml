@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: sb04_gradle_oracle_jpa_thymeleaf
+
+  sql:
+    init:
+      mode: never
+
+  datasource:
+    url: ${SB_URL}
+    username: ${SB_USERNAME}
+    password: ${SB_PASSWORD}
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
+# JPA 설정
+  jpa:
+    database: oracle   # mysql  JPA에서 사용할 DBMS
+    generate-ddl: false # JPA가 DDL을 생성할 것인지 결정
+    hibernate:
+      ddl-auto: update # JPA가 일반적인 DDL 생성, 엔티티 클래스를 기준으로 DB 테이블을 어떻게 처리할지를 결정
+      naming:
+        # Entity -> DB 테이블 생성될 때 실제 테이블 이름 설정
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    # 실행되는 SQL 을 콘솔에 출력, sql 쿼리 확인
+    show-sql: true
+    properties:  # hibernate의 세부 속성을 직접 설정
+      hibernate:
+        format_sql: true # 실행되는 SQL을 형식화해서 출력
+    defer-datasource-initialization: true # jpa 초기화 된 후에 sql 초기화 작업
+
+server:
+   port: 80 

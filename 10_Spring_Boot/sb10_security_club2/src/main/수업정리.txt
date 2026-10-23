@@ -1,0 +1,24 @@
+1. DB처리
+
+2. 프로젝트를 위한 JPA 처리
+   1) 회원 Entity: ClubMember
+       ㄴ fromSocial: 소셜 로그인 처리 후에 회원 가입 유무
+   2) 권한 Entity: ClubMemberRole
+   	   (1) USER
+   	   (2) MANAGER
+   	   (3) ADMIN
+   3) ClubMember 1:N  ClubMemberRole 연관관계 
+                           FK
+                           @ManyToOne 연관관계
+   
+   4) Repository 추가
+   
+   5) 단위 테스트: 회원 100명 추가
+      1~80: USER
+      81~90: USER, MANAGER
+      91~100: USER, MANAGER, ADMIN
+      
+   6) 시큐리티에서 사용할 UserDetailsService
+     (1) UserDetailsService.loadUserByUsername()
+   
+   7) SecurityConfig.java 인메모리 -> ClubUserDetailsService 수정

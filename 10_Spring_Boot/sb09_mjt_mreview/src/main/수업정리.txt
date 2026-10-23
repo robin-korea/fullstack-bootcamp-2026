@@ -1,0 +1,65 @@
+1. 학습목표
+   1) 영화(movie)와 회원(member): 리뷰
+          N       :     M
+   
+   2) JPA에서 다:다 관계 처리
+     (1) @ManyToMany 이용해서 처리 X
+     (2) 영화 E   리E   회원 E 
+          1:N           N:1
+     (3)      (매핑테이블) @OneToMany, @ManyToOne
+        주로 명사가 아닌 동사/히스토리에 대한 데이터를 저장하는 용도
+        중간에서 양쪽 테이블의 PK를 참조하는 형태로 사용된다.
+     (4) 예: 학E  수강E  과E
+             고E  주문E  상E
+     
+2. 실습 : 영화E, 고객E, 리뷰E(매핑테이블) + 영화이미지E(파일업로드)
+	 - 목록 화면에 영화의 제목과 이미지 하나, 영화 리뷰의 평점/리뷰 개수를 출력   
+     - 영화 조회 화면에서 영화와 영화의 이미지들, 리뷰의 평균점수/리뷰 개수를 같이 출력  
+     - 리뷰에 대한 정보에는 회원의 이메일이나 닉네임과 같은 정보를 같이 출력
+     
+     주의할 점) JPA에서 다:다 관계가 있을 경우 매핑 테이블은 반드시 마지막 단계에 처리한다
+       - 영화E, 영화이미지E, 고객E     가장 마지막에 리뷰 E == 매핑테이블
+
+3. org.doit.ik.mreview 패키지 추가
+     ㄴ entity 패키지 추가
+     ㄴ repository 패키지 추가
+
+4. o.d.i.m.e.BaseEntity.java
+4-2. 영화 Entity 추가: Movie.java
+4-3. 영화이미지 Entity 추가: MovieImage.java
+4-4. 고객(회원) Entity 추가: Member.java
+4-5. 리뷰 Entity 추가: Review.java - 매핑테이블, 연관관계(고객 1:N, 영화 1:N)
+
+5. o.d.i.mreview.repository 패키지 : MovieRepository.java
+5-2. MovieImageRepository
+5-3. MovieRepositoryTests.java 단위테스트 (더미데이터 추가)
+
+6. MemberRepository.java
+
+7. ReviewRepository.java
+--- 100개 영화, 100명 회원, 200개 영화 리뷰 (더미 데이터 추가)
+
+8. 페이징 처리가 된 영화별 평균점수/리뷰 갯수 처리...
+    영화 목록 화면: 영화/영화이미지/리뷰정보 JOIN 
+    MovieRepository.java - 쿼리 메서드 선언 getListPage()
+    
+8-2 단위테스트
+
+9. 특정 영화의 모든 리뷰와 회원의 닉네임: ReviewRepository.java
+    
+    // Lazy 로딩을 설정했기에 리뷰객체와 맴버 객체를 조회 X
+    @EntityGraph
+    
+    Movie  1 : N   Review(리뷰정보 X)
+                   @ManyToOne(fetch = fetchType.LAZY)
+                   private Movie movie
+
+10. 특정 회원을 삭제할 때 문제점 + 트랜잭션 처리
+   1) 회원을 삭제하려면 회원이 작성한 모든 리뷰 삭제 + 트랜잭션 처리
+   2) 
+
+
+
+
+
+
